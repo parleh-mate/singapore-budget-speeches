@@ -9,7 +9,7 @@ An interactive website for exploring 65 years of Singapore Budget Speeches (1960
 ## Features
 
 ### 📊 Full-Text Search
-- Search across **65,285 sentences** from 66 budget speeches
+- Search across **39,704 sentences** from 66 budget speeches
 - **Context expansion**: View surrounding sentences for better understanding
 - **Topic classification**: Results tagged with policy areas (Defence, Education, Health, etc.)
 - **Advanced filters**: By decade, minister, topic
@@ -24,7 +24,7 @@ An interactive website for exploring 65 years of Singapore Budget Speeches (1960
 - 66 Budget Speeches (1960–2025)
 - 10 Finance Ministers
 - 15 Policy Areas tracked
-- 65,285 Searchable sentences
+- 39,704 Searchable sentences
 
 ---
 
@@ -149,20 +149,20 @@ The export script (`analysis/export_for_web.py`):
 
 ---
 
-## Finance Ministers (1959–Present)
+## Finance Ministers (1960–2026)
 
-| Minister | Tenure |
-|----------|--------|
-| Goh Keng Swee | 1959–1965, 1967–1970 |
-| Lim Kim San | 1965–1967 |
-| Hon Sui Sen | 1970–1983 |
-| Tony Tan | 1983–1985 |
-| Richard Hu | 1985–2001 |
-| Lee Hsien Loong | 2001–2007 |
+| Minister | Budget Years |
+|----------|--------------|
+| Goh Keng Swee | 1960–1965, 1968–1970 |
+| Lim Kim San | 1966–1967 |
+| Hon Sui Sen | 1971–1978 |
+| Goh Chok Tong | 1979–1981 |
+| Tony Tan | 1982–1985 |
+| Richard Hu | 1986–2001 |
+| Lee Hsien Loong | 2002–2006 |
 | Tharman Shanmugaratnam | 2007–2015 |
-| Heng Swee Keat | 2015–2021 |
-| Lawrence Wong | 2021–2024 |
-| Indranee Rajah | 2024–Present |
+| Heng Swee Keat | 2016–2021 |
+| Lawrence Wong | 2022–2026 |
 
 ---
 

@@ -5,411 +5,580 @@ Generates lightweight summary JSONs and detailed shards for progressive loading
 """
 
 import json
-import pandas as pd
 from pathlib import Path
-from typing import Dict, List, Any
+
+import pandas as pd
 
 # Paths
 ANALYSIS_DIR = Path(__file__).parent
-DATA_DIR = ANALYSIS_DIR.parent / 'docs' / 'data'
-SUMMARY_DIR = DATA_DIR / 'summary'
-DETAILED_DIR = DATA_DIR / 'detailed'
-SEARCH_DIR = DATA_DIR / 'search-index'
+DATA_DIR = ANALYSIS_DIR.parent / "docs" / "data"
+SUMMARY_DIR = DATA_DIR / "summary"
+DETAILED_DIR = DATA_DIR / "detailed"
+SEARCH_DIR = DATA_DIR / "search-index"
+
 
 def ensure_directories():
     """Create output directories if they don't exist"""
     SUMMARY_DIR.mkdir(parents=True, exist_ok=True)
     DETAILED_DIR.mkdir(parents=True, exist_ok=True)
-    (SEARCH_DIR / 'decades').mkdir(parents=True, exist_ok=True)
-    (SEARCH_DIR / 'topics').mkdir(parents=True, exist_ok=True)
+    (SEARCH_DIR / "decades").mkdir(parents=True, exist_ok=True)
+    (SEARCH_DIR / "topics").mkdir(parents=True, exist_ok=True)
     print("✓ Created directory structure")
+
 
 def export_ministries_overview():
     """Export ministry statistics as lightweight JSON"""
     print("\n📊 Exporting ministries overview...")
-    
+
     # Load CSVs
-    by_year = pd.read_csv(ANALYSIS_DIR / 'ministry_by_year.csv')
-    by_decade = pd.read_csv(ANALYSIS_DIR / 'ministry_by_decade.csv')
-    
+    by_year = pd.read_csv(ANALYSIS_DIR / "ministry_by_year.csv")
+
     # Create overview JSON
-    overview = {
-        'by_year': {},
-        'by_ministry': {},
-        'insights': []
-    }
-    
+    overview = {"by_year": {}, "by_ministry": {}, "insights": []}
+
     # Get ministry columns (all except 'year')
-    ministry_cols = [col for col in by_year.columns if col != 'year']
-    
+    ministry_cols = [col for col in by_year.columns if col != "year"]
+
     # Format ministry names (convert snake_case to Title Case)
     def format_ministry_name(name):
-        return name.replace('_', ' ').title()
-    
+        return name.replace("_", " ").title()
+
     # Process by_year data
     for _, row in by_year.iterrows():
-        year = str(int(row['year']))
-        overview['by_year'][year] = {}
-        
+        year = str(int(row["year"]))
+        overview["by_year"][year] = {}
+
         for ministry in ministry_cols:
             formatted_name = format_ministry_name(ministry)
             # Convert percentage to absolute count (approximate based on percentages)
-            overview['by_year'][year][formatted_name] = round(float(row[ministry]), 2)
-    
+            overview["by_year"][year][formatted_name] = round(float(row[ministry]), 2)
+
     # Calculate ministry totals and stats
     for ministry in ministry_cols:
         formatted_name = format_ministry_name(ministry)
         values = by_year[ministry].values
-        
+
         total = float(values.sum())
         avg = float(values.mean())
         peak_idx = values.argmax()
-        peak_year = int(by_year.iloc[peak_idx]['year'])
-        
-        overview['by_ministry'][formatted_name] = {
-            'total': round(total, 2),
-            'average_per_year': round(avg, 2),
-            'peak_year': peak_year,
-            'percentage': round((total / by_year[ministry_cols].sum().sum()) * 100, 2)
+        peak_year = int(by_year.iloc[peak_idx]["year"])
+
+        overview["by_ministry"][formatted_name] = {
+            "total": round(total, 2),
+            "average_per_year": round(avg, 2),
+            "peak_year": peak_year,
+            "percentage": round((total / by_year[ministry_cols].sum().sum()) * 100, 2),
         }
-    
+
     # Sort by total
-    overview['by_ministry'] = dict(sorted(
-        overview['by_ministry'].items(), 
-        key=lambda x: x[1]['total'], 
-        reverse=True
-    ))
-    
+    overview["by_ministry"] = dict(
+        sorted(overview["by_ministry"].items(), key=lambda x: x[1]["total"], reverse=True)
+    )
+
     # Add insights
-    top_ministry = list(overview['by_ministry'].items())[0]
-    overview['insights'] = [
+    top_ministry = list(overview["by_ministry"].items())[0]
+    overview["insights"] = [
         {
-            'title': 'Most Discussed Ministry',
-            'description': f"{top_ministry[0]} was the most discussed topic, representing {top_ministry[1]['percentage']}% of all policy discussions."
+            "title": "Most Discussed Ministry",
+            "description": (
+                f"{top_ministry[0]} was the most discussed topic, "
+                f"representing {top_ministry[1]['percentage']}% of all policy discussions."
+            ),
         },
         {
-            'title': 'Policy Evolution',
-            'description': 'Defence dominated early years (1960s-70s) during nation-building. Social Services surged in 2000s-2010s as Singapore matured. Environment emerged strongly in 2020s.'
+            "title": "Policy Evolution",
+            "description": (
+                "Defence dominated early years (1960s-70s) during nation-building. "
+                "Social Services surged in 2000s-2010s as Singapore matured. "
+                "Environment emerged strongly in 2020s."
+            ),
         },
         {
-            'title': 'Crisis Response',
-            'description': 'Economic topics spiked during 1985 recession, 1997 Asian Financial Crisis, 2008 Global Financial Crisis, and 2020 COVID-19 pandemic.'
-        }
+            "title": "Crisis Response",
+            "description": (
+                "Economic topics spiked during 1985 recession, 1997 Asian Financial Crisis, "
+                "2008 Global Financial Crisis, and 2020 COVID-19 pandemic."
+            ),
+        },
     ]
-    
+
     # Write to file
-    output_path = SUMMARY_DIR / 'ministries_overview.json'
-    with open(output_path, 'w') as f:
+    output_path = SUMMARY_DIR / "ministries_overview.json"
+    with open(output_path, "w") as f:
         json.dump(overview, f, indent=2)
-    
+
     size_kb = output_path.stat().st_size / 1024
     print(f"  ✓ Exported ministries_overview.json ({size_kb:.1f} KB)")
+
 
 def export_ministers_overview():
     """Export minister statistics as lightweight JSON"""
     print("\n👤 Exporting ministers overview...")
-    
+
     # Load CSVs
-    minister_stats = pd.read_csv(ANALYSIS_DIR / 'minister_speech_statistics.csv')
-    yearly_stats = pd.read_csv(ANALYSIS_DIR / 'yearly_speech_statistics.csv')
-    minister_topics = pd.read_csv(ANALYSIS_DIR / 'ministry_by_minister.csv')
-    
+    yearly_stats = pd.read_csv(ANALYSIS_DIR / "yearly_speech_statistics.csv")
+    minister_topics = pd.read_csv(ANALYSIS_DIR / "ministry_by_minister.csv")
+
     # Define minister periods (hardcoded for accuracy)
     minister_periods = {
-        'Goh Keng Swee': '1960-1965',
-        'Lim Kim San': '1967-1970',
-        'Hon Sui Sen': '1971-1983',
-        'Goh Chok Tong': '1982-1984',
-        'Dr Richard Hu Tsu Tau': '1985-2001',
-        'Dr Tony Tan Keng Yam': '2002-2004',
-        'Lee Hsien Loong': '2005-2007',
-        'Tharman Shanmugaratnam': '2008-2015',
-        'Heng Swee Keat': '2016-2021',
-        'Lawrence Wong': '2022-2025'
+        "Goh Keng Swee": "1960-1965",
+        "Lim Kim San": "1967-1970",
+        "Hon Sui Sen": "1971-1983",
+        "Goh Chok Tong": "1982-1984",
+        "Dr Richard Hu Tsu Tau": "1985-2001",
+        "Dr Tony Tan Keng Yam": "2002-2004",
+        "Lee Hsien Loong": "2005-2007",
+        "Tharman Shanmugaratnam": "2008-2015",
+        "Heng Swee Keat": "2016-2021",
+        "Lawrence Wong": "2022-2025",
     }
-    
-    overview = {
-        'ministers': [],
-        'minister_topics': {}
-    }
-    
+
+    overview = {"ministers": [], "minister_topics": {}}
+
     # Process each minister from yearly stats
-    minister_groups = yearly_stats.groupby('minister')
-    
+    minister_groups = yearly_stats.groupby("minister")
+
     for minister_name, group in minister_groups:
         # Calculate stats
         num_speeches = len(group)
-        total_sentences = int(group['total_sentences'].sum())
-        avg_sentence_length = round(float(group['avg_words_per_sentence'].mean()), 1)
-        readability_score = round(float(group['readability'].mean()), 1)
-        
+        total_sentences = int(group["total_sentences"].sum())
+        avg_sentence_length = round(float(group["avg_words_per_sentence"].mean()), 1)
+        readability_score = round(float(group["readability"].mean()), 1)
+
         minister_data = {
-            'name': minister_name,
-            'years_served': minister_periods.get(minister_name, 'Unknown'),
-            'num_speeches': num_speeches,
-            'total_sentences': total_sentences,
-            'avg_sentence_length': avg_sentence_length,
-            'readability_score': readability_score
+            "name": minister_name,
+            "years_served": minister_periods.get(minister_name, "Unknown"),
+            "num_speeches": num_speeches,
+            "total_sentences": total_sentences,
+            "avg_sentence_length": avg_sentence_length,
+            "readability_score": readability_score,
         }
-        
-        overview['ministers'].append(minister_data)
-    
+
+        overview["ministers"].append(minister_data)
+
     # Process minister topics
     for _, row in minister_topics.iterrows():
-        minister = row['minister']
-        overview['minister_topics'][minister] = {}
-        
+        minister = row["minister"]
+        overview["minister_topics"][minister] = {}
+
         for col in minister_topics.columns:
-            if col != 'minister':
-                formatted_name = col.replace('_', ' ').title()
-                overview['minister_topics'][minister][formatted_name] = round(float(row[col]), 2)
-    
+            if col != "minister":
+                formatted_name = col.replace("_", " ").title()
+                overview["minister_topics"][minister][formatted_name] = round(float(row[col]), 2)
+
     # Write to file
-    output_path = SUMMARY_DIR / 'ministers_overview.json'
-    with open(output_path, 'w') as f:
+    output_path = SUMMARY_DIR / "ministers_overview.json"
+    with open(output_path, "w") as f:
         json.dump(overview, f, indent=2)
-    
+
     size_kb = output_path.stat().st_size / 1024
     print(f"  ✓ Exported ministers_overview.json ({size_kb:.1f} KB)")
+
 
 def export_yearly_overview():
     """Export yearly statistics as lightweight JSON"""
     print("\n📅 Exporting yearly overview...")
-    
+
     # Load CSV
-    df = pd.read_csv(ANALYSIS_DIR / 'yearly_speech_statistics.csv')
-    
+    df = pd.read_csv(ANALYSIS_DIR / "yearly_speech_statistics.csv")
+
     overview = {
-        'by_year': {},
-        'by_minister': {},
-        'insights': {
-            'readability_trend': 'Readability improved from ~40 (1960s) to ~60 (2020s). Higher scores mean easier to read.',
-            'sentence_length': 'Average sentence length decreased from 28 words (1960s) to 22 words (2020s), making speeches clearer.',
-            'most_readable': 'Recent ministers use shorter sentences and simpler language compared to earlier decades.',
-            'complex_topics': 'Economic and financial topics tend to have lower readability due to technical terminology.'
-        }
+        "by_year": {},
+        "by_minister": {},
+        "insights": {
+            "readability_trend": (
+                "Readability improved from ~40 (1960s) to ~60 (2020s). "
+                "Higher scores mean easier to read."
+            ),
+            "sentence_length": (
+                "Average sentence length decreased from 28 words (1960s) to 22 words (2020s), "
+                "making speeches clearer."
+            ),
+            "most_readable": (
+                "Recent ministers use shorter sentences and simpler language "
+                "compared to earlier decades."
+            ),
+            "complex_topics": (
+                "Economic and financial topics tend to have lower readability "
+                "due to technical terminology."
+            ),
+        },
     }
-    
+
     # Process by year
     for _, row in df.iterrows():
-        year = str(int(row['year']))
-        overview['by_year'][year] = {
-            'total_sentences': int(row['total_sentences']),
-            'avg_sentence_length': round(float(row['avg_words_per_sentence']), 1),
-            'readability': round(float(row['readability']), 1),
-            'minister': row['minister']
+        year = str(int(row["year"]))
+        overview["by_year"][year] = {
+            "total_sentences": int(row["total_sentences"]),
+            "avg_sentence_length": round(float(row["avg_words_per_sentence"]), 1),
+            "readability": round(float(row["readability"]), 1),
+            "minister": row["minister"],
         }
-    
+
     # Group by minister
-    minister_stats = df.groupby('minister').agg({
-        'readability': 'mean',
-        'avg_words_per_sentence': 'mean',
-        'total_sentences': 'sum'
-    }).reset_index()
-    
+    minister_stats = (
+        df.groupby("minister")
+        .agg({"readability": "mean", "avg_words_per_sentence": "mean", "total_sentences": "sum"})
+        .reset_index()
+    )
+
     for _, row in minister_stats.iterrows():
-        minister = row['minister']
-        overview['by_minister'][minister] = {
-            'avg_readability': round(float(row['readability']), 1),
-            'avg_sentence_length': round(float(row['avg_words_per_sentence']), 1),
-            'total_sentences': int(row['total_sentences'])
+        minister = row["minister"]
+        overview["by_minister"][minister] = {
+            "avg_readability": round(float(row["readability"]), 1),
+            "avg_sentence_length": round(float(row["avg_words_per_sentence"]), 1),
+            "total_sentences": int(row["total_sentences"]),
         }
-    
+
     # Write to file
-    output_path = SUMMARY_DIR / 'yearly_overview.json'
-    with open(output_path, 'w') as f:
+    output_path = SUMMARY_DIR / "yearly_overview.json"
+    with open(output_path, "w") as f:
         json.dump(overview, f, indent=2)
-    
+
     size_kb = output_path.stat().st_size / 1024
     print(f"  ✓ Exported yearly_overview.json ({size_kb:.1f} KB)")
 
+
 def export_search_index():
-    """Export search index with progressive loading support"""
+    """Export search index with progressive loading support using parquet files"""
     print("\n🔍 Exporting search index...")
-    
-    # Parse all markdown files to extract sentences
-    markdown_dir = ANALYSIS_DIR.parent / 'output_markdown'
+
+    # Use parquet files as the source (cleaner, no duplicates)
+    parquet_dir = ANALYSIS_DIR.parent / "output_processor"
     all_sentences = []
-    
-    # Minister periods for attribution
+
+    # Minister periods for attribution (from speech_links.py)
     minister_periods = {
-        (1960, 1965): 'Goh Keng Swee',
-        (1967, 1970): 'Lim Kim San',
-        (1971, 1983): 'Hon Sui Sen',
-        (1982, 1984): 'Goh Chok Tong',
-        (1985, 2001): 'Dr Richard Hu Tsu Tau',
-        (2002, 2004): 'Dr Tony Tan Keng Yam',
-        (2005, 2007): 'Lee Hsien Loong',
-        (2008, 2015): 'Tharman Shanmugaratnam',
-        (2016, 2021): 'Heng Swee Keat',
-        (2022, 2025): 'Lawrence Wong'
+        (1960, 1965): "Goh Keng Swee",
+        (1966, 1967): "Lim Kim San",
+        (1968, 1970): "Goh Keng Swee",
+        (1971, 1978): "Hon Sui Sen",
+        (1979, 1981): "Goh Chok Tong",
+        (1982, 1985): "Dr Tony Tan Keng Yam",
+        (1986, 2001): "Dr Richard Hu Tsu Tau",
+        (2002, 2006): "Lee Hsien Loong",
+        (2007, 2015): "Tharman Shanmugaratnam",
+        (2016, 2021): "Heng Swee Keat",
+        (2022, 2026): "Lawrence Wong",
     }
-    
+
     def get_minister(year):
         for (start, end), name in minister_periods.items():
             if start <= year <= end:
                 return name
-        return 'Unknown'
-    
+        return "Unknown"
+
     # Topic keywords for classification
     topic_keywords = {
-        'Defence': ['defence', 'defense', 'military', 'armed forces', 'army', 'navy', 'air force', 
-                    'national service', 'ns', 'mindef', 'saf', 'security', 'terrorism', 'homeland'],
-        'Education': ['education', 'school', 'university', 'polytechnic', 'ite', 'student', 'teacher',
-                      'curriculum', 'moe', 'learning', 'skillsfuture', 'training', 'vocational', 
-                      'preschool', 'tuition', 'nus', 'ntu', 'smu', 'scholarship'],
-        'Health': ['health', 'healthcare', 'hospital', 'medical', 'medicine', 'doctor', 'nurse',
-                   'moh', 'clinic', 'patient', 'disease', 'treatment', 'medisave', 'medishield',
-                   'medifund', 'elderly care', 'mental health', 'vaccine', 'pandemic', 'covid'],
-        'Housing': ['housing', 'hdb', 'flat', 'home', 'property', 'bto', 'resale', 'mortgage',
-                    'cpf housing', 'public housing', 'rental', 'estate', 'neighbourhood'],
-        'Transport': ['transport', 'mrt', 'bus', 'train', 'lta', 'road', 'traffic', 'vehicle',
-                      'car', 'taxi', 'cycling', 'infrastructure', 'airport', 'changi', 'port',
-                      'ewl', 'nsl', 'nel', 'dtl', 'ccl', 'tel'],
-        'Economy': ['economy', 'economic', 'gdp', 'growth', 'recession', 'inflation', 'trade',
-                    'export', 'import', 'investment', 'business', 'enterprise', 'sme', 'startup',
-                    'industry', 'manufacturing', 'services', 'tourism', 'employment', 'jobs',
-                    'unemployment', 'wages', 'productivity', 'competitiveness'],
-        'Finance': ['tax', 'gst', 'budget', 'fiscal', 'revenue', 'expenditure', 'deficit', 'surplus',
-                    'reserves', 'mas', 'cpf', 'savings', 'pension', 'retirement', 'income tax',
-                    'corporate tax', 'stamp duty', 'iras'],
-        'Social Services': ['social', 'welfare', 'comcare', 'assistance', 'support', 'low-income',
-                            'vulnerable', 'disability', 'family', 'children', 'youth', 'seniors',
-                            'pioneer generation', 'merdeka generation', 'silver support', 'workfare',
-                            'gst voucher', 'cdc voucher'],
-        'Environment': ['environment', 'climate', 'sustainability', 'green', 'carbon', 'emissions',
-                        'renewable', 'solar', 'energy', 'water', 'newater', 'recycling', 'waste',
-                        'pollution', 'biodiversity', 'nature', 'parks', 'gardens'],
-        'Technology': ['technology', 'digital', 'innovation', 'research', 'r&d', 'ai', 'artificial intelligence',
-                       'smart nation', 'cyber', 'data', 'fintech', 'biotech', 'infocomm', 'ict',
-                       'automation', 'robotics', 'internet']
+        "Defence": [
+            "defence",
+            "defense",
+            "military",
+            "armed forces",
+            "army",
+            "navy",
+            "air force",
+            "national service",
+            "ns",
+            "mindef",
+            "saf",
+            "security",
+            "terrorism",
+            "homeland",
+        ],
+        "Education": [
+            "education",
+            "school",
+            "university",
+            "polytechnic",
+            "ite",
+            "student",
+            "teacher",
+            "curriculum",
+            "moe",
+            "learning",
+            "skillsfuture",
+            "training",
+            "vocational",
+            "preschool",
+            "tuition",
+            "nus",
+            "ntu",
+            "smu",
+            "scholarship",
+        ],
+        "Health": [
+            "health",
+            "healthcare",
+            "hospital",
+            "medical",
+            "medicine",
+            "doctor",
+            "nurse",
+            "moh",
+            "clinic",
+            "patient",
+            "disease",
+            "treatment",
+            "medisave",
+            "medishield",
+            "medifund",
+            "elderly care",
+            "mental health",
+            "vaccine",
+            "pandemic",
+            "covid",
+        ],
+        "Housing": [
+            "housing",
+            "hdb",
+            "flat",
+            "home",
+            "property",
+            "bto",
+            "resale",
+            "mortgage",
+            "cpf housing",
+            "public housing",
+            "rental",
+            "estate",
+            "neighbourhood",
+        ],
+        "Transport": [
+            "transport",
+            "mrt",
+            "bus",
+            "train",
+            "lta",
+            "road",
+            "traffic",
+            "vehicle",
+            "car",
+            "taxi",
+            "cycling",
+            "infrastructure",
+            "airport",
+            "changi",
+            "port",
+            "ewl",
+            "nsl",
+            "nel",
+            "dtl",
+            "ccl",
+            "tel",
+        ],
+        "Economy": [
+            "economy",
+            "economic",
+            "gdp",
+            "growth",
+            "recession",
+            "inflation",
+            "trade",
+            "export",
+            "import",
+            "investment",
+            "business",
+            "enterprise",
+            "sme",
+            "startup",
+            "industry",
+            "manufacturing",
+            "services",
+            "tourism",
+            "employment",
+            "jobs",
+            "unemployment",
+            "wages",
+            "productivity",
+            "competitiveness",
+        ],
+        "Finance": [
+            "tax",
+            "gst",
+            "budget",
+            "fiscal",
+            "revenue",
+            "expenditure",
+            "deficit",
+            "surplus",
+            "reserves",
+            "mas",
+            "cpf",
+            "savings",
+            "pension",
+            "retirement",
+            "income tax",
+            "corporate tax",
+            "stamp duty",
+            "iras",
+        ],
+        "Social Services": [
+            "social",
+            "welfare",
+            "comcare",
+            "assistance",
+            "support",
+            "low-income",
+            "vulnerable",
+            "disability",
+            "family",
+            "children",
+            "youth",
+            "seniors",
+            "pioneer generation",
+            "merdeka generation",
+            "silver support",
+            "workfare",
+            "gst voucher",
+            "cdc voucher",
+        ],
+        "Environment": [
+            "environment",
+            "climate",
+            "sustainability",
+            "green",
+            "carbon",
+            "emissions",
+            "renewable",
+            "solar",
+            "energy",
+            "water",
+            "newater",
+            "recycling",
+            "waste",
+            "pollution",
+            "biodiversity",
+            "nature",
+            "parks",
+            "gardens",
+        ],
+        "Technology": [
+            "technology",
+            "digital",
+            "innovation",
+            "research",
+            "r&d",
+            "ai",
+            "artificial intelligence",
+            "smart nation",
+            "cyber",
+            "data",
+            "fintech",
+            "biotech",
+            "infocomm",
+            "ict",
+            "automation",
+            "robotics",
+            "internet",
+        ],
     }
-    
+
     def classify_topic(text):
         """Classify a sentence into a topic based on keywords"""
         text_lower = text.lower()
         topic_scores = {}
-        
+
         for topic, keywords in topic_keywords.items():
             score = sum(1 for kw in keywords if kw in text_lower)
             if score > 0:
                 topic_scores[topic] = score
-        
+
         if topic_scores:
             return max(topic_scores, key=topic_scores.get)
-        return 'General'
-    
-    # Process each markdown file
-    for year in range(1960, 2026):
-        filepath = markdown_dir / f'{year}.md'
-        if not filepath.exists():
-            continue
-            
-        with open(filepath, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Extract text content (skip headers and metadata)
-        lines = content.split('\n')
-        text_lines = []
-        
-        for line in lines:
-            # Skip markdown headers, empty lines, and speaker labels
-            line = line.strip()
-            if not line:
-                continue
-            if line.startswith('#'):
-                continue
-            if line.startswith('**') and line.endswith('**'):
-                continue
-            if line.startswith(':'):
-                line = line[1:].strip()
-            if line.startswith('---'):
-                continue
-            if line.startswith('['):  # Skip references like [Please refer to...]
-                continue
-            
-            text_lines.append(line)
-        
-        # Join and split into sentences
-        full_text = ' '.join(text_lines)
-        
-        # Simple sentence splitting (by . ! ?)
-        import re
-        sentences = re.split(r'(?<=[.!?])\s+', full_text)
-        
+        return "General"
+
+    # Process each parquet file
+    parquet_files = sorted(parquet_dir.glob("*.parquet"))
+
+    for filepath in parquet_files:
+        year = int(filepath.stem)
+        df = pd.read_parquet(filepath)
+
         minister = get_minister(year)
         decade = f"{(year // 10) * 10}s"
-        
-        for idx, sentence in enumerate(sentences):
-            sentence = sentence.strip()
-            if len(sentence) < 20:  # Skip very short fragments
+
+        for _, row in df.iterrows():
+            sentence = row["sentence_text"].strip()
+
+            # Skip very short fragments or placeholder text
+            if len(sentence) < 20:
                 continue
-            if len(sentence) > 500:  # Skip very long "sentences" (likely parsing errors)
+            if "Please refer to Hansard document" in sentence:
                 continue
-            
+
             # Classify the sentence topic
             topic = classify_topic(sentence)
-                
-            all_sentences.append({
-                'year': year,
-                'decade': decade,
-                'minister': minister,
-                'text': sentence,
-                'idx': idx,
-                'topic': topic
-            })
-    
-    print(f"  📝 Extracted {len(all_sentences)} sentences from {2025-1960+1} speeches")
-    
+
+            all_sentences.append(
+                {
+                    "year": year,
+                    "decade": decade,
+                    "minister": minister,
+                    "text": sentence,
+                    "idx": int(row["sentence_order"]),
+                    "topic": topic,
+                }
+            )
+
+    print(f"  📝 Extracted {len(all_sentences):,} sentences from {len(parquet_files)} speeches")
+
     # Create overview
     overview = {
-        'total_sentences': len(all_sentences),
-        'years': list(range(1960, 2026)),
-        'decades': ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s'],
-        'topics': ['Defence', 'Education', 'Health', 'Housing', 'Transport', 
-                   'Economy', 'Finance', 'Social Services', 'Environment', 'Technology']
+        "total_sentences": len(all_sentences),
+        "years": sorted(list(set(s["year"] for s in all_sentences))),
+        "decades": ["1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+        "topics": [
+            "Defence",
+            "Education",
+            "Health",
+            "Housing",
+            "Transport",
+            "Economy",
+            "Finance",
+            "Social Services",
+            "Environment",
+            "Technology",
+        ],
     }
-    
-    output_path = SEARCH_DIR / 'overview.json'
-    with open(output_path, 'w') as f:
+
+    output_path = SEARCH_DIR / "overview.json"
+    with open(output_path, "w") as f:
         json.dump(overview, f, indent=2)
     print(f"  ✓ Exported overview.json ({output_path.stat().st_size / 1024:.1f} KB)")
-    
+
     # Export by decade shards
-    for decade in ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s']:
-        decade_sentences = [s for s in all_sentences if s['decade'] == decade]
-        
-        shard = {
-            'decade': decade,
-            'count': len(decade_sentences),
-            'sentences': decade_sentences
-        }
-        
-        output_path = SEARCH_DIR / 'decades' / f'{decade}.json'
-        with open(output_path, 'w') as f:
+    for decade in ["1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"]:
+        decade_sentences = [s for s in all_sentences if s["decade"] == decade]
+
+        shard = {"decade": decade, "count": len(decade_sentences), "sentences": decade_sentences}
+
+        output_path = SEARCH_DIR / "decades" / f"{decade}.json"
+        with open(output_path, "w") as f:
             json.dump(shard, f)
-        
+
         size_kb = output_path.stat().st_size / 1024
-        print(f"  ✓ Exported {decade}.json ({size_kb:.1f} KB, {len(decade_sentences)} sentences)")
-    
-    print(f"\n  ✅ Search index complete with {len(all_sentences)} searchable sentences")
+        print(f"  ✓ Exported {decade}.json ({size_kb:.1f} KB, {len(decade_sentences):,} sentences)")
+
+    print(f"\n  ✅ Search index complete with {len(all_sentences):,} searchable sentences")
+
 
 def main():
     """Main export pipeline"""
     print("=" * 60)
     print("🚀 EXPORTING DATA FOR WEB VISUALISATION")
     print("=" * 60)
-    
+
     try:
         # Create directories
         ensure_directories()
-        
+
         # Export data
         export_ministries_overview()
         export_ministers_overview()
         export_yearly_overview()
         export_search_index()
-        
+
         print("\n" + "=" * 60)
         print("✅ EXPORT COMPLETE!")
         print("=" * 60)
@@ -418,10 +587,11 @@ def main():
         print("  1. Test locally: cd docs && python -m http.server 8000")
         print("  2. Open browser: http://localhost:8000")
         print("  3. Commit and push to GitHub for deployment")
-        
+
     except Exception as e:
         print(f"\n❌ ERROR: {e}")
         raise
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
