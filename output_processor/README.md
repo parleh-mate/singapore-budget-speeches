@@ -14,6 +14,7 @@ This directory contains the processed Singapore budget speeches dataset in two f
 | `sentence_order` | int | Order of sentence within the year (0-indexed) |
 | `sentence_text` | str | The actual sentence text |
 | `word_count` | int | Number of words in the sentence (excluding punctuation) |
+| `syllable_count` | int | Number of syllables in the sentence (using pyphen) |
 | `char_count` | int | Number of characters in the sentence |
 
 ## Dataset Statistics

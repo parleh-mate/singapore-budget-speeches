@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import pyphen
 import spacy
 
 logger = logging.getLogger(__name__)
@@ -17,6 +18,7 @@ class SpeechParser:
 
     def __init__(self):
         self.nlp = None
+        self.pyphen_dic = None
 
     def load_spacy(self):
         """Load spaCy model for sentence tokenization"""
@@ -114,6 +116,24 @@ class SpeechParser:
         words = [t.text for t in doc if not t.is_space and not t.is_punct]
         return len(words)
 
+    def count_syllables(self, text: str) -> int:
+        """Count syllables in text using pyphen hyphenation"""
+        if self.pyphen_dic is None:
+            self.pyphen_dic = pyphen.Pyphen(lang="en")
+
+        self.load_spacy()
+        doc = self.nlp(text)
+        words = [t.text for t in doc if not t.is_space and not t.is_punct]
+
+        total_syllables = 0
+        for word in words:
+            # Hyphenate and count segments (hyphens + 1)
+            hyphenated = self.pyphen_dic.inserted(word.lower())
+            syllable_count = hyphenated.count("-") + 1
+            total_syllables += syllable_count
+
+        return total_syllables
+
     def parse_file(self, file_path: Path) -> List[Dict]:
         """
         Parse a markdown file and return list of sentence dictionaries
@@ -143,6 +163,7 @@ class SpeechParser:
             # Split into sentences
             for sentence_text in self.split_into_sentences(text):
                 word_count = self.count_words(sentence_text)
+                syllable_count = self.count_syllables(sentence_text)
 
                 sentences.append(
                     {
@@ -154,6 +175,7 @@ class SpeechParser:
                         "sentence_order": sentence_order,
                         "sentence_text": sentence_text,
                         "word_count": word_count,
+                        "syllable_count": syllable_count,
                         "char_count": len(sentence_text),
                     }
                 )
