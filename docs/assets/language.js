@@ -1,9 +1,35 @@
 // ===================================
 // LANGUAGE ANALYSIS PAGE
 // Singapore Budget Speeches (1960-2025)
+// Redesigned with better visualizations
 // ===================================
 
 let languageData = null;
+
+// Minister chronological order (for sorting)
+const ministerOrder = [
+    'Goh Keng Swee',
+    'Lim Kim San', 
+    'Hon Sui Sen',
+    'Goh Chok Tong',
+    'Dr Tony Tan Keng Yam',
+    'Dr Richard Hu Tsu Tau',
+    'Lee Hsien Loong',
+    'Tharman Shanmugaratnam',
+    'Heng Swee Keat',
+    'Lawrence Wong'
+];
+
+// Civic Strength color palette
+const colors = {
+    primary: '#0C2340',      // Deep Navy
+    accent: '#C8102E',       // Vibrant Red
+    success: '#2D6A4F',      // Forest Green
+    warning: '#D4A72C',      // Civic Gold
+    neutral: '#9EA2A2',      // Slate Gray
+    light: '#FAF9F7',        // Warm Sand
+    grid: '#E2E8F0'
+};
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,13 +43,16 @@ async function loadLanguageData() {
         languageData = await response.json();
         
         hideLoading();
-        renderCharts();
-        renderInsights();
+        renderMetricsSummary();
+        renderTrendChart();
+        renderCorrelationChart();
+        renderMinisterChart();
+        renderDecadeChart();
         
     } catch (error) {
         console.error('Failed to load language data:', error);
         document.getElementById('loading').innerHTML = `
-            <p style="color: var(--color-error);">Failed to load data. Please refresh the page.</p>
+            <p style="color: ${colors.accent};">Failed to load data. Please refresh the page.</p>
         `;
     }
 }
@@ -34,214 +63,418 @@ function hideLoading() {
     document.getElementById('content').style.display = 'block';
 }
 
-// Render charts
-function renderCharts() {
-    renderReadabilityChart();
-    renderSentenceLengthChart();
-    renderMinisterReadabilityChart();
-}
-
-// Chart: Readability over time
-function renderReadabilityChart() {
-    if (!languageData.by_year) return;
-    
+// Render key metrics summary cards
+function renderMetricsSummary() {
+    const container = document.getElementById('metricsSummary');
     const years = Object.keys(languageData.by_year).sort();
     
-    const trace = {
-        x: years,
-        y: years.map(year => languageData.by_year[year].readability || 0),
-        type: 'scatter',
-        mode: 'lines+markers',
-        name: 'Flesch Reading Ease',
-        line: { color: '#0C2340', width: 3 },
-        marker: { size: 8, color: '#0C2340' }
-    };
+    // Calculate metrics
+    const allReadability = years.map(y => languageData.by_year[y].readability);
+    const allSentenceLen = years.map(y => languageData.by_year[y].avg_sentence_length);
     
-    // Add benchmark lines
-    const benchmarks = [
-        { value: 60, label: '60: Standard', color: '#2D6A4F' },
-        { value: 50, label: '50: Fairly Difficult', color: '#D4A72C' },
-        { value: 30, label: '30: Very Difficult', color: '#C8102E' }
+    const earlyYears = years.filter(y => parseInt(y) < 1980);
+    const recentYears = years.filter(y => parseInt(y) >= 2010);
+    
+    const earlyReadability = earlyYears.reduce((sum, y) => sum + languageData.by_year[y].readability, 0) / earlyYears.length;
+    const recentReadability = recentYears.reduce((sum, y) => sum + languageData.by_year[y].readability, 0) / recentYears.length;
+    
+    const earlySentence = earlyYears.reduce((sum, y) => sum + languageData.by_year[y].avg_sentence_length, 0) / earlyYears.length;
+    const recentSentence = recentYears.reduce((sum, y) => sum + languageData.by_year[y].avg_sentence_length, 0) / recentYears.length;
+    
+    const readabilityChange = ((recentReadability - earlyReadability) / earlyReadability * 100).toFixed(0);
+    const sentenceChange = ((recentSentence - earlySentence) / earlySentence * 100).toFixed(0);
+    
+    container.innerHTML = `
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">${recentReadability.toFixed(0)}</div>
+                <div class="metric-label">Current Readability</div>
+                <div class="metric-change positive">+${readabilityChange}% since 1960s</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">${recentSentence.toFixed(0)}</div>
+                <div class="metric-label">Words per Sentence</div>
+                <div class="metric-change ${parseInt(sentenceChange) < 0 ? 'positive' : 'negative'}">${sentenceChange}% since 1960s</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">${years.length}</div>
+                <div class="metric-label">Speeches Analysed</div>
+                <div class="metric-subtitle">1960–2025</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">10</div>
+                <div class="metric-label">Finance Ministers</div>
+                <div class="metric-subtitle">Compared</div>
+            </div>
+        </div>
+    `;
+}
+
+// Chart 1: Combined trend chart with smoothed lines
+function renderTrendChart() {
+    const years = Object.keys(languageData.by_year).sort();
+    const readability = years.map(y => languageData.by_year[y].readability);
+    const sentenceLen = years.map(y => languageData.by_year[y].avg_sentence_length);
+    
+    // Calculate 5-year moving average for smoother trends
+    const smoothReadability = movingAverage(readability, 5);
+    const smoothSentence = movingAverage(sentenceLen, 5);
+    
+    const traces = [
+        // Raw data as faint markers
+        {
+            x: years,
+            y: readability,
+            type: 'scatter',
+            mode: 'markers',
+            name: 'Readability (raw)',
+            marker: { color: colors.primary, size: 6, opacity: 0.3 },
+            hovertemplate: '%{x}: %{y:.1f}<extra>Readability</extra>'
+        },
+        // Smoothed trend line
+        {
+            x: years,
+            y: smoothReadability,
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Readability (trend)',
+            line: { color: colors.primary, width: 3 },
+            hovertemplate: '%{x}: %{y:.1f}<extra>Readability Trend</extra>'
+        },
+        // Sentence length on secondary axis
+        {
+            x: years,
+            y: sentenceLen,
+            type: 'scatter',
+            mode: 'markers',
+            name: 'Sentence Length (raw)',
+            marker: { color: colors.accent, size: 6, opacity: 0.3 },
+            yaxis: 'y2',
+            hovertemplate: '%{x}: %{y:.1f} words<extra>Sentence Length</extra>'
+        },
+        {
+            x: years,
+            y: smoothSentence,
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Sentence Length (trend)',
+            line: { color: colors.accent, width: 3 },
+            yaxis: 'y2',
+            hovertemplate: '%{x}: %{y:.1f} words<extra>Sentence Trend</extra>'
+        }
     ];
     
-    const shapes = benchmarks.map(b => ({
+    const layout = {
+        xaxis: { 
+            title: { text: 'Year', font: { size: 12 } },
+            gridcolor: colors.grid,
+            tickmode: 'linear',
+            dtick: 10
+        },
+        yaxis: { 
+            title: { text: 'Readability Score', font: { size: 12, color: colors.primary } },
+            range: [30, 80],
+            gridcolor: colors.grid,
+            tickfont: { color: colors.primary }
+        },
+        yaxis2: {
+            title: { text: 'Words per Sentence', font: { size: 12, color: colors.accent } },
+            overlaying: 'y',
+            side: 'right',
+            range: [35, 10],  // Inverted so shorter = higher (better)
+            gridcolor: 'transparent',
+            tickfont: { color: colors.accent }
+        },
+        height: 450,
+        showlegend: true,
+        legend: { 
+            orientation: 'h', 
+            y: -0.15,
+            x: 0.5,
+            xanchor: 'center'
+        },
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        margin: { t: 20, b: 80, l: 60, r: 60 },
+        hovermode: 'x unified'
+    };
+    
+    Plotly.newPlot('trendChart', traces, layout, { responsive: true, displayModeBar: false });
+}
+
+// Chart 2: Correlation scatter plot
+function renderCorrelationChart() {
+    const years = Object.keys(languageData.by_year).sort();
+    
+    // Group by minister for coloring
+    const ministerData = {};
+    years.forEach(year => {
+        const d = languageData.by_year[year];
+        const minister = d.minister;
+        if (!ministerData[minister]) {
+            ministerData[minister] = { x: [], y: [], years: [] };
+        }
+        ministerData[minister].x.push(d.avg_sentence_length);
+        ministerData[minister].y.push(d.readability);
+        ministerData[minister].years.push(year);
+    });
+    
+    const traces = Object.entries(ministerData).map(([minister, data], i) => ({
+        x: data.x,
+        y: data.y,
+        type: 'scatter',
+        mode: 'markers',
+        name: minister.replace('Dr ', '').split(' ').slice(0, 2).join(' '),
+        marker: { 
+            size: 12, 
+            color: getMinisterColor(minister),
+            opacity: 0.7,
+            line: { color: 'white', width: 1 }
+        },
+        text: data.years,
+        hovertemplate: `<b>${minister}</b><br>Year: %{text}<br>Sentence Length: %{x:.1f} words<br>Readability: %{y:.1f}<extra></extra>`
+    }));
+    
+    // Add trend line
+    const allX = years.map(y => languageData.by_year[y].avg_sentence_length);
+    const allY = years.map(y => languageData.by_year[y].readability);
+    const trendline = linearRegression(allX, allY);
+    
+    traces.push({
+        x: [Math.min(...allX), Math.max(...allX)],
+        y: [trendline.predict(Math.min(...allX)), trendline.predict(Math.max(...allX))],
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Trend',
+        line: { color: colors.neutral, width: 2, dash: 'dash' },
+        hoverinfo: 'skip'
+    });
+    
+    const layout = {
+        xaxis: { 
+            title: { text: 'Average Sentence Length (words)', font: { size: 12 } },
+            gridcolor: colors.grid,
+            range: [14, 32]
+        },
+        yaxis: { 
+            title: { text: 'Readability Score (higher = easier)', font: { size: 12 } },
+            gridcolor: colors.grid,
+            range: [40, 75]
+        },
+        height: 450,
+        showlegend: true,
+        legend: { 
+            orientation: 'h', 
+            y: -0.2,
+            x: 0.5,
+            xanchor: 'center',
+            font: { size: 10 }
+        },
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        margin: { t: 20, b: 100, l: 60, r: 20 },
+        annotations: [{
+            x: 28,
+            y: 45,
+            text: 'Longer sentences<br>= harder to read',
+            showarrow: false,
+            font: { size: 11, color: colors.neutral }
+        }, {
+            x: 17,
+            y: 68,
+            text: 'Shorter sentences<br>= easier to read',
+            showarrow: false,
+            font: { size: 11, color: colors.neutral }
+        }]
+    };
+    
+    Plotly.newPlot('correlationChart', traces, layout, { responsive: true, displayModeBar: false });
+}
+
+// Chart 3: Minister comparison - horizontal lollipop chart
+function renderMinisterChart() {
+    const ministers = Object.entries(languageData.by_minister)
+        .sort((a, b) => {
+            const orderA = ministerOrder.indexOf(a[0]);
+            const orderB = ministerOrder.indexOf(b[0]);
+            return orderA - orderB;
+        });
+    
+    const avgReadability = ministers.reduce((sum, [_, d]) => sum + d.avg_readability, 0) / ministers.length;
+    
+    // Create lollipop chart (horizontal bar + marker)
+    const traces = [
+        // Lines from axis to marker
+        {
+            x: ministers.map(([_, d]) => d.avg_readability),
+            y: ministers.map(([name, _]) => formatMinisterName(name)),
+            type: 'scatter',
+            mode: 'markers+text',
+            marker: { 
+                size: 16, 
+                color: ministers.map(([_, d]) => d.avg_readability >= avgReadability ? colors.success : colors.accent),
+                line: { color: 'white', width: 2 }
+            },
+            text: ministers.map(([_, d]) => d.avg_readability.toFixed(1)),
+            textposition: 'middle right',
+            textfont: { size: 11, color: colors.primary },
+            hovertemplate: '%{y}<br>Readability: %{x:.1f}<extra></extra>'
+        }
+    ];
+    
+    // Add horizontal lines (lollipop stems)
+    const shapes = ministers.map(([name, d], i) => ({
         type: 'line',
-        x0: years[0],
-        x1: years[years.length - 1],
-        y0: b.value,
-        y1: b.value,
-        line: { color: b.color, width: 1, dash: 'dash' }
+        x0: 45,
+        x1: d.avg_readability,
+        y0: formatMinisterName(name),
+        y1: formatMinisterName(name),
+        line: { 
+            color: d.avg_readability >= avgReadability ? colors.success : colors.accent, 
+            width: 3 
+        }
+    }));
+    
+    // Add average line
+    shapes.push({
+        type: 'line',
+        x0: avgReadability,
+        x1: avgReadability,
+        y0: -0.5,
+        y1: ministers.length - 0.5,
+        line: { color: colors.neutral, width: 2, dash: 'dash' }
+    });
+    
+    const layout = {
+        xaxis: { 
+            title: { text: 'Average Readability Score', font: { size: 12 } },
+            range: [45, 75],
+            gridcolor: colors.grid
+        },
+        yaxis: { 
+            automargin: true,
+            tickfont: { size: 11 }
+        },
+        shapes: shapes,
+        height: 450,
+        showlegend: false,
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        margin: { t: 20, b: 50, l: 150, r: 50 },
+        annotations: [{
+            x: avgReadability,
+            y: ministers.length - 0.3,
+            text: `Average: ${avgReadability.toFixed(1)}`,
+            showarrow: false,
+            font: { size: 10, color: colors.neutral },
+            yanchor: 'bottom'
+        }]
+    };
+    
+    Plotly.newPlot('ministerChart', traces, layout, { responsive: true, displayModeBar: false });
+}
+
+// Chart 4: Decade box plot
+function renderDecadeChart() {
+    const decades = ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s'];
+    const years = Object.keys(languageData.by_year).sort();
+    
+    // Group data by decade
+    const decadeData = decades.map(decade => {
+        const decadeStart = parseInt(decade);
+        const decadeYears = years.filter(y => {
+            const year = parseInt(y);
+            return year >= decadeStart && year < decadeStart + 10;
+        });
+        return decadeYears.map(y => languageData.by_year[y].readability);
+    });
+    
+    const traces = decades.map((decade, i) => ({
+        y: decadeData[i],
+        type: 'box',
+        name: decade,
+        marker: { color: getDecadeColor(i) },
+        boxpoints: 'all',
+        jitter: 0.3,
+        pointpos: 0,
+        hovertemplate: `${decade}<br>Readability: %{y:.1f}<extra></extra>`
     }));
     
     const layout = {
-        title: {
-            text: 'Budget Speech Readability Over Time',
-            font: { size: 18, color: '#0C2340', family: 'Public Sans' }
-        },
         xaxis: { 
-            title: 'Year',
-            gridcolor: '#E2E8F0',
-            linecolor: '#E2E8F0'
+            title: { text: 'Decade', font: { size: 12 } }
         },
         yaxis: { 
-            title: 'Flesch Reading Ease Score',
-            range: [0, 100],
-            gridcolor: '#E2E8F0',
-            linecolor: '#E2E8F0'
+            title: { text: 'Readability Score', font: { size: 12 } },
+            range: [35, 80],
+            gridcolor: colors.grid
         },
-        shapes: shapes,
-        annotations: benchmarks.map(b => ({
-            x: years[years.length - 1],
-            y: b.value,
-            text: b.label,
-            showarrow: false,
-            xanchor: 'left',
-            xshift: 10,
-            font: { size: 10, color: b.color }
-        })),
-        height: 500,
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        margin: { t: 60, b: 60, l: 60, r: 120 }
+        height: 400,
+        showlegend: false,
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        margin: { t: 20, b: 50, l: 60, r: 20 }
     };
     
-    Plotly.newPlot('readabilityChart', [trace], layout, { responsive: true });
+    Plotly.newPlot('decadeChart', traces, layout, { responsive: true, displayModeBar: false });
 }
 
-// Chart: Sentence length over time
-function renderSentenceLengthChart() {
-    if (!languageData.by_year) return;
-    
-    const years = Object.keys(languageData.by_year).sort();
-    
-    const trace = {
-        x: years,
-        y: years.map(year => languageData.by_year[year].avg_sentence_length || 0),
-        type: 'scatter',
-        mode: 'lines+markers',
-        name: 'Avg Sentence Length',
-        line: { color: '#C8102E', width: 3 },
-        marker: { size: 8, color: '#C8102E' },
-        fill: 'tozeroy',
-        fillcolor: 'rgba(200, 16, 46, 0.1)'
-    };
-    
-    const layout = {
-        title: {
-            text: 'Average Sentence Length Over Time',
-            font: { size: 18, color: '#0C2340', family: 'Public Sans' }
-        },
-        xaxis: { 
-            title: 'Year',
-            gridcolor: '#E2E8F0',
-            linecolor: '#E2E8F0'
-        },
-        yaxis: { 
-            title: 'Words per Sentence',
-            gridcolor: '#E2E8F0',
-            linecolor: '#E2E8F0'
-        },
-        height: 500,
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        margin: { t: 60, b: 60, l: 60, r: 20 }
-    };
-    
-    Plotly.newPlot('sentenceLengthChart', [trace], layout, { responsive: true });
+// Utility: Moving average
+function movingAverage(data, window) {
+    const result = [];
+    for (let i = 0; i < data.length; i++) {
+        const start = Math.max(0, i - Math.floor(window / 2));
+        const end = Math.min(data.length, i + Math.ceil(window / 2));
+        const slice = data.slice(start, end);
+        result.push(slice.reduce((a, b) => a + b, 0) / slice.length);
+    }
+    return result;
 }
 
-// Chart: Readability by minister
-function renderMinisterReadabilityChart() {
-    if (!languageData.by_minister) return;
+// Utility: Linear regression
+function linearRegression(x, y) {
+    const n = x.length;
+    const sumX = x.reduce((a, b) => a + b, 0);
+    const sumY = y.reduce((a, b) => a + b, 0);
+    const sumXY = x.reduce((total, xi, i) => total + xi * y[i], 0);
+    const sumXX = x.reduce((total, xi) => total + xi * xi, 0);
     
-    const ministers = Object.keys(languageData.by_minister);
+    const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+    const intercept = (sumY - slope * sumX) / n;
     
-    const trace = {
-        x: ministers,
-        y: ministers.map(m => languageData.by_minister[m].avg_readability || 0),
-        type: 'bar',
-        marker: {
-            color: ministers.map((_, i) => getColorByIndex(i))
-        }
+    return {
+        slope,
+        intercept,
+        predict: (xi) => slope * xi + intercept
     };
-    
-    const layout = {
-        title: {
-            text: 'Average Readability Score by Finance Minister',
-            font: { size: 18, color: '#0C2340', family: 'Public Sans' }
-        },
-        xaxis: { 
-            title: 'Minister',
-            tickangle: -45,
-            gridcolor: '#E2E8F0',
-            linecolor: '#E2E8F0'
-        },
-        yaxis: { 
-            title: 'Avg Flesch Reading Ease',
-            range: [0, 100],
-            gridcolor: '#E2E8F0',
-            linecolor: '#E2E8F0'
-        },
-        height: 500,
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        margin: { t: 60, b: 120, l: 60, r: 20 }
-    };
-    
-    Plotly.newPlot('ministerReadabilityChart', [trace], layout, { responsive: true });
 }
 
-// Render insights
-function renderInsights() {
-    if (!languageData.insights) return;
-    
-    const container = document.getElementById('insights');
-    
-    // Calculate key insights from data
-    const insights = [
-        {
-            title: 'Readability Trend',
-            text: languageData.insights.readability_trend || 
-                  'Speeches have become more readable over time, with Flesch scores improving from ~40 in the 1960s to ~60 in the 2020s.'
-        },
-        {
-            title: 'Sentence Length',
-            text: languageData.insights.sentence_length || 
-                  'Average sentence length decreased from 28 words in the 1960s to 22 words in the 2020s, making speeches easier to follow.'
-        },
-        {
-            title: 'Most Readable Minister',
-            text: languageData.insights.most_readable || 
-                  'Recent ministers tend to use clearer language and shorter sentences compared to earlier decades.'
-        },
-        {
-            title: 'Complex Topics',
-            text: languageData.insights.complex_topics || 
-                  'Economic and financial topics tend to have lower readability scores due to technical terminology.'
-        }
+// Utility: Format minister name (shorter version)
+function formatMinisterName(name) {
+    return name.replace('Dr ', '').replace(' Keng Yam', '').replace(' Tsu Tau', '');
+}
+
+// Utility: Get color by minister
+function getMinisterColor(name) {
+    const idx = ministerOrder.indexOf(name);
+    const palette = [
+        '#0C2340', '#1A3A5C', '#2D6A4F', '#3D7C8C', '#D4A72C',
+        '#B45A3C', '#6B4E71', '#C8102E', '#5C5C5C', '#9EA2A2'
     ];
-    
-    container.innerHTML = insights.map(insight => `
-        <div class="insight-card">
-            <h4>${insight.title}</h4>
-            <p>${insight.text}</p>
-        </div>
-    `).join('');
+    return idx >= 0 ? palette[idx] : colors.neutral;
 }
 
-// Utility: Get color by index (civic strength palette)
-function getColorByIndex(index) {
-    const colors = [
-        '#0C2340',  // Deep Navy
-        '#C8102E',  // Vibrant Red
-        '#2D6A4F',  // Forest Green
-        '#D4A72C',  // Civic Gold
-        '#1A3A5C',  // Steel Blue
-        '#9EA2A2',  // Slate Gray
-        '#6B4E71',  // Muted Purple
-        '#B45A3C',  // Terracotta
-        '#3D7C8C',  // Teal
-        '#5C5C5C'   // Charcoal
+// Utility: Get color by decade index
+function getDecadeColor(index) {
+    // Gradient from navy to red across decades
+    const palette = [
+        '#0C2340',  // 1960s - Deep Navy
+        '#1A3A5C',  // 1970s
+        '#2D5A7B',  // 1980s
+        '#3D7C8C',  // 1990s
+        '#D4A72C',  // 2000s - Gold
+        '#B45A3C',  // 2010s - Terracotta
+        '#C8102E'   // 2020s - Red
     ];
-    return colors[index % colors.length];
+    return palette[index] || colors.neutral;
 }
