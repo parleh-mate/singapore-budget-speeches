@@ -531,4 +531,10 @@ budget_speech_links: Dict[int, Dict[str, Any]] = {
         "url": "https://isomer-user-content.by.gov.sg/153/f1a99a9f-70ae-467e-8d2c-bbb9e02473a9/Budget%202025%20Statement.pdf",
         "type": "pdf",
     },
+    2026: {
+        "date": "2026-02-12",
+        "minister": "Lawrence Wong",
+        "fiscal_year_start": "2026-04-01",
+        "fiscal_year_end": "2027-03-31",
+    },
 }
