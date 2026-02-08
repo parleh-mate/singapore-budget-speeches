@@ -25,7 +25,7 @@
     <main class="container">
         <section class="page-header">
             <h2>Ten Finance Ministers</h2>
-            <p class="subtitle">From Goh Keng Swee (1960) to Lawrence Wong (2025)</p>
+            <p class="subtitle">65 years of fiscal stewardship: from Goh Keng Swee (1960) to Lawrence Wong (2025)</p>
         </section>
 
         <section id="loading" class="loading-state">
@@ -34,22 +34,40 @@
         </section>
 
         <section id="content" class="content-area" style="display: none;">
-            <div class="minister-timeline">
-                <h3>Timeline</h3>
-                <div id="timeline"></div>
-            </div>
+            <!-- Key metrics summary -->
+            <div id="metricsSummary" class="metrics-summary"></div>
 
+            <!-- Visual timeline (Gantt-style) -->
             <div class="chart-container">
-                <h3>Speaking Style Comparison</h3>
-                <div id="ministerStyleChart"></div>
+                <h3>Ministerial Timeline</h3>
+                <p class="chart-description">Tenure spans of Singapore's Finance Ministers, coloured by era</p>
+                <div id="timelineChart"></div>
             </div>
 
+            <!-- Two-column chart grid -->
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <h3>Output Comparison</h3>
+                    <p class="chart-description">Total sentences delivered during tenure</p>
+                    <div id="outputChart"></div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Communication Style</h3>
+                    <p class="chart-description">Readability vs sentence complexity</p>
+                    <div id="styleChart"></div>
+                </div>
+            </div>
+
+            <!-- Policy focus heatmap -->
             <div class="chart-container">
                 <h3>Policy Focus by Minister</h3>
-                <div id="ministerTopicsChart"></div>
+                <p class="chart-description">Percentage of sentences mentioning each ministry area (normalised by tenure)</p>
+                <div id="topicsHeatmap"></div>
             </div>
 
-            <div class="minister-cards" id="ministerProfiles"></div>
+            <!-- Minister profile cards -->
+            <div class="minister-profiles" id="ministerProfiles"></div>
         </section>
     </main>
 

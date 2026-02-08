@@ -817,14 +817,26 @@ a:hover {
 
 .minister-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: var(--space-lg);
-    margin-top: var(--space-xl);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+@media (min-width: 1100px) {
+    .minister-cards {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .minister-cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 .minister-card {
     background: var(--color-bg-card);
-    padding: var(--space-xl);
+    padding: var(--space-md);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-light);
     box-shadow: var(--shadow-card);
@@ -833,15 +845,115 @@ a:hover {
 
 .minister-card:hover {
     box-shadow: var(--shadow-md);
-    border-color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+.minister-card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.minister-portrait {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--color-bg-alt);
+    border: 2px solid var(--color-border-light);
+}
+
+.minister-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.minister-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
 }
 
 .minister-card h4 {
     color: var(--color-text);
-    margin-bottom: var(--space-xs);
-    font-size: 1.125rem;
+    margin-bottom: 0;
+    font-size: 0.9375rem;
+    line-height: 1.3;
 }
 
+.minister-tenure {
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.minister-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+}
+
+.minister-stat {
+    text-align: center;
+    position: relative;
+}
+
+.minister-stat .stat-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.minister-stat .stat-label {
+    display: block;
+    font-size: 0.5625rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+}
+
+.minister-stat .stat-rank {
+    display: block;
+    font-size: 0.5625rem;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+.minister-stat .stat-rank.top {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+.minister-topics {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    padding-top: var(--space-xs);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.minister-topics strong {
+    color: var(--color-text);
+}
+
+.minister-profiles > h3 {
+    margin-bottom: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+/* Old styles kept for backwards compatibility */
 .minister-years {
     color: var(--color-primary);
     font-size: 0.875rem;
@@ -856,10 +968,6 @@ a:hover {
     margin-top: var(--space-lg);
     padding-top: var(--space-md);
     border-top: 1px solid var(--color-border-light);
-}
-
-.minister-stat {
-    text-align: center;
 }
 
 .minister-stat-value {
