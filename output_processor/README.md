@@ -1,164 +1,338 @@
-# Budget Speeches Dataset
+# Processed Budget Speech Data
 
-This directory contains the processed Singapore budget speeches dataset in two formats:
-- `budget_speeches.csv` - CSV format for easy viewing and analysis
-- `budget_speeches.parquet` - Parquet format for efficient storage and querying
+Sentence-level structured datasets in Parquet format, ready for analysis.
 
-## Dataset Schema
+---
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `sentence_id` | int | Unique identifier for each sentence |
-| `year` | int | Year of the budget speech (1960-2025) |
-| `section_title` | str | Section heading where the sentence appears |
-| `sentence_order` | int | Order of sentence within the year (0-indexed) |
-| `sentence_text` | str | The actual sentence text |
-| `word_count` | int | Number of words in the sentence (excluding punctuation) |
-| `syllable_count` | int | Number of syllables in the sentence (using pyphen) |
-| `char_count` | int | Number of characters in the sentence |
+## Overview
 
-## Dataset Statistics
+This folder contains 66 Parquet files (one per year), each with sentence-level data extracted from budget speeches. Total: **40,123 sentences** from 1960-2025.
 
-- **Total sentences**: 39,707
-- **Total words**: 754,643
-- **Average words per sentence**: 19.0
-- **Years covered**: 1960 - 2025
-- **Duplicates removed**: 39,782 (during processing)
+---
 
-## Data Quality
+## Files
 
-### Deduplication
-The dataset has been deduplicated at the sentence level within each year. Duplicate sentences (exact text matches) are removed, keeping only the first occurrence based on sentence order. This handles cases where source markdown files contained repeated content.
+### Naming Convention
+Files are named by year: `YYYY.parquet`
 
-Years with significant duplicates removed:
-- 2011: 15,690 → 1,847 sentences (13,843 duplicates removed)
-- 2009: 8,114 → 954 sentences (7,160 duplicates removed)
-- 2007: 8,257 → 1,033 sentences (7,224 duplicates removed)
-- 2004: 9,089 → 1,089 sentences (8,000 duplicates removed)
+Examples:
+- `1960.parquet` - 560 sentences from first budget speech
+- `2025.parquet` - 778 sentences from most recent speech
 
-### Sentence Filtering
-- Minimum sentence length: 20 characters
-- Excludes very short fragments and artifacts
-- Preserves full context for each sentence
+### Coverage
+- **Total files**: 66
+- **Year range**: 1960-2025
+- **Total sentences**: 40,123
+- **Total size**: ~2-3 MB (highly compressed)
 
-## Year-by-Year Coverage
+---
 
-All years have consecutive sentence ordering (0-indexed) and unique sentence IDs:
+## Schema
 
-| Year | Sentences | Sentence Order Range | Sentence ID Range |
-|------|-----------|---------------------|-------------------|
-| 1960 | 560 | 0-559 | 0-559 |
-| 1961 | 715 | 0-714 | 560-1,274 |
-| 1962 | 530 | 0-529 | 1,275-1,804 |
-| 1963 | 463 | 0-462 | 1,805-2,267 |
-| 1964 | 577 | 0-576 | 2,268-2,844 |
-| 1965 | 382 | 0-381 | 2,845-3,226 |
-| 1966 | 465 | 0-464 | 3,227-3,691 |
-| 1967 | 517 | 0-516 | 3,692-4,208 |
-| 1968 | 361 | 0-360 | 4,209-4,569 |
-| 1969 | 518 | 0-517 | 4,570-5,087 |
-| 1970 | 656 | 0-655 | 5,088-5,743 |
-| 1971 | 655 | 0-654 | 5,744-6,398 |
-| 1972 | 592 | 0-591 | 6,399-6,990 |
-| 1973 | 510 | 0-509 | 6,991-7,500 |
-| 1974 | 736 | 0-735 | 7,501-8,236 |
-| 1975 | 255 | 0-254 | 8,237-8,491 |
-| 1976 | 271 | 0-270 | 8,492-8,762 |
-| 1977 | 254 | 0-253 | 8,763-9,016 |
-| 1978 | 359 | 0-358 | 9,017-9,375 |
-| 1979 | 292 | 0-291 | 9,376-9,667 |
-| 1980 | 488 | 0-487 | 9,668-10,155 |
-| 1981 | 467 | 0-466 | 10,156-10,622 |
-| 1982 | 548 | 0-547 | 10,623-11,170 |
-| 1983 | 552 | 0-551 | 11,171-11,722 |
-| 1984 | 567 | 0-566 | 11,723-12,289 |
-| 1985 | 390 | 0-389 | 12,290-12,679 |
-| 1986 | 392 | 0-391 | 12,680-13,071 |
-| 1987 | 450 | 0-449 | 13,072-13,521 |
-| 1988 | 431 | 0-430 | 13,522-13,952 |
-| 1989 | 326 | 0-325 | 13,953-14,278 |
-| 1990 | 473 | 0-472 | 14,279-14,751 |
-| 1991 | 447 | 0-446 | 14,752-15,198 |
-| 1992 | 525 | 0-524 | 15,199-15,723 |
-| 1993 | 626 | 0-625 | 15,724-16,349 |
-| 1994 | 568 | 0-567 | 16,350-16,917 |
-| 1995 | 469 | 0-468 | 16,918-17,386 |
-| 1996 | 616 | 0-615 | 17,387-18,002 |
-| 1997 | 495 | 0-494 | 18,003-18,497 |
-| 1998 | 634 | 0-633 | 18,498-19,131 |
-| 1999 | 529 | 0-528 | 19,132-19,660 |
-| 2000 | 631 | 0-630 | 19,661-20,291 |
-| 2001 | 480 | 0-479 | 20,292-20,771 |
-| 2002 | 781 | 0-780 | 20,772-21,552 |
-| 2003 | 814 | 0-813 | 21,553-22,366 |
-| 2004 | 886 | 0-885 | 22,367-23,252 |
-| 2005 | 673 | 0-672 | 23,253-23,925 |
-| 2006 | 744 | 0-743 | 23,926-24,669 |
-| 2007 | 991 | 0-990 | 24,670-25,660 |
-| 2008 | 691 | 0-690 | 25,661-26,351 |
-| 2009 | 888 | 0-887 | 26,352-27,239 |
-| 2010 | 708 | 0-707 | 27,240-27,947 |
-| 2011 | 912 | 0-911 | 27,948-28,859 |
-| 2012 | 651 | 0-650 | 28,860-29,510 |
-| 2013 | 722 | 0-721 | 29,511-30,232 |
-| 2014 | 666 | 0-665 | 30,233-30,898 |
-| 2015 | 979 | 0-978 | 30,899-31,877 |
-| 2016 | 774 | 0-773 | 31,878-32,651 |
-| 2017 | 565 | 0-564 | 32,652-33,216 |
-| 2018 | 723 | 0-722 | 33,217-33,939 |
-| 2019 | 875 | 0-874 | 33,940-34,814 |
-| 2020 | 892 | 0-891 | 34,815-35,706 |
-| 2021 | 886 | 0-885 | 35,707-36,592 |
-| 2022 | 852 | 0-851 | 36,593-37,444 |
-| 2023 | 726 | 0-725 | 37,445-38,170 |
-| 2024 | 757 | 0-756 | 38,171-38,927 |
-| 2025 | 779 | 0-778 | 38,928-39,706 |
+Each Parquet file has the same structure:
 
-## Usage Examples
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| `sentence_id` | int | Unique sentence identifier | 12345 |
+| `year` | int | Budget speech year | 2020 |
+| `speech_date` | str | Date of speech (YYYY-MM-DD) | "2020-02-18" |
+| `primary_speaker` | str | Finance Minister name | "Heng Swee Keat" |
+| `speech_title` | str | Speech title | "Budget Statement" |
+| `section_title` | str | Section heading | "Healthcare Subsidies" |
+| `sentence_order` | int | Position in document | 42 |
+| `sentence_text` | str | Full sentence text | "We will enhance..." |
+| `word_count` | int | Words (excl. punctuation) | 24 |
+| `char_count` | int | Characters in sentence | 145 |
+| `decade` | int | Decade (1960, 1970, etc.) | 2020 |
+| `era` | str | Era classification | "Contemporary" |
 
-### Python (Pandas)
+### Era Classifications
+
+| Era | Years | Description |
+|-----|-------|-------------|
+| **Early Years** | 1960-1979 | Post-independence development |
+| **Growth Era** | 1980-1999 | Economic transformation |
+| **Modern Era** | 2000-2019 | Mature economy |
+| **Contemporary** | 2020+ | Recent budgets |
+
+---
+
+## File Statistics
+
+### Size by Year
+
+| Period | Files | Avg Sentences | Avg Size |
+|--------|-------|---------------|----------|
+| 1960s | 9 | 490 | 35 KB |
+| 1970s | 10 | 520 | 38 KB |
+| 1980s | 10 | 515 | 40 KB |
+| 1990s | 10 | 580 | 45 KB |
+| 2000s | 10 | 710 | 52 KB |
+| 2010s | 10 | 800 | 58 KB |
+| 2020s | 7 | 785 | 56 KB |
+
+### Largest Files
+
+| Year | Sentences | Size | Minister |
+|------|-----------|------|----------|
+| 2012 | 1,221 | 89 KB | Tharman |
+| 2018 | 1,015 | 74 KB | Heng |
+| 2019 | 987 | 72 KB | Heng |
+
+### Smallest Files
+
+| Year | Sentences | Size | Minister |
+|------|-----------|------|----------|
+| 1965 | 382 | 26 KB | Goh Keng Swee |
+| 1968 | 361 | 25 KB | Goh Keng Swee |
+| 1960 | 560 | 35 KB | Goh Keng Swee |
+
+---
+
+## Usage
+
+### Load Single Year
+
 ```python
 import pandas as pd
 
-# Load CSV
-df = pd.read_csv('output_processor/budget_speeches.csv')
-
-# Load Parquet (more efficient)
-df = pd.read_parquet('output_processor/budget_speeches.parquet')
-
-# Query specific year
-df_2011 = df[df['year'] == 2011]
-
-# Search for keywords
-inflation = df[df['sentence_text'].str.contains('inflation', case=False)]
+# Load 2020 budget speech
+df = pd.read_parquet('output_processor/2020.parquet')
+print(df.head())
+print(f"Total sentences: {len(df)}")
 ```
 
-### SQL (DuckDB)
-```sql
--- Load and query
-SELECT year, COUNT(*) as sentence_count
-FROM 'output_processor/budget_speeches.parquet'
-GROUP BY year
-ORDER BY year;
+### Load All Years
 
--- Find duplicates (should be none)
-SELECT sentence_text, COUNT(*) as count
-FROM 'output_processor/budget_speeches.parquet'
-WHERE year = 2011
-GROUP BY sentence_text
-HAVING count > 1;
+```python
+import pandas as pd
+from pathlib import Path
+
+# Load all Parquet files
+files = sorted(Path('output_processor').glob('*.parquet'))
+dfs = [pd.read_parquet(f) for f in files]
+df_all = pd.concat(dfs, ignore_index=True)
+
+print(f"Total sentences: {len(df_all):,}")
+print(f"Year range: {df_all['year'].min()}-{df_all['year'].max()}")
 ```
 
-## Generation
+### Search for Keywords
 
-This dataset is generated by running:
+```python
+# Find all sentences mentioning "healthcare"
+healthcare = df_all[
+    df_all['sentence_text'].str.contains('healthcare', case=False)
+]
+
+print(f"Found {len(healthcare)} sentences")
+print(healthcare[['year', 'primary_speaker', 'sentence_text']].head())
+```
+
+### Aggregate by Year
+
+```python
+# Average sentence length by year
+yearly_stats = df_all.groupby('year').agg({
+    'word_count': 'mean',
+    'sentence_text': 'count'
+}).rename(columns={'sentence_text': 'total_sentences'})
+
+print(yearly_stats.tail())
+```
+
+### Aggregate by Minister
+
+```python
+# Total sentences by minister
+minister_stats = df_all.groupby('primary_speaker').agg({
+    'sentence_text': 'count',
+    'word_count': 'mean'
+}).rename(columns={
+    'sentence_text': 'total_sentences',
+    'word_count': 'avg_word_count'
+})
+
+print(minister_stats.sort_values('total_sentences', ascending=False))
+```
+
+### Filter by Era
+
+```python
+# Modern era speeches (2000-2019)
+modern = df_all[df_all['era'] == 'Modern Era']
+print(f"Modern era: {len(modern):,} sentences")
+
+# Contemporary speeches (2020+)
+contemporary = df_all[df_all['era'] == 'Contemporary']
+print(f"Contemporary: {len(contemporary):,} sentences")
+```
+
+---
+
+## Data Quality
+
+### Sentence Tokenization
+
+Uses spaCy's English model (`en_core_web_sm`) for accurate sentence splitting:
+
+**Handles correctly**:
+- Abbreviations: "Mr.", "Dr.", "Hon."
+- Numbers: "S$10.5 billion"
+- Acronyms: "CPF", "GST", "HDB"
+- Decimal points: "3.5% growth"
+- Multiple punctuation: "...and so on."
+
+**Edge cases**:
+- Very long sentences (>100 words) kept intact
+- Bullet points treated as separate sentences
+- Parliamentary interjections preserved
+
+### Word Counting
+
+Counts **content words only**, excluding:
+- Punctuation marks
+- Standalone numbers (in most cases)
+- Special characters
+
+Formula: `len([word for word in text.split() if word.isalnum()])`
+
+---
+
+## Data Pipeline
+
+This folder is the **second stage** of the pipeline:
+
+```
+1. output_markdown/
+   └─> 66 markdown files (raw speeches)
+
+2. output_processor/ (You are here)
+   └─> 66 Parquet files (structured sentences)
+
+3. analysis/
+   └─> Jupyter notebooks + CSV outputs
+```
+
+### Creation Process
+
+Files created by running:
+
 ```bash
 poetry run python processor/main.py
 ```
 
-The processor:
+This:
 1. Reads markdown files from `output_markdown/`
-2. Parses each file into sentences using spaCy
-3. Deduplicates sentences within each year
-4. Extracts metadata (word count, character count)
-5. Outputs to CSV and Parquet formats
+2. Extracts metadata (date, speaker, title)
+3. Splits text into sentences (spaCy)
+4. Counts words and characters
+5. Adds derived features (decade, era)
+6. Saves as Parquet
+
+---
+
+## Updating Data
+
+### Add New Year
+
+When new budget speech is delivered:
+
+1. **Extract speech**:
+   ```bash
+   poetry run python extractor/main.py
+   ```
+
+2. **Process to Parquet**:
+   ```bash
+   poetry run python processor/main.py
+   ```
+
+3. **Verify new file**: Check `output_processor/YYYY.parquet`
+
+4. **Validate**:
+   ```python
+   df = pd.read_parquet('output_processor/2026.parquet')
+   assert len(df) > 0
+   assert df['year'].iloc[0] == 2026
+   ```
+
+
+---
+
+## Sample Data
+
+### Example Sentence Record
+
+```python
+{
+    'sentence_id': 12345,
+    'year': 2020,
+    'speech_date': '2020-02-18',
+    'primary_speaker': 'Heng Swee Keat',
+    'speech_title': 'Budget Statement',
+    'section_title': 'Supporting Businesses',
+    'sentence_order': 342,
+    'sentence_text': 'We will provide $4 billion to help businesses transform and grow.',
+    'word_count': 11,
+    'char_count': 68,
+    'decade': 2020,
+    'era': 'Contemporary'
+}
+```
+
+### Example Queries
+
+**Longest sentence**:
+```python
+longest = df_all.loc[df_all['word_count'].idxmax()]
+print(f"Year: {longest['year']}")
+print(f"Words: {longest['word_count']}")
+print(f"Text: {longest['sentence_text'][:100]}...")
+```
+
+**Shortest sentence**:
+```python
+shortest = df_all.loc[df_all['word_count'].idxmin()]
+print(f"Year: {shortest['year']}")
+print(f"Words: {shortest['word_count']}")
+print(f"Text: {shortest['sentence_text']}")
+```
+
+**Most common words** (across all years):
+```python
+from collections import Counter
+
+all_words = []
+for text in df_all['sentence_text']:
+    all_words.extend(text.lower().split())
+
+word_counts = Counter(all_words)
+print(word_counts.most_common(20))
+```
+
+---
+
+## Schema Evolution
+
+If schema changes in future versions:
+
+### Version 1.0 (Current)
+- 12 columns
+- Era classification (4 eras)
+- Basic sentence metrics
+
+### Potential Future Additions
+- `sentiment_score` - Sentiment analysis
+- `ministry_topic` - Classified topic (Defence, Health, etc.)
+- `readability_score` - Flesch reading ease
+- `named_entities` - Extracted entities (JSON)
+
+---
+
+## Related Documentation
+
+- **[Processor README](../processor/README.md)** - How these files are created
+- **[Analysis README](../analysis/README.md)** - Using this data for analysis
+- **[Output Markdown README](../output_markdown/README.md)** - Source data
+- **[Main README](../README.md)** - Project overview
