@@ -53,18 +53,36 @@
           <div id="regionCards" class="region-cards"></div>
         </div>
 
-        <!-- Country Trends Chart -->
+        <!-- Country/Region Trends Chart -->
         <div class="chart-container">
-          <h3>Country References Over Time</h3>
+          <h3>References Over Time</h3>
           <p class="chart-description">
-            Track how frequently different countries are mentioned across
-            decades. Select countries to compare.
+            Track how frequently countries or regions are mentioned across
+            decades. Toggle between country and region view.
           </p>
-          <div class="country-selector">
-            <label>Compare countries:</label>
-            <select id="countrySelect1"></select>
-            <select id="countrySelect2"></select>
-            <select id="countrySelect3"></select>
+          <div class="trends-controls">
+            <div class="view-toggle">
+              <button id="viewByCountry" class="toggle-btn active">
+                By Country
+              </button>
+              <button id="viewByRegion" class="toggle-btn">By Region</button>
+            </div>
+            <div class="country-selector" id="countrySelectors">
+              <label>Compare countries:</label>
+              <select id="countrySelect1"></select>
+              <select id="countrySelect2"></select>
+              <select id="countrySelect3"></select>
+            </div>
+            <div
+              class="region-selector"
+              id="regionSelectors"
+              style="display: none"
+            >
+              <label>Compare regions:</label>
+              <select id="regionSelect1"></select>
+              <select id="regionSelect2"></select>
+              <select id="regionSelect3"></select>
+            </div>
           </div>
           <div id="countryTrendsChart"></div>
         </div>

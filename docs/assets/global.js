@@ -9,6 +9,7 @@ let timeSeriesData = null;
 let countryDetailsData = null;
 let mapData = null;
 let decadeShardCache = new Map(); // Cache for decade shards
+let currentTrendsView = "country"; // Track current view: 'country' or 'region'
 
 // Region colors for consistent styling
 const regionColors = {
@@ -68,6 +69,8 @@ function renderPage() {
   renderWorldMap();
   renderRegionCards();
   setupCountrySelectors();
+  setupRegionSelectors();
+  setupViewToggle();
   renderCountryTrends();
   populateRegionFilter();
   renderCountryList();
@@ -232,8 +235,32 @@ function renderRegionCards() {
 }
 
 // ===================================
-// COUNTRY TRENDS CHART
+// COUNTRY/REGION TRENDS CHART
 // ===================================
+
+function setupViewToggle() {
+  const countryBtn = document.getElementById("viewByCountry");
+  const regionBtn = document.getElementById("viewByRegion");
+
+  countryBtn.addEventListener("click", () => {
+    currentTrendsView = "country";
+    countryBtn.classList.add("active");
+    regionBtn.classList.remove("active");
+    document.getElementById("countrySelectors").style.display = "flex";
+    document.getElementById("regionSelectors").style.display = "none";
+    renderCountryTrends();
+  });
+
+  regionBtn.addEventListener("click", () => {
+    currentTrendsView = "region";
+    regionBtn.classList.add("active");
+    countryBtn.classList.remove("active");
+    document.getElementById("countrySelectors").style.display = "none";
+    document.getElementById("regionSelectors").style.display = "flex";
+    renderRegionTrends();
+  });
+}
+
 function setupCountrySelectors() {
   const topCountries = Object.entries(overviewData.country_totals)
     .sort((a, b) => b[1] - a[1])
@@ -256,6 +283,31 @@ function setupCountrySelectors() {
         .join("");
 
     select.addEventListener("change", renderCountryTrends);
+  });
+}
+
+function setupRegionSelectors() {
+  const regions = Object.keys(overviewData.by_region).sort(
+    (a, b) => overviewData.by_region[b].total - overviewData.by_region[a].total,
+  );
+
+  const selectors = ["regionSelect1", "regionSelect2", "regionSelect3"];
+  const defaults = ["East Asia", "Southeast Asia", "Western Europe"];
+
+  selectors.forEach((id, index) => {
+    const select = document.getElementById(id);
+    select.innerHTML =
+      '<option value="">-- Select Region --</option>' +
+      regions
+        .map(
+          (region) =>
+            `<option value="${region}" ${
+              region === defaults[index] ? "selected" : ""
+            }>${region}</option>`,
+        )
+        .join("");
+
+    select.addEventListener("change", renderRegionTrends);
   });
 }
 
@@ -295,6 +347,109 @@ function renderCountryTrends() {
         hovertemplate: `<b>${country}</b><br>%{x}: %{y} mentions<extra></extra>`,
       });
     }
+  });
+
+  // Add crisis year annotations
+  const crisisYears = [
+    { year: 1973, label: "Oil Crisis" },
+    { year: 1985, label: "Recession" },
+    { year: 1997, label: "Asian Crisis" },
+    { year: 2008, label: "Global Crisis" },
+    { year: 2020, label: "COVID-19" },
+  ];
+
+  const annotations = crisisYears.map((crisis) => ({
+    x: crisis.year,
+    y: 1,
+    yref: "paper",
+    text: crisis.label,
+    showarrow: true,
+    arrowhead: 0,
+    ax: 0,
+    ay: -25,
+    font: { size: 9, color: "#888" },
+  }));
+
+  const layout = {
+    showlegend: true,
+    legend: {
+      orientation: "h",
+      y: -0.15,
+      x: 0.5,
+      xanchor: "center",
+    },
+    xaxis: {
+      title: "Year",
+      tickmode: "linear",
+      dtick: 10,
+      gridcolor: "#E5E5E5",
+    },
+    yaxis: {
+      title: "Number of Mentions",
+      gridcolor: "#E5E5E5",
+    },
+    margin: { t: 30, b: 80, l: 60, r: 20 },
+    height: 400,
+    plot_bgcolor: "white",
+    paper_bgcolor: "white",
+    annotations: annotations,
+  };
+
+  Plotly.newPlot("countryTrendsChart", traces, layout, { responsive: true });
+}
+
+function renderRegionTrends() {
+  const selected = [
+    document.getElementById("regionSelect1").value,
+    document.getElementById("regionSelect2").value,
+    document.getElementById("regionSelect3").value,
+  ].filter(Boolean);
+
+  if (selected.length === 0) {
+    selected.push("East Asia", "Southeast Asia", "Western Europe");
+  }
+
+  const years = timeSeriesData.years;
+  const traces = [];
+
+  // Calculate regional totals per year
+  const regionYearlyData = {};
+
+  // For each region, sum up all country mentions per year
+  selected.forEach((region) => {
+    regionYearlyData[region] = years.map(() => 0);
+
+    // Get countries in this region from overview data
+    const regionInfo = overviewData.by_region[region];
+    if (regionInfo && regionInfo.countries) {
+      Object.keys(regionInfo.countries).forEach((country) => {
+        const countryData = timeSeriesData.countries[country];
+        if (countryData) {
+          countryData.yearly_counts.forEach((count, i) => {
+            regionYearlyData[region][i] += count;
+          });
+        }
+      });
+    }
+  });
+
+  selected.forEach((region, i) => {
+    const color = regionColors[region] || "#666";
+    traces.push({
+      x: years,
+      y: regionYearlyData[region],
+      name: region,
+      type: "scatter",
+      mode: "lines+markers",
+      line: {
+        color: color,
+        width: 2,
+      },
+      marker: {
+        size: 5,
+      },
+      hovertemplate: `<b>${region}</b><br>%{x}: %{y} mentions<extra></extra>`,
+    });
   });
 
   // Add crisis year annotations

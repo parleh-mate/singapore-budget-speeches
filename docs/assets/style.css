@@ -1453,24 +1453,68 @@ tr:hover td {
 }
 
 /* Country selector for trends chart */
-.country-selector {
+.trends-controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--space-sm);
-  align-items: center;
   margin-bottom: var(--space-md);
   padding: var(--space-sm);
   background: var(--color-bg-alt);
   border-radius: var(--radius-sm);
 }
 
-.country-selector label {
+.view-toggle {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.toggle-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.toggle-btn:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.toggle-btn:last-child {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.toggle-btn:hover {
+  background: var(--color-bg-alt);
+}
+
+.toggle-btn.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.country-selector,
+.region-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.country-selector label,
+.region-selector label {
   font-weight: 600;
   color: var(--color-text);
   font-size: 0.875rem;
 }
 
-.country-selector select {
+.country-selector select,
+.region-selector select {
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
