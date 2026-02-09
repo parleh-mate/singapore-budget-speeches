@@ -444,25 +444,29 @@ function renderDecadeChart() {
   ];
   const years = Object.keys(languageData.by_year).sort();
 
-  // Group data by decade
+  // Group data by decade - include year labels for hover
   const decadeData = decades.map((decade) => {
     const decadeStart = parseInt(decade);
     const decadeYears = years.filter((y) => {
       const year = parseInt(y);
       return year >= decadeStart && year < decadeStart + 10;
     });
-    return decadeYears.map((y) => languageData.by_year[y].readability);
+    return {
+      values: decadeYears.map((y) => languageData.by_year[y].readability),
+      years: decadeYears,
+    };
   });
 
   const traces = decades.map((decade, i) => ({
-    y: decadeData[i],
+    y: decadeData[i].values,
+    text: decadeData[i].years,
     type: "box",
     name: decade,
     marker: { color: getDecadeColor(i) },
     boxpoints: "all",
     jitter: 0.3,
     pointpos: 0,
-    hovertemplate: `${decade}<br>Readability: %{y:.1f}<extra></extra>`,
+    hovertemplate: `<b>%{text}</b><br>Readability: %{y:.1f}<extra></extra>`,
   }));
 
   const layout = {
