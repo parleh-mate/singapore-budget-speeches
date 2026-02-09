@@ -622,7 +622,7 @@ COUNTRIES = {
         "region": "Middle East",
         "aliases": ["Israel", "Israeli", "Tel Aviv", "Jerusalem"],
     },
-    "Turkey": {
+    "Türkiye": {
         "iso": "TUR",
         "region": "Middle East",
         "aliases": ["Turkey", "Türkiye", "Turkiye", "Turkish", "Istanbul", "Ankara"],
@@ -1201,6 +1201,31 @@ def extract_country_mentions(text: str, patterns: dict) -> dict[str, list[str]]:
     return mentions
 
 
+# Minister periods for year-to-minister mapping
+MINISTER_PERIODS = {
+    (1959, 1967): "Goh Keng Swee",
+    (1965, 1965): "Lim Kim San",
+    (1966, 1966): "Lim Kim San",
+    (1967, 1970): "Goh Keng Swee",
+    (1971, 1979): "Hon Sui Sen",
+    (1980, 1983): "Goh Chok Tong",
+    (1984, 1984): "Goh Keng Swee",
+    (1985, 1992): "Richard Hu",
+    (1993, 2006): "Lee Hsien Loong",
+    (2007, 2015): "Tharman Shanmugaratnam",
+    (2016, 2021): "Heng Swee Keat",
+    (2022, 2026): "Lawrence Wong",
+}
+
+
+def get_minister_for_year(year: int) -> str:
+    """Get the Finance Minister for a given year."""
+    for (start, end), name in MINISTER_PERIODS.items():
+        if start <= year <= end:
+            return name
+    return "Unknown"
+
+
 def process_parquet_files(parquet_dir: Path, patterns: dict) -> dict:  # type: ignore[type-arg]
     """Process all parquet files and extract country mentions."""
     results: dict = {
@@ -1220,6 +1245,8 @@ def process_parquet_files(parquet_dir: Path, patterns: dict) -> dict:  # type: i
 
         df = pd.read_parquet(pf)
 
+        minister = get_minister_for_year(year)
+
         for _, row in df.iterrows():
             text = row["sentence_text"]
             sentence_id = row["sentence_id"]
@@ -1236,6 +1263,7 @@ def process_parquet_files(parquet_dir: Path, patterns: dict) -> dict:  # type: i
                             "text": text,
                             "section": section,
                             "matched_terms": matched_terms,
+                            "minister": minister,
                         }
                     )
 
@@ -1246,6 +1274,7 @@ def process_parquet_files(parquet_dir: Path, patterns: dict) -> dict:  # type: i
                             "text": text,
                             "section": section,
                             "matched_terms": matched_terms,
+                            "minister": minister,
                         }
                     )
 
@@ -1312,7 +1341,12 @@ def generate_output_json(results: dict, output_dir: Path):  # type: ignore[type-
 
             for year, sentences in yearly_data.items():
                 country_details[country]["by_year"][year] = [
-                    {"text": s["text"], "section": s["section"], "terms": s["matched_terms"]}
+                    {
+                        "text": s["text"],
+                        "section": s["section"],
+                        "terms": s["matched_terms"],
+                        "minister": s.get("minister", "Unknown"),
+                    }
                     for s in sentences[:10]  # Limit to 10 per year for file size
                 ]
 

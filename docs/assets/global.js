@@ -457,10 +457,14 @@ function renderCountryQuotes(country) {
             /\s+/g,
             "-",
           )}-${currentIndex}`;
+          const ministerName = q.minister || "Unknown Minister";
           return `
           <div class="quote-item" data-year="${year}" data-text="${encodeURIComponent(
             q.text,
           )}">
+            <div class="quote-meta">
+              <span class="quote-minister">${ministerName}</span>
+            </div>
             <p class="quote-text">${highlightedText}</p>
             <div class="quote-actions">
               ${

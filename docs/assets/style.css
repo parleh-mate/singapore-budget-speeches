@@ -1652,6 +1652,19 @@ tr:hover td {
   border-left: 3px solid var(--color-accent);
 }
 
+.quote-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.quote-minister {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
 .quote-text {
   font-size: 0.9375rem;
   line-height: 1.6;

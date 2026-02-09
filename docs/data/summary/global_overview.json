@@ -118,12 +118,11 @@
       }
     },
     "Middle East": {
-      "total": 34,
+      "total": 32,
       "countries": {
         "Saudi Arabia": 2,
         "United Arab Emirates": 4,
         "Israel": 8,
-        "Turkey": 2,
         "Iran": 7,
         "Iraq": 7,
         "Kuwait": 1,
@@ -196,7 +195,7 @@
     "Chile": 2,
     "Slovakia": 2,
     "Maldives": 2,
-    "Turkey": 2,
+    "T\u00fcrkiye": 2,
     "Latvia": 2
   },
   "years": [
