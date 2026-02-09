@@ -82,27 +82,76 @@ function hideLoading() {
 // ===================================
 // CHART 1: HEATMAP WITH DRILL-DOWN
 // ===================================
+let selectedDecades = ["1960s"]; // Default to first decade
+
 function setupHeatmapControls() {
   const viewToggle = document.getElementById("heatmapViewToggle");
-  const decadeSelect = document.getElementById("decadeSelect");
+  const decadeContainer = document.getElementById("decadeSelectContainer");
+  const decadeCheckboxes = document.getElementById("decadeCheckboxes");
+  const selectAllBtn = document.getElementById("selectAllDecades");
 
   if (viewToggle) {
     viewToggle.addEventListener("change", (e) => {
       currentView = e.target.value;
-      decadeSelect.style.display =
-        currentView === "year" ? "inline-block" : "none";
+      decadeContainer.style.display = currentView === "year" ? "flex" : "none";
       renderHeatmap();
     });
   }
 
-  if (decadeSelect) {
-    DECADES.forEach((decade) => {
-      const option = document.createElement("option");
-      option.value = decade.name;
-      option.textContent = decade.name;
-      decadeSelect.appendChild(option);
+  if (decadeCheckboxes) {
+    // Create checkboxes for each decade
+    DECADES.forEach((decade, index) => {
+      const label = document.createElement("label");
+      label.className = "decade-checkbox-label";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = decade.name;
+      checkbox.checked = index === 0; // First decade checked by default
+      checkbox.addEventListener("change", () => {
+        updateSelectedDecades();
+        renderHeatmap();
+      });
+
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(decade.name));
+      decadeCheckboxes.appendChild(label);
     });
-    decadeSelect.addEventListener("change", renderHeatmap);
+  }
+
+  if (selectAllBtn) {
+    selectAllBtn.addEventListener("click", () => {
+      const checkboxes = decadeCheckboxes.querySelectorAll(
+        'input[type="checkbox"]',
+      );
+      const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
+
+      checkboxes.forEach((cb) => {
+        cb.checked = !allChecked;
+      });
+
+      // Ensure at least one is selected
+      if (allChecked) {
+        checkboxes[0].checked = true;
+      }
+
+      updateSelectedDecades();
+      renderHeatmap();
+    });
+  }
+}
+
+function updateSelectedDecades() {
+  const checkboxes = document.querySelectorAll(
+    '#decadeCheckboxes input[type="checkbox"]:checked',
+  );
+  selectedDecades = Array.from(checkboxes).map((cb) => cb.value);
+
+  // Ensure at least one decade is selected
+  if (selectedDecades.length === 0) {
+    selectedDecades = ["1960s"];
+    document.querySelector('#decadeCheckboxes input[value="1960s"]').checked =
+      true;
   }
 }
 
@@ -163,13 +212,16 @@ function renderHeatmap() {
       }),
     );
   } else {
-    // Year view - filter to selected decade
-    const selectedDecade =
-      document.getElementById("decadeSelect")?.value || "1960s";
-    const decade = DECADES.find((d) => d.name === selectedDecade);
-    const filteredYears = years.filter(
-      (y) => parseInt(y) >= decade.start && parseInt(y) <= decade.end,
+    // Year view - filter to selected decades
+    const selectedDecadeObjs = DECADES.filter((d) =>
+      selectedDecades.includes(d.name),
     );
+    const filteredYears = years.filter((y) => {
+      const yearNum = parseInt(y);
+      return selectedDecadeObjs.some(
+        (d) => yearNum >= d.start && yearNum <= d.end,
+      );
+    });
 
     xLabels = filteredYears;
 
@@ -216,12 +268,15 @@ function renderHeatmap() {
   let annotations = [];
 
   if (currentView === "year") {
-    const selectedDecade =
-      document.getElementById("decadeSelect")?.value || "1960s";
-    const decade = DECADES.find((d) => d.name === selectedDecade);
+    const selectedDecadeObjs = DECADES.filter((d) =>
+      selectedDecades.includes(d.name),
+    );
 
     CRISIS_YEARS.forEach((crisis) => {
-      if (crisis.year >= decade.start && crisis.year <= decade.end) {
+      const inSelectedDecade = selectedDecadeObjs.some(
+        (d) => crisis.year >= d.start && crisis.year <= d.end,
+      );
+      if (inSelectedDecade) {
         shapes.push({
           type: "line",
           x0: crisis.year.toString(),

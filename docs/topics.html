@@ -49,9 +49,14 @@
               <option value="decade" selected>By Decade (overview)</option>
               <option value="year">By Year (detailed)</option>
             </select>
-            <select id="decadeSelect" style="display: none">
-              <!-- Populated by JS -->
-            </select>
+            <div id="decadeSelectContainer" style="display: none">
+              <button id="selectAllDecades" class="decade-toggle-btn">
+                All
+              </button>
+              <div class="decade-checkboxes" id="decadeCheckboxes">
+                <!-- Populated by JS -->
+              </div>
+            </div>
           </div>
           <div id="topicsHeatmap"></div>
         </div>
