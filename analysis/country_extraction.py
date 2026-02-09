@@ -511,7 +511,6 @@ COUNTRIES = {
         "aliases": [
             "United States",
             "USA",
-            "US",
             "America",
             "American",
             "Washington",
