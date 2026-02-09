@@ -904,12 +904,32 @@ a:hover {
   gap: var(--space-lg);
 }
 
+.insight-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform var(--transition-fast);
+}
+
+.insight-card-link:hover {
+  transform: translateY(-2px);
+}
+
+.insight-card-link:hover .insight-card {
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--color-secondary);
+}
+
 .insight-card {
   background: var(--color-bg-card);
   padding: var(--space-lg);
   border-radius: var(--radius-lg);
   border-left: 4px solid var(--color-accent);
   box-shadow: var(--shadow-card);
+  transition:
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+  height: 100%;
 }
 
 .insight-card h4 {
@@ -921,6 +941,7 @@ a:hover {
 .insight-card p {
   font-size: 0.9375rem;
   margin-bottom: 0;
+  color: var(--color-text-light);
 }
 
 /* --- DATA TABLE --- */
