@@ -11455,6 +11455,31 @@
       ]
     }
   },
+  "Seychelles": {
+    "iso": "SYC",
+    "region": "Sub-Saharan Africa",
+    "total_mentions": 2,
+    "by_year": {
+      "1962": [
+        {
+          "text": "The increase in the provision for the Ministry of Culture is due to the incorporation under this Head of Victoria Theatre and Memorial Hall (previously shown separately).",
+          "section": "Expenditure Estimates, 1962",
+          "terms": [
+            "Victoria"
+          ]
+        }
+      ],
+      "1965": [
+        {
+          "text": "The detailed plans for the development of Southern Precinct I bounded by New Bridge Road, Havelock Road, Outram Road and Chin Swee Road and Northern Precinct I bounded by Beach Road, Crawford Street, Victoria Street and Jalan Sultan has been completed.",
+          "section": "Development Expenditure",
+          "terms": [
+            "Victoria"
+          ]
+        }
+      ]
+    }
+  },
   "Australia": {
     "iso": "AUS",
     "region": "Oceania",
@@ -12186,6 +12211,56 @@
           "section": null,
           "terms": [
             "Amsterdam"
+          ]
+        }
+      ]
+    }
+  },
+  "Denmark": {
+    "iso": "DNK",
+    "region": "Northern Europe",
+    "total_mentions": 3,
+    "by_year": {
+      "1965": [
+        {
+          "text": "in Jurong with the assistance of experts from Denmark.",
+          "section": "1965 Development Estimates",
+          "terms": [
+            "Denmark"
+          ]
+        }
+      ],
+      "1975": [
+        {
+          "text": "In addition to the nine centres already in operation, two more promotion centres are being established in Houston and Copenhagen.",
+          "section": "Industrial Development Policy",
+          "terms": [
+            "Copenhagen"
+          ]
+        }
+      ],
+      "2022": [
+        {
+          "text": "Countries like Germany, France and Denmark have stopped levying taxes on individuals\u2019 net wealth.",
+          "section": null,
+          "terms": [
+            "Denmark"
+          ]
+        }
+      ]
+    }
+  },
+  "Serbia": {
+    "iso": "SRB",
+    "region": "Eastern Europe",
+    "total_mentions": 1,
+    "by_year": {
+      "1966": [
+        {
+          "text": "Yugoslavia and the U.S.S.R. are sending trade missions and have invited us in return.",
+          "section": "Neutral Stand",
+          "terms": [
+            "Yugoslavia"
           ]
         }
       ]
@@ -13312,6 +13387,148 @@
       ]
     }
   },
+  "Austria": {
+    "iso": "AUT",
+    "region": "Western Europe",
+    "total_mentions": 1,
+    "by_year": {
+      "1972": [
+        {
+          "text": "In May, the first indications of potential trouble came with the free floating upwards of the German Mark, and the revaluation of the Swiss Franc and the Austrian Schilling.",
+          "section": "Survey of International Economic Events",
+          "terms": [
+            "Austrian"
+          ]
+        }
+      ]
+    }
+  },
+  "Belgium": {
+    "iso": "BEL",
+    "region": "Western Europe",
+    "total_mentions": 4,
+    "by_year": {
+      "1972": [
+        {
+          "text": "It is therefore our intention, by establishing an official representation to the E.E.C, in Brussels, to investigate the possibilities of negotiating an associate member status or a trade agreement with the E.E.C, which will facilitate such entry.",
+          "section": "Survey of International Economic Events",
+          "terms": [
+            "Brussels"
+          ]
+        }
+      ],
+      "1973": [
+        {
+          "text": "The better to investigate possibilities of improving trade links with the enlarged EEC, whether under a negotiated agreement, the Generalised System of Preferences (GSP) Scheme or in any other way, we have in the last year established an Embassy in Brussels accredited to both Belgium and the EEC, and shall be establishing diplomatic representation also in other countries in the near future.",
+          "section": "Survey of the Economic Scene",
+          "terms": [
+            "Brussels",
+            "Belgium"
+          ]
+        }
+      ],
+      "1984": [
+        {
+          "text": "Two new ones were set up in Brussels and Dubai while honorary representatives were appointed in Sydney, Seoul and Dusseldorf.",
+          "section": "TRADE DEVELOPMENT",
+          "terms": [
+            "Brussels"
+          ]
+        }
+      ],
+      "2003": [
+        {
+          "text": "We will change from the Brussels Definition of Value (BDV) method to the Customs Valuation Code (CVC) method.",
+          "section": "Motor Vehicle Taxes",
+          "terms": [
+            "Brussels"
+          ]
+        }
+      ]
+    }
+  },
+  "Italy": {
+    "iso": "ITA",
+    "region": "Southern Europe",
+    "total_mentions": 3,
+    "by_year": {
+      "1973": [
+        {
+          "text": "A forecast made by the Organisation for Economic Co-operation and Development (OECD) indicated that Japan should lead the group of industrialised countries with a real growth rate for 1973 of nearly 11 per cent, followed by the United States with 6.25 per cent, France and Canada 6 per cent, Germany 5.2 per cent, and Italy and the United Kingdom 5 per cent.",
+          "section": "Trade",
+          "terms": [
+            "Italy"
+          ]
+        }
+      ],
+      "1974": [
+        {
+          "text": "The French franc and the Italian lira also showed weakness stemming mainly from industrial unrest and certain political factors.",
+          "section": "International Monetary Situation",
+          "terms": [
+            "Italian"
+          ]
+        }
+      ],
+      "2017": [
+        {
+          "text": "The over-use of diesel cars has resulted in cities like London, Paris and Rome being enveloped in smog in recent years.",
+          "section": null,
+          "terms": [
+            "Rome"
+          ]
+        }
+      ]
+    }
+  },
+  "Norway": {
+    "iso": "NOR",
+    "region": "Northern Europe",
+    "total_mentions": 1,
+    "by_year": {
+      "1974": [
+        {
+          "text": "These countries included the Netherlands, Norway, Australia and New Zealand.",
+          "section": "International Monetary Situation",
+          "terms": [
+            "Norway"
+          ]
+        }
+      ]
+    }
+  },
+  "Kenya": {
+    "iso": "KEN",
+    "region": "Sub-Saharan Africa",
+    "total_mentions": 1,
+    "by_year": {
+      "1974": [
+        {
+          "text": "The first outline of reform was presented to the Board of Governors of the Fund at the IMF Annual Meeting at Nairobi in September 1973.",
+          "section": "International Monetary Situation",
+          "terms": [
+            "Nairobi"
+          ]
+        }
+      ]
+    }
+  },
+  "South Africa": {
+    "iso": "ZAF",
+    "region": "Sub-Saharan Africa",
+    "total_mentions": 1,
+    "by_year": {
+      "1974": [
+        {
+          "text": "First, the termination of the 1968 two-tier gold agreement followed by the termination of the IMF Agreement on South African gold sales to finance payments deficits indicate some recognition of the desire to de-sterilize gold reserves for use by central banks and the urgency of agreeing on the future role of gold vis-a-vis reserve currencies.",
+          "section": "International Monetary Situation",
+          "terms": [
+            "South African"
+          ]
+        }
+      ]
+    }
+  },
   "Thailand": {
     "iso": "THA",
     "region": "Southeast Asia",
@@ -13622,6 +13839,22 @@
       ]
     }
   },
+  "Egypt": {
+    "iso": "EGY",
+    "region": "North Africa",
+    "total_mentions": 1,
+    "by_year": {
+      "1974": [
+        {
+          "text": "In the Middle East, it is not unlikely that negotiations for a settlement of the Arab/Israeli conflict can progress sufficiently for the Suez Canal soon to reopen.",
+          "section": "Trade Sector",
+          "terms": [
+            "Suez"
+          ]
+        }
+      ]
+    }
+  },
   "Cambodia": {
     "iso": "KHM",
     "region": "Southeast Asia",
@@ -13676,6 +13909,47 @@
           "section": null,
           "terms": [
             "Cambodia"
+          ]
+        }
+      ]
+    }
+  },
+  "Laos": {
+    "iso": "LAO",
+    "region": "Southeast Asia",
+    "total_mentions": 4,
+    "by_year": {
+      "1976": [
+        {
+          "text": "And further the loss of the markets in Vietnam, Cambodia and Laos did not help.",
+          "section": "Singapore's Economy in 1975",
+          "terms": [
+            "Laos"
+          ]
+        }
+      ],
+      "1993": [
+        {
+          "text": "Kampuchea, Laos, Myanmar and Vietnam, and to include other types of services.",
+          "section": "Tax Incentives to Promote an External Economy",
+          "terms": [
+            "Laos"
+          ]
+        }
+      ],
+      "2025": [
+        {
+          "text": "In Asia, the Cold War spilled over into proxy fights, with devastating wars in Vietnam, Laos and Cambodia.",
+          "section": null,
+          "terms": [
+            "Laos"
+          ]
+        },
+        {
+          "text": "We have started a pilot with Peninsular Malaysia and expanded the capacity of a power trading initiative with Laos, Thailand and Malaysia.",
+          "section": null,
+          "terms": [
+            "Laos"
           ]
         }
       ]
@@ -13809,6 +14083,341 @@
       ]
     }
   },
+  "Poland": {
+    "iso": "POL",
+    "region": "Eastern Europe",
+    "total_mentions": 4,
+    "by_year": {
+      "1981": [
+        {
+          "text": "The Iranian-Iraqi war and the volatile political situation in Poland hold grave perils for the world.",
+          "section": "Concluding Remarks on Economic Policy",
+          "terms": [
+            "Poland"
+          ]
+        }
+      ],
+      "2006": [
+        {
+          "text": "Some are even lower - Slovakia and Poland have cut their rates to 19%, and Hungary has reduced its rate to 16%.",
+          "section": null,
+          "terms": [
+            "Poland"
+          ]
+        }
+      ],
+      "2007": [
+        {
+          "text": "Food Empire, based in Geylang, owns MacCoffee, which has become immensely popular in Ukraine, Russia, Poland, Bahrain, Iran and Turkey.",
+          "section": null,
+          "terms": [
+            "Poland"
+          ]
+        },
+        {
+          "text": "Poland's and Slovak's Republic are at 19%.",
+          "section": null,
+          "terms": [
+            "Poland"
+          ]
+        }
+      ]
+    }
+  },
+  "Saudi Arabia": {
+    "iso": "SAU",
+    "region": "Middle East",
+    "total_mentions": 2,
+    "by_year": {
+      "1983": [
+        {
+          "text": "In 1982, trade offices were opened in Jeddah and Bonn.",
+          "section": "Trade Development Board",
+          "terms": [
+            "Jeddah"
+          ]
+        }
+      ],
+      "2007": [
+        {
+          "text": "Very active in China and India, and now moving into the Middle Eastern market with Saudi Arabian partners.",
+          "section": null,
+          "terms": [
+            "Saudi"
+          ]
+        }
+      ]
+    }
+  },
+  "United Arab Emirates": {
+    "iso": "ARE",
+    "region": "Middle East",
+    "total_mentions": 4,
+    "by_year": {
+      "1984": [
+        {
+          "text": "Two new ones were set up in Brussels and Dubai while honorary representatives were appointed in Sydney, Seoul and Dusseldorf.",
+          "section": "TRADE DEVELOPMENT",
+          "terms": [
+            "Dubai"
+          ]
+        }
+      ],
+      "2006": [
+        {
+          "text": "They are investing in education and infrastructure, attracting foreign investment, building international companies like Dubai Ports and Emirates Airlines, and using their oil and gas revenues to create a sustainable long-term basis for growth and development.",
+          "section": null,
+          "terms": [
+            "Dubai",
+            "Emirates"
+          ]
+        }
+      ],
+      "2008": [
+        {
+          "text": "Purple gold is now sold in several cities around the world, from London and Dubai, to Tokyo and Seoul.",
+          "section": null,
+          "terms": [
+            "Dubai"
+          ]
+        }
+      ],
+      "2009": [
+        {
+          "text": "AsiaMedic Limited, a locally-listed company which provides diagnostic imaging and specialist medical services, announced plans just this week to manage a diagnostic imaging centre in Abu Dhabi.",
+          "section": null,
+          "terms": [
+            "Abu Dhabi"
+          ]
+        }
+      ]
+    }
+  },
+  "Spain": {
+    "iso": "ESP",
+    "region": "Southern Europe",
+    "total_mentions": 3,
+    "by_year": {
+      "1987": [
+        {
+          "text": "MNCs seeking investment locations are evaluating us against countries such as Britain, Spain and even some states in the US.",
+          "section": "LONG-TERM TRANSFORMATION OF THE ECONOMY",
+          "terms": [
+            "Spain"
+          ]
+        }
+      ],
+      "2009": [
+        {
+          "text": "Spain, Greece, Portugal and Russia have just seen recent downgrades in their credit ratings, while Taiwan has been \"placed on negative outlook\".",
+          "section": null,
+          "terms": [
+            "Spain"
+          ]
+        }
+      ],
+      "2017": [
+        {
+          "text": "Athens, Madrid, Mexico City and Paris have announced plans to ban diesel vehicles from their city centres by 2025.",
+          "section": null,
+          "terms": [
+            "Madrid"
+          ]
+        }
+      ]
+    }
+  },
+  "Luxembourg": {
+    "iso": "LUX",
+    "region": "Western Europe",
+    "total_mentions": 1,
+    "by_year": {
+      "1988": [
+        {
+          "text": "It can also be seen as further Government encouragement and support of private sector initiative, which has led to a trading linkage being formed last year between the Stock Exchange of Singapore and the US National Association of Securities Dealers to facilitate the trading of US stocks here, and an agreement between our Stock Exchange and the Luxembourg Stock Exchange to have joint listings for Eurobonds.",
+          "section": "[Mr Deputy Speaker in the Chair]",
+          "terms": [
+            "Luxembourg"
+          ]
+        }
+      ]
+    }
+  },
+  "Kuwait": {
+    "iso": "KWT",
+    "region": "Middle East",
+    "total_mentions": 1,
+    "by_year": {
+      "1991": [
+        {
+          "text": "When Iraq invaded Kuwait in August, one of the immediate effects was a jump in oil prices.",
+          "section": "ECONOMIC OUTLOOK FOR 1991",
+          "terms": [
+            "Kuwait"
+          ]
+        }
+      ]
+    }
+  },
+  "Pakistan": {
+    "iso": "PAK",
+    "region": "South Asia",
+    "total_mentions": 1,
+    "by_year": {
+      "1993": [
+        {
+          "text": "It is involved in mobile phone ventures in Vietnam, India, Sri Lanka and Pakistan.",
+          "section": "STRENGTHENING THE EXTERNAL DIMENSION OF THE SINGAPORE ECONOMY",
+          "terms": [
+            "Pakistan"
+          ]
+        }
+      ]
+    }
+  },
+  "Fiji": {
+    "iso": "FJI",
+    "region": "Oceania",
+    "total_mentions": 1,
+    "by_year": {
+      "1993": [
+        {
+          "text": "(b) Extension of the unilateral tax credit scheme for services income, to include income remitted from Fiji,",
+          "section": "Tax Incentives to Promote an External Economy",
+          "terms": [
+            "Fiji"
+          ]
+        }
+      ]
+    }
+  },
+  "Myanmar": {
+    "iso": "MMR",
+    "region": "Southeast Asia",
+    "total_mentions": 2,
+    "by_year": {
+      "1993": [
+        {
+          "text": "Kampuchea, Laos, Myanmar and Vietnam, and to include other types of services.",
+          "section": "Tax Incentives to Promote an External Economy",
+          "terms": [
+            "Myanmar"
+          ]
+        }
+      ],
+      "2004": [
+        {
+          "text": "To alleviate the shortage of nurses, MOH will continue to recruit nurses from diverse sources, and streamline the recognition of nursing qualifications from thePhilippines,Myanmar,ChinaandIndonesia.",
+          "section": null,
+          "terms": [
+            "Myanmar"
+          ]
+        }
+      ]
+    }
+  },
+  "Uruguay": {
+    "iso": "URY",
+    "region": "South America",
+    "total_mentions": 1,
+    "by_year": {
+      "1994": [
+        {
+          "text": "The successful conclusion of the Uruguay Round of trade talks has given a clear signal that most trading nations are committed to the continued liberalisation of world trade.",
+          "section": "ECONOMIC OUTLOOK FOR 1994",
+          "terms": [
+            "Uruguay"
+          ]
+        }
+      ]
+    }
+  },
+  "Sweden": {
+    "iso": "SWE",
+    "region": "Northern Europe",
+    "total_mentions": 4,
+    "by_year": {
+      "1994": [
+        {
+          "text": "In the developed countries, government expenditures vary from about 30% of GDP as in the case of the United States to over 60% of GDP in Sweden.",
+          "section": "Evolution in the role of the Government",
+          "terms": [
+            "Sweden"
+          ]
+        }
+      ],
+      "1995": [
+        {
+          "text": "We now have the lowest infant mortality rate in the world - 5 per 1,000 live births, as low as Japan and Sweden.",
+          "section": "Combining Economic Growth With Social Progress",
+          "terms": [
+            "Sweden"
+          ]
+        }
+      ],
+      "2007": [
+        {
+          "text": "Other developed nations, including small ones like Switzerland and Sweden, have taken decades to get to where they are.",
+          "section": null,
+          "terms": [
+            "Sweden"
+          ]
+        }
+      ],
+      "2013": [
+        {
+          "text": "Three decades on, our productivity level is about 70% of today's global productivity leaders \u2013 countries like the US, Japan, Switzerland and Sweden.",
+          "section": null,
+          "terms": [
+            "Sweden"
+          ]
+        }
+      ]
+    }
+  },
+  "Mexico": {
+    "iso": "MEX",
+    "region": "North America",
+    "total_mentions": 4,
+    "by_year": {
+      "1995": [
+        {
+          "text": "World capital markets have recently been volatile, due to concerns over US interest rates, the devaluation of the Mexican peso and the earthquake in Kobe.",
+          "section": "ECONOMIC OUTLOOK FOR 1995",
+          "terms": [
+            "Mexican"
+          ]
+        }
+      ],
+      "2001": [
+        {
+          "text": "This year, we aim to conclude FTAs with Australia, Japan, Mexico and the US.",
+          "section": "PART II THE FY2001 BUDGET",
+          "terms": [
+            "Mexico"
+          ]
+        }
+      ],
+      "2003": [
+        {
+          "text": "We are currently negotiating FTAs with Canada and Mexico.",
+          "section": "Moving Ahead",
+          "terms": [
+            "Mexico"
+          ]
+        }
+      ],
+      "2017": [
+        {
+          "text": "Athens, Madrid, Mexico City and Paris have announced plans to ban diesel vehicles from their city centres by 2025.",
+          "section": null,
+          "terms": [
+            "Mexico"
+          ]
+        }
+      ]
+    }
+  },
   "Ireland": {
     "iso": "IRL",
     "region": "Western Europe",
@@ -13880,6 +14489,253 @@
           "terms": [
             "Ireland",
             "Irish"
+          ]
+        }
+      ]
+    }
+  },
+  "Brazil": {
+    "iso": "BRA",
+    "region": "South America",
+    "total_mentions": 4,
+    "by_year": {
+      "1999": [
+        {
+          "text": "Financial markets, especially in the emerging countries, are still fragile and prone to bouts of nervousness, as is evident from the recent episode of the Brazilian Real flotation.",
+          "section": "OUTLOOK FOR 1999",
+          "terms": [
+            "Brazilian"
+          ]
+        },
+        {
+          "text": "Aside from the equity risk, there could also be significant repercussions on the US banking sector and economy if Brazil falls into full-blown recession and drags down the rest of Latin America.",
+          "section": "OUTLOOK FOR 1999",
+          "terms": [
+            "Brazil"
+          ]
+        }
+      ],
+      "2007": [
+        {
+          "text": "OLAM & Chinatex will jointly invest to source soybeans in Brazil.",
+          "section": null,
+          "terms": [
+            "Brazil"
+          ]
+        }
+      ],
+      "2022": [
+        {
+          "text": "Beyond this six-month extension, I will maintain the enhanced 70% risk-share under the Trade Loan for enterprises venturing into more nascent markets like Bangladesh or Brazil.",
+          "section": null,
+          "terms": [
+            "Brazil"
+          ]
+        }
+      ]
+    }
+  },
+  "Argentina": {
+    "iso": "ARG",
+    "region": "South America",
+    "total_mentions": 1,
+    "by_year": {
+      "2000": [
+        {
+          "text": "Argentina, for example, has seen a four-fold increase in its GDP in the last decade as a result of economic reforms.",
+          "section": "Competing In The New Millennium",
+          "terms": [
+            "Argentina"
+          ]
+        }
+      ]
+    }
+  },
+  "Afghanistan": {
+    "iso": "AFG",
+    "region": "South Asia",
+    "total_mentions": 1,
+    "by_year": {
+      "2002": [
+        {
+          "text": "Despite the defeat of the Taleban and Al Qaeda in Afghanistan, global terrorism is still an active force, with numerous cells and networks endemic in many countries, including in our region.",
+          "section": "Offsetting the GST Increase",
+          "terms": [
+            "Afghanistan"
+          ]
+        }
+      ]
+    }
+  },
+  "Venezuela": {
+    "iso": "VEN",
+    "region": "South America",
+    "total_mentions": 1,
+    "by_year": {
+      "2003": [
+        {
+          "text": "The crisis in Venezuela, which has significantly reduced world supplies of oil, makes it more likely that oil prices will stay high.",
+          "section": "Immediate Outlook",
+          "terms": [
+            "Venezuela"
+          ]
+        }
+      ]
+    }
+  },
+  "Chile": {
+    "iso": "CHL",
+    "region": "South America",
+    "total_mentions": 2,
+    "by_year": {
+      "2003": [
+        {
+          "text": "a trilateral FTA with New Zealand and Chile.",
+          "section": "Moving Ahead",
+          "terms": [
+            "Chile"
+          ]
+        }
+      ],
+      "2020": [
+        {
+          "text": "Just last month, we concluded our first Digital Economy Agreement with Chile and New Zealand.",
+          "section": null,
+          "terms": [
+            "Chile"
+          ]
+        }
+      ]
+    }
+  },
+  "Papua New Guinea": {
+    "iso": "PNG",
+    "region": "Oceania",
+    "total_mentions": 1,
+    "by_year": {
+      "2006": [
+        {
+          "text": "I see Prof. Ivan Png nodding his head.",
+          "section": null,
+          "terms": [
+            "Png"
+          ]
+        }
+      ]
+    }
+  },
+  "Panama": {
+    "iso": "PAN",
+    "region": "Central America",
+    "total_mentions": 1,
+    "by_year": {
+      "2006": [
+        {
+          "text": "When the studio opened in October last year, its first batch of 35 animators came from 19 nations, including Panama and Ecuador.",
+          "section": null,
+          "terms": [
+            "Panama"
+          ]
+        }
+      ]
+    }
+  },
+  "Ecuador": {
+    "iso": "ECU",
+    "region": "South America",
+    "total_mentions": 1,
+    "by_year": {
+      "2006": [
+        {
+          "text": "When the studio opened in October last year, its first batch of 35 animators came from 19 nations, including Panama and Ecuador.",
+          "section": null,
+          "terms": [
+            "Ecuador"
+          ]
+        }
+      ]
+    }
+  },
+  "Hungary": {
+    "iso": "HUN",
+    "region": "Eastern Europe",
+    "total_mentions": 3,
+    "by_year": {
+      "2006": [
+        {
+          "text": "Some are even lower - Slovakia and Poland have cut their rates to 19%, and Hungary has reduced its rate to 16%.",
+          "section": null,
+          "terms": [
+            "Hungary"
+          ]
+        }
+      ],
+      "2007": [
+        {
+          "text": "Hungary's is at 16%.",
+          "section": null,
+          "terms": [
+            "Hungary"
+          ]
+        }
+      ],
+      "2015": [
+        {
+          "text": "He went to train under a master shoemaker in Budapest, in Hungary and came back to found his own company.",
+          "section": null,
+          "terms": [
+            "Budapest",
+            "Hungary"
+          ]
+        }
+      ]
+    }
+  },
+  "Slovakia": {
+    "iso": "SVK",
+    "region": "Eastern Europe",
+    "total_mentions": 2,
+    "by_year": {
+      "2006": [
+        {
+          "text": "Some are even lower - Slovakia and Poland have cut their rates to 19%, and Hungary has reduced its rate to 16%.",
+          "section": null,
+          "terms": [
+            "Slovakia"
+          ]
+        }
+      ],
+      "2007": [
+        {
+          "text": "Poland's and Slovak's Republic are at 19%.",
+          "section": null,
+          "terms": [
+            "Slovak"
+          ]
+        }
+      ]
+    }
+  },
+  "Maldives": {
+    "iso": "MDV",
+    "region": "South Asia",
+    "total_mentions": 2,
+    "by_year": {
+      "2006": [
+        {
+          "text": "One and a half generations of male Singaporeans have served NS.",
+          "section": null,
+          "terms": [
+            "male"
+          ]
+        }
+      ],
+      "2019": [
+        {
+          "text": "Other small island nations like the Maldives are already facing the risk of flooding, with severe implications",
+          "section": null,
+          "terms": [
+            "Maldives"
           ]
         }
       ]
@@ -14019,6 +14875,198 @@
           "section": null,
           "terms": [
             "Ukraine"
+          ]
+        }
+      ]
+    }
+  },
+  "Turkey": {
+    "iso": "TUR",
+    "region": "Middle East",
+    "total_mentions": 1,
+    "by_year": {
+      "2007": [
+        {
+          "text": "Food Empire, based in Geylang, owns MacCoffee, which has become immensely popular in Ukraine, Russia, Poland, Bahrain, Iran and Turkey.",
+          "section": null,
+          "terms": [
+            "Turkey"
+          ]
+        }
+      ]
+    }
+  },
+  "Bahrain": {
+    "iso": "BHR",
+    "region": "Middle East",
+    "total_mentions": 1,
+    "by_year": {
+      "2007": [
+        {
+          "text": "Food Empire, based in Geylang, owns MacCoffee, which has become immensely popular in Ukraine, Russia, Poland, Bahrain, Iran and Turkey.",
+          "section": null,
+          "terms": [
+            "Bahrain"
+          ]
+        }
+      ]
+    }
+  },
+  "Qatar": {
+    "iso": "QAT",
+    "region": "Middle East",
+    "total_mentions": 1,
+    "by_year": {
+      "2007": [
+        {
+          "text": "Over 140 schools in Singapore, Australia, Taiwan and Qatar use their products to introduce creative learning in the classroom.",
+          "section": null,
+          "terms": [
+            "Qatar"
+          ]
+        }
+      ]
+    }
+  },
+  "Czech Republic": {
+    "iso": "CZE",
+    "region": "Eastern Europe",
+    "total_mentions": 1,
+    "by_year": {
+      "2007": [
+        {
+          "text": "The emerging Eastern European economies have become serious competitors for global investment - Czech Republic's is at 24%.",
+          "section": null,
+          "terms": [
+            "Czech Republic"
+          ]
+        }
+      ]
+    }
+  },
+  "Latvia": {
+    "iso": "LVA",
+    "region": "Eastern Europe",
+    "total_mentions": 2,
+    "by_year": {
+      "2007": [
+        {
+          "text": "Latvia's and Lithuania's are at 15%.As a broad-based measure to help all companies and to keep Singapore attractive as a business location, I have decided to reduce the corporate tax rate by two percentage points, to 18%, with effect from YA2008.",
+          "section": null,
+          "terms": [
+            "Latvia"
+          ]
+        },
+        {
+          "text": "Latvia's and Lithuania's are at 15%.",
+          "section": null,
+          "terms": [
+            "Latvia"
+          ]
+        }
+      ]
+    }
+  },
+  "Lithuania": {
+    "iso": "LTU",
+    "region": "Eastern Europe",
+    "total_mentions": 2,
+    "by_year": {
+      "2007": [
+        {
+          "text": "Latvia's and Lithuania's are at 15%.As a broad-based measure to help all companies and to keep Singapore attractive as a business location, I have decided to reduce the corporate tax rate by two percentage points, to 18%, with effect from YA2008.",
+          "section": null,
+          "terms": [
+            "Lithuania"
+          ]
+        },
+        {
+          "text": "Latvia's and Lithuania's are at 15%.",
+          "section": null,
+          "terms": [
+            "Lithuania"
+          ]
+        }
+      ]
+    }
+  },
+  "Portugal": {
+    "iso": "PRT",
+    "region": "Southern Europe",
+    "total_mentions": 1,
+    "by_year": {
+      "2009": [
+        {
+          "text": "Spain, Greece, Portugal and Russia have just seen recent downgrades in their credit ratings, while Taiwan has been \"placed on negative outlook\".",
+          "section": null,
+          "terms": [
+            "Portugal"
+          ]
+        }
+      ]
+    }
+  },
+  "Greece": {
+    "iso": "GRC",
+    "region": "Southern Europe",
+    "total_mentions": 3,
+    "by_year": {
+      "2009": [
+        {
+          "text": "Spain, Greece, Portugal and Russia have just seen recent downgrades in their credit ratings, while Taiwan has been \"placed on negative outlook\".",
+          "section": null,
+          "terms": [
+            "Greece"
+          ]
+        }
+      ],
+      "2010": [
+        {
+          "text": "The recent problems over sovereign debt in Greece could be contagious.",
+          "section": null,
+          "terms": [
+            "Greece"
+          ]
+        }
+      ],
+      "2017": [
+        {
+          "text": "Athens, Madrid, Mexico City and Paris have announced plans to ban diesel vehicles from their city centres by 2025.",
+          "section": null,
+          "terms": [
+            "Athens"
+          ]
+        }
+      ]
+    }
+  },
+  "Bangladesh": {
+    "iso": "BGD",
+    "region": "South Asia",
+    "total_mentions": 1,
+    "by_year": {
+      "2022": [
+        {
+          "text": "Beyond this six-month extension, I will maintain the enhanced 70% risk-share under the Trade Loan for enterprises venturing into more nascent markets like Bangladesh or Brazil.",
+          "section": null,
+          "terms": [
+            "Bangladesh"
+          ]
+        }
+      ]
+    }
+  },
+  "Syria": {
+    "iso": "SYR",
+    "region": "Middle East",
+    "total_mentions": 1,
+    "by_year": {
+      "2024": [
+        {
+          "text": "We saw this in the relief efforts following the devastating earthquake in T\u00fcrkiye and Syria last year; and also in the generous donations in response to the human tragedy arising from the Israel-Hamas conflict.",
+          "section": null,
+          "terms": [
+            "Syria"
           ]
         }
       ]

@@ -153,8 +153,13 @@ function renderWorldMap() {
   // Add click handler to scroll to country details
   document.getElementById("worldMap").on("plotly_click", (data) => {
     const iso = data.points[0].location;
-    const countryName = mapData[iso]?.country;
-    if (countryName && countryDetailsData[countryName]) {
+    const countryInfo = mapData[iso];
+    if (!countryInfo) return;
+
+    const countryName = countryInfo.country;
+
+    // Check if country has details
+    if (countryDetailsData[countryName]) {
       // Scroll to and expand that country
       const countryCard = document.querySelector(
         `[data-country="${countryName}"]`,
@@ -165,9 +170,34 @@ function renderWorldMap() {
         if (!countryCard.classList.contains("expanded")) {
           toggleCountryExpansion(countryName);
         }
+        // Highlight briefly
+        countryCard.classList.add("highlight-flash");
+        setTimeout(() => countryCard.classList.remove("highlight-flash"), 2000);
       }
+    } else {
+      // Show a brief notification for countries with data but no detail card visible
+      showMapNotification(
+        `${countryName}: ${countryInfo.total} mention${
+          countryInfo.total > 1 ? "s" : ""
+        } (${countryInfo.region})`,
+      );
     }
   });
+}
+
+// Show a brief notification near the map
+function showMapNotification(message) {
+  // Remove any existing notification
+  const existing = document.querySelector(".map-notification");
+  if (existing) existing.remove();
+
+  const notification = document.createElement("div");
+  notification.className = "map-notification";
+  notification.textContent = message;
+  document.getElementById("worldMap").parentElement.appendChild(notification);
+
+  // Auto-remove after 3 seconds
+  setTimeout(() => notification.remove(), 3000);
 }
 
 // ===================================

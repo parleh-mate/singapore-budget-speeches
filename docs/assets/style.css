@@ -1509,6 +1509,52 @@ tr:hover td {
   box-shadow: var(--shadow-md);
 }
 
+.country-card.highlight-flash {
+  animation: highlight-pulse 2s ease-out;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    box-shadow: 0 0 0 4px rgba(200, 16, 46, 0.5);
+  }
+  100% {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* Map notification for clicked countries */
+.map-notification {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  animation: notification-fade 3s ease-out forwards;
+}
+
+@keyframes notification-fade {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-chart {
+  position: relative;
+}
+
 .country-header {
   display: flex;
   justify-content: space-between;

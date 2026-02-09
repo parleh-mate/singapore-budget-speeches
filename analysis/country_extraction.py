@@ -1302,7 +1302,7 @@ def generate_output_json(results: dict, output_dir: Path):  # type: ignore[type-
     country_details = {}
 
     for country, yearly_data in results["by_country"].items():
-        if results["totals"][country] >= 5:  # Only include countries with 5+ mentions
+        if results["totals"][country] >= 1:  # Include all countries with any mentions
             country_details[country] = {
                 "iso": COUNTRIES[country]["iso"],
                 "region": COUNTRIES[country]["region"],
