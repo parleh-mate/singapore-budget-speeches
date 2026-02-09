@@ -521,12 +521,9 @@ function linearRegression(x, y) {
   };
 }
 
-// Utility: Format minister name (shorter version)
+// Utility: Format minister name (full name)
 function formatMinisterName(name) {
-  return name
-    .replace("Dr ", "")
-    .replace(" Keng Yam", "")
-    .replace(" Tsu Tau", "");
+  return name;
 }
 
 // Utility: Get color by minister
