@@ -292,6 +292,12 @@ a:hover {
   padding: 0 var(--space-lg);
 }
 
+.stat-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .stat-card {
   background: var(--color-bg-card);
   padding: var(--space-xl);
