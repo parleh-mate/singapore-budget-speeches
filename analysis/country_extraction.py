@@ -1202,16 +1202,16 @@ def extract_country_mentions(text: str, patterns: dict) -> dict[str, list[str]]:
 
 
 # Minister periods for year-to-minister mapping
+# Based on speech_links.py - actual years when each minister delivered budget
 MINISTER_PERIODS = {
-    (1959, 1967): "Goh Keng Swee",
-    (1965, 1965): "Lim Kim San",
-    (1966, 1966): "Lim Kim San",
-    (1967, 1970): "Goh Keng Swee",
-    (1971, 1979): "Hon Sui Sen",
-    (1980, 1983): "Goh Chok Tong",
-    (1984, 1984): "Goh Keng Swee",
-    (1985, 1992): "Richard Hu",
-    (1993, 2006): "Lee Hsien Loong",
+    (1960, 1965): "Goh Keng Swee",  # First tenure
+    (1966, 1967): "Lim Kim San",
+    (1968, 1970): "Goh Keng Swee",  # Second tenure
+    (1971, 1978): "Hon Sui Sen",
+    (1979, 1981): "Goh Chok Tong",
+    (1982, 1985): "Dr Tony Tan Keng Yam",
+    (1986, 2001): "Dr Richard Hu Tsu Tau",
+    (2002, 2006): "Lee Hsien Loong",
     (2007, 2015): "Tharman Shanmugaratnam",
     (2016, 2021): "Heng Swee Keat",
     (2022, 2026): "Lawrence Wong",

@@ -8,12 +8,14 @@ let ministerData = null;
 
 // Chronological order of ministers (source of truth from speech_links.py)
 // Portrait images - placeholder for now, to be updated with actual images
+// Note: Goh Keng Swee had two separate tenures (1960-1965 and 1968-1970)
 const ministerOrder = [
   {
     name: "Goh Keng Swee",
     start: 1960,
-    end: 1970,
+    end: 1965,
     era: "founding",
+    tenure: 1,
     image: "https://placehold.co/220x280/0C2340/white?text=GKS",
   },
   {
@@ -22,6 +24,14 @@ const ministerOrder = [
     end: 1967,
     era: "founding",
     image: "https://placehold.co/220x280/0C2340/white?text=LKS",
+  },
+  {
+    name: "Goh Keng Swee",
+    start: 1968,
+    end: 1970,
+    era: "founding",
+    tenure: 2,
+    image: "https://placehold.co/220x280/0C2340/white?text=GKS",
   },
   {
     name: "Hon Sui Sen",
@@ -212,18 +222,25 @@ function renderMetricsSummary() {
 
 // Chart 1: Gantt-style timeline
 function renderTimelineChart() {
-  const ministers = ministerData.ministers;
+  // Use ministerOrder to show accurate timeline with split tenures
+  // Group by unique minister names for y-axis positioning
+  const uniqueMinisterNames = [
+    ...new Set(ministerOrder.map((m) => m.name)),
+  ].reverse();
 
-  // Create Gantt bars
-  const traces = ministers.map((minister, i) => {
-    const info = getMinisterInfo(minister.name);
+  // Create Gantt bars - one for each tenure period
+  const traces = ministerOrder.map((info) => {
+    const ministerStats = ministerData.ministers.find(
+      (m) => m.name === info.name,
+    );
+    const tenureLabel = info.tenure ? ` (${info.tenure})` : "";
     return {
-      x: [info.end - info.start],
-      y: [shortName(minister.name)],
+      x: [info.end - info.start + 1], // +1 to include both start and end year
+      y: [shortName(info.name)],
       type: "bar",
       orientation: "h",
       base: [info.start],
-      name: minister.name,
+      name: info.name + tenureLabel,
       marker: {
         color: eraColors[info.era],
         line: { color: "white", width: 1 },
@@ -231,7 +248,12 @@ function renderTimelineChart() {
       text: [`${info.start}–${info.end}`],
       textposition: "inside",
       textfont: { color: "white", size: 11 },
-      hovertemplate: `<b>${minister.name}</b><br>${info.start}–${info.end}<br>${minister.num_speeches} speeches<extra></extra>`,
+      hovertemplate: `<b>${info.name}</b>${tenureLabel}<br>${info.start}–${
+        info.end
+      }<br>${
+        ministerStats ? ministerStats.num_speeches + " speeches (total)" : ""
+      }<extra></extra>`,
+      showlegend: false,
     };
   });
 
