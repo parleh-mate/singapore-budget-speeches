@@ -14883,7 +14883,7 @@
   "Turkey": {
     "iso": "TUR",
     "region": "Middle East",
-    "total_mentions": 1,
+    "total_mentions": 2,
     "by_year": {
       "2007": [
         {
@@ -14891,6 +14891,15 @@
           "section": null,
           "terms": [
             "Turkey"
+          ]
+        }
+      ],
+      "2024": [
+        {
+          "text": "We saw this in the relief efforts following the devastating earthquake in T\u00fcrkiye and Syria last year; and also in the generous donations in response to the human tragedy arising from the Israel-Hamas conflict.",
+          "section": null,
+          "terms": [
+            "T\u00fcrkiye"
           ]
         }
       ]

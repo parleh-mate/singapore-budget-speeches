@@ -1,5 +1,5 @@
 {
-  "total_mentions": 2163,
+  "total_mentions": 2164,
   "countries_mentioned": 74,
   "by_region": {
     "East Asia": {
@@ -118,12 +118,12 @@
       }
     },
     "Middle East": {
-      "total": 33,
+      "total": 34,
       "countries": {
         "Saudi Arabia": 2,
         "United Arab Emirates": 4,
         "Israel": 8,
-        "Turkey": 1,
+        "Turkey": 2,
         "Iran": 7,
         "Iraq": 7,
         "Kuwait": 1,
@@ -196,8 +196,8 @@
     "Chile": 2,
     "Slovakia": 2,
     "Maldives": 2,
-    "Latvia": 2,
-    "Lithuania": 2
+    "Turkey": 2,
+    "Latvia": 2
   },
   "years": [
     1960,

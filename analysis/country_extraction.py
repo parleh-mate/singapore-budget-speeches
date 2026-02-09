@@ -625,7 +625,7 @@ COUNTRIES = {
     "Turkey": {
         "iso": "TUR",
         "region": "Middle East",
-        "aliases": ["Turkey", "Turkish", "Istanbul", "Ankara"],
+        "aliases": ["Turkey", "Türkiye", "Turkiye", "Turkish", "Istanbul", "Ankara"],
     },
     "Iran": {
         "iso": "IRN",
