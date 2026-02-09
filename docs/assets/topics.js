@@ -62,6 +62,7 @@ async function loadTopicData() {
     renderHeatmap();
     setupTopicSelectors();
     renderTopicTrends();
+    renderEntropyChart();
     renderDecadeComparison();
     renderInsights();
     renderDataTable();
@@ -376,7 +377,142 @@ function renderTopicTrends() {
 }
 
 // ===================================
-// CHART 3: DECADE COMPARISON (Sentence counts)
+// CHART 3: SHANNON ENTROPY (Topic Diversity)
+// ===================================
+function calculateShannonEntropy(distribution) {
+  // Filter out zero values and normalize
+  const values = distribution.filter((v) => v > 0);
+  const total = values.reduce((sum, v) => sum + v, 0);
+  if (total === 0) return 0;
+
+  // Calculate probabilities and entropy
+  const probabilities = values.map((v) => v / total);
+  const entropy = -probabilities.reduce((sum, p) => {
+    return sum + (p > 0 ? p * Math.log2(p) : 0);
+  }, 0);
+
+  return entropy;
+}
+
+function renderEntropyChart() {
+  if (!topicData.by_year) return;
+
+  const years = Object.keys(topicData.by_year).sort();
+
+  // Calculate entropy for each year (excluding "General")
+  const entropyData = years.map((year) => {
+    const yearData = topicData.by_year[year];
+    const values = Object.entries(yearData)
+      .filter(([topic]) => topic !== "General")
+      .map(([, value]) => value);
+    return calculateShannonEntropy(values);
+  });
+
+  // Calculate max possible entropy (log2 of number of topics)
+  const numTopics = Object.keys(topicData.by_year[years[0]]).filter(
+    (t) => t !== "General",
+  ).length;
+  const maxEntropy = Math.log2(numTopics);
+
+  // Calculate decade averages for reference line
+  const decadeAverages = DECADES.map((decade) => {
+    const decadeYears = years.filter(
+      (y) => parseInt(y) >= decade.start && parseInt(y) <= decade.end,
+    );
+    const decadeEntropies = decadeYears.map((y) => {
+      const idx = years.indexOf(y);
+      return entropyData[idx];
+    });
+    return {
+      decade: decade.name,
+      avg: decadeEntropies.reduce((a, b) => a + b, 0) / decadeEntropies.length,
+      midYear: Math.floor((decade.start + decade.end) / 2),
+    };
+  });
+
+  // Main entropy trace
+  const entropyTrace = {
+    x: years,
+    y: entropyData,
+    name: "Topic Diversity (Entropy)",
+    type: "scatter",
+    mode: "lines+markers",
+    line: { color: "#2D3748", width: 2 },
+    marker: { size: 5 },
+    hovertemplate:
+      "<b>%{x}</b><br>Entropy: %{y:.2f}<br>" +
+      `(max possible: ${maxEntropy.toFixed(2)})<extra></extra>`,
+  };
+
+  // 5-year moving average
+  const movingAvg = years.map((_, i) => {
+    const start = Math.max(0, i - 2);
+    const end = Math.min(entropyData.length, i + 3);
+    const window = entropyData.slice(start, end);
+    return window.reduce((a, b) => a + b, 0) / window.length;
+  });
+
+  const movingAvgTrace = {
+    x: years,
+    y: movingAvg,
+    name: "5-Year Moving Average",
+    type: "scatter",
+    mode: "lines",
+    line: { color: "#C8102E", width: 2.5, dash: "solid" },
+    hovertemplate: "<b>%{x}</b><br>5-yr avg: %{y:.2f}<extra></extra>",
+  };
+
+  // Crisis year shapes
+  const shapes = CRISIS_YEARS.map((crisis) => ({
+    type: "line",
+    x0: crisis.year.toString(),
+    x1: crisis.year.toString(),
+    y0: 0,
+    y1: 1,
+    yref: "paper",
+    line: { color: "#E2E8F0", width: 1, dash: "dot" },
+  }));
+
+  const annotations = CRISIS_YEARS.map((crisis) => ({
+    x: crisis.year.toString(),
+    y: 1,
+    yref: "paper",
+    text: crisis.label,
+    showarrow: false,
+    textangle: -90,
+    font: { size: 9, color: "#718096" },
+    xshift: 10,
+  }));
+
+  const layout = {
+    xaxis: {
+      title: "Year",
+      gridcolor: "#E2E8F0",
+      dtick: 5,
+    },
+    yaxis: {
+      title: "Shannon Entropy (bits)",
+      gridcolor: "#E2E8F0",
+      range: [0, maxEntropy * 1.1],
+    },
+    hovermode: "x unified",
+    showlegend: true,
+    legend: { orientation: "h", y: -0.15 },
+    height: 400,
+    margin: { t: 20, b: 80, l: 60, r: 20 },
+    paper_bgcolor: "rgba(0,0,0,0)",
+    plot_bgcolor: "rgba(0,0,0,0)",
+    shapes: shapes,
+    annotations: annotations,
+  };
+
+  Plotly.newPlot("entropyChart", [entropyTrace, movingAvgTrace], layout, {
+    responsive: true,
+  });
+}
+
+// ===================================
+// CHART 4: DECADE COMPARISON (Sentence counts)
 // ===================================
 function renderDecadeComparison() {
   if (!topicData.by_year) return;
