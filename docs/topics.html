@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Policy Evolution by Ministry | SG Budget (1960-2025)</title>
+    <title>Policy Topics | SG Budget (1960-2025)</title>
     <link rel="stylesheet" href="assets/style.css" />
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
   </head>
@@ -14,7 +14,7 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="search.html">Search</a></li>
-          <li><a href="ministries.html" class="active">Ministries</a></li>
+          <li><a href="topics.html" class="active">Topics</a></li>
           <li><a href="ministers.html">Ministers</a></li>
           <li><a href="language.html">Language</a></li>
           <li><a href="about.html">About</a></li>
@@ -32,18 +32,18 @@
 
       <section id="loading" class="loading-state">
         <div class="spinner"></div>
-        <p>Loading ministry statistics...</p>
+        <p>Loading topic statistics...</p>
       </section>
 
       <section id="content" class="content-area" style="display: none">
         <div class="chart-container">
-          <h3>Ministry Coverage Over Time</h3>
-          <div id="ministriesOverTimeChart"></div>
+          <h3>Topic Coverage Over Time</h3>
+          <div id="topicsOverTimeChart"></div>
         </div>
 
         <div class="chart-container">
-          <h3>Top 10 Ministries by Total Coverage</h3>
-          <div id="ministriesByTotalChart"></div>
+          <h3>Top 10 Topics by Total Coverage</h3>
+          <div id="topicsByTotalChart"></div>
         </div>
 
         <div class="insights-section">
@@ -78,6 +78,6 @@
       </div>
     </footer>
 
-    <script src="assets/ministries.js"></script>
+    <script src="assets/topics.js"></script>
   </body>
 </html>
