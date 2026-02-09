@@ -75,16 +75,28 @@ def export_ministries_overview():
         sorted(overview["by_ministry"].items(), key=lambda x: x[1]["total"], reverse=True)
     )
 
-    # Add insights
-    top_ministry = list(overview["by_ministry"].items())[0]
-    overview["insights"] = [
-        {
+    # Add insights (exclude "General" when finding top ministry)
+    top_ministry = next(
+        (item for item in overview["by_ministry"].items() if item[0] != "General"), None
+    )
+    if top_ministry:
+        top_insight = {
             "title": "Most Discussed Ministry",
             "description": (
-                f"{top_ministry[0]} was the most discussed topic, "
+                f"{top_ministry[0]} was the most discussed specific policy area, "
                 f"representing {top_ministry[1]['percentage']}% of all policy discussions."
             ),
-        },
+        }
+    else:
+        top_insight = {
+            "title": "Policy Diversity",
+            "description": (
+                "Budget speeches cover a wide range of policy areas across all ministries."
+            ),
+        }
+
+    overview["insights"] = [
+        top_insight,
         {
             "title": "Policy Evolution",
             "description": (
