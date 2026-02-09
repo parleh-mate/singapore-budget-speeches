@@ -462,6 +462,47 @@ COUNTRIES = {
         "region": "Eastern Europe",
         "aliases": ["Lithuania", "Lithuanian", "Vilnius"],
     },
+    "Kosovo": {
+        "iso": "XKX",
+        "region": "Eastern Europe",
+        "aliases": ["Kosovo", "Kosovar", "Pristina"],
+    },
+    "Bosnia and Herzegovina": {
+        "iso": "BIH",
+        "region": "Eastern Europe",
+        "aliases": ["Bosnia", "Bosnian", "Herzegovina", "Sarajevo"],
+    },
+    "Montenegro": {
+        "iso": "MNE",
+        "region": "Eastern Europe",
+        "aliases": ["Montenegro", "Montenegrin", "Podgorica"],
+    },
+    "North Macedonia": {
+        "iso": "MKD",
+        "region": "Eastern Europe",
+        "aliases": ["North Macedonia", "Macedonia", "Macedonian", "Skopje"],
+    },
+    "Albania": {
+        "iso": "ALB",
+        "region": "Eastern Europe",
+        "aliases": ["Albania", "Albanian", "Tirana"],
+    },
+    # Caucasus
+    "Georgia": {
+        "iso": "GEO",
+        "region": "Eastern Europe",
+        "aliases": ["Georgia", "Georgian", "Tbilisi"],
+    },
+    "Armenia": {
+        "iso": "ARM",
+        "region": "Eastern Europe",
+        "aliases": ["Armenia", "Armenian", "Yerevan"],
+    },
+    "Azerbaijan": {
+        "iso": "AZE",
+        "region": "Eastern Europe",
+        "aliases": ["Azerbaijan", "Azerbaijani", "Baku"],
+    },
     # ===== AMERICAS =====
     # North America
     "United States": {
@@ -765,6 +806,167 @@ COUNTRIES = {
         "region": "Sub-Saharan Africa",
         "aliases": ["Mauritius", "Mauritian", "Port Louis"],
     },
+    "DR Congo": {
+        "iso": "COD",
+        "region": "Sub-Saharan Africa",
+        "aliases": [
+            "Democratic Republic of Congo",
+            "Democratic Republic of the Congo",
+            "Congo-Kinshasa",
+            "Kinshasa",
+            "Zaire",
+        ],
+    },
+    "Republic of Congo": {
+        "iso": "COG",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Republic of Congo", "Congo-Brazzaville", "Brazzaville"],
+    },
+    "Cameroon": {
+        "iso": "CMR",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Cameroon", "Cameroonian", "Yaounde"],
+    },
+    "Madagascar": {
+        "iso": "MDG",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Madagascar", "Malagasy", "Antananarivo"],
+    },
+    "Mali": {
+        "iso": "MLI",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Mali", "Malian", "Bamako"],
+    },
+    "Niger": {
+        "iso": "NER",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Niger", "Nigerien", "Niamey"],
+    },
+    "Burkina Faso": {
+        "iso": "BFA",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Burkina Faso", "Burkinabe", "Ouagadougou"],
+    },
+    "Malawi": {
+        "iso": "MWI",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Malawi", "Malawian", "Lilongwe"],
+    },
+    "Somalia": {
+        "iso": "SOM",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Somalia", "Somali", "Mogadishu"],
+    },
+    "Chad": {
+        "iso": "TCD",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Chad", "Chadian", "N'Djamena"],
+    },
+    "Guinea": {
+        "iso": "GIN",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Guinea", "Guinean", "Conakry"],
+    },
+    "Benin": {
+        "iso": "BEN",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Benin", "Beninese", "Porto-Novo", "Dahomey"],
+    },
+    "Burundi": {
+        "iso": "BDI",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Burundi", "Burundian", "Bujumbura"],
+    },
+    "South Sudan": {
+        "iso": "SSD",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["South Sudan", "South Sudanese", "Juba"],
+    },
+    "Eritrea": {
+        "iso": "ERI",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Eritrea", "Eritrean", "Asmara"],
+    },
+    "Sierra Leone": {
+        "iso": "SLE",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Sierra Leone", "Sierra Leonean", "Freetown"],
+    },
+    "Togo": {
+        "iso": "TGO",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Togo", "Togolese", "Lome"],
+    },
+    "Liberia": {
+        "iso": "LBR",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Liberia", "Liberian", "Monrovia"],
+    },
+    "Central African Republic": {
+        "iso": "CAF",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Central African Republic", "Bangui"],
+    },
+    "Gabon": {
+        "iso": "GAB",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Gabon", "Gabonese", "Libreville"],
+    },
+    "Lesotho": {
+        "iso": "LSO",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Lesotho", "Basotho", "Maseru"],
+    },
+    "Eswatini": {
+        "iso": "SWZ",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Eswatini", "Swaziland", "Swazi", "Mbabane"],
+    },
+    "Djibouti": {
+        "iso": "DJI",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Djibouti", "Djiboutian"],
+    },
+    "Gambia": {
+        "iso": "GMB",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Gambia", "Gambian", "Banjul"],
+    },
+    "Guinea-Bissau": {
+        "iso": "GNB",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Guinea-Bissau", "Bissau"],
+    },
+    "Equatorial Guinea": {
+        "iso": "GNQ",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Equatorial Guinea", "Malabo"],
+    },
+    "Mauritania": {
+        "iso": "MRT",
+        "region": "North Africa",
+        "aliases": ["Mauritania", "Mauritanian", "Nouakchott"],
+    },
+    "Seychelles": {
+        "iso": "SYC",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Seychelles", "Seychellois", "Victoria"],
+    },
+    "Cape Verde": {
+        "iso": "CPV",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Cape Verde", "Cabo Verde", "Praia"],
+    },
+    "Comoros": {
+        "iso": "COM",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Comoros", "Comorian", "Moroni"],
+    },
+    "Sao Tome and Principe": {
+        "iso": "STP",
+        "region": "Sub-Saharan Africa",
+        "aliases": ["Sao Tome", "Principe"],
+    },
 }
 
 # Regional groupings for analysis
@@ -839,6 +1041,16 @@ REGIONS = {
         "Estonia",
         "Latvia",
         "Lithuania",
+        "Kosovo",
+        "Bosnia and Herzegovina",
+        "Montenegro",
+        "North Macedonia",
+        "Albania",
+    ],
+    "Caucasus": [
+        "Georgia",
+        "Armenia",
+        "Azerbaijan",
     ],
     "North America": ["United States", "Canada", "Mexico"],
     "Central America": ["Cuba", "Jamaica", "Panama", "Costa Rica"],
@@ -871,7 +1083,15 @@ REGIONS = {
         "Yemen",
         "Palestine",
     ],
-    "North Africa": ["Egypt", "Morocco", "Algeria", "Tunisia", "Libya", "Sudan"],
+    "North Africa": [
+        "Egypt",
+        "Morocco",
+        "Algeria",
+        "Tunisia",
+        "Libya",
+        "Sudan",
+        "Mauritania",
+    ],
     "Sub-Saharan Africa": [
         "South Africa",
         "Nigeria",
@@ -890,6 +1110,36 @@ REGIONS = {
         "Botswana",
         "Namibia",
         "Mauritius",
+        "DR Congo",
+        "Republic of Congo",
+        "Cameroon",
+        "Madagascar",
+        "Mali",
+        "Niger",
+        "Burkina Faso",
+        "Malawi",
+        "Somalia",
+        "Chad",
+        "Guinea",
+        "Benin",
+        "Burundi",
+        "South Sudan",
+        "Eritrea",
+        "Sierra Leone",
+        "Togo",
+        "Liberia",
+        "Central African Republic",
+        "Gabon",
+        "Lesotho",
+        "Eswatini",
+        "Djibouti",
+        "Gambia",
+        "Guinea-Bissau",
+        "Equatorial Guinea",
+        "Seychelles",
+        "Cape Verde",
+        "Comoros",
+        "Sao Tome and Principe",
     ],
 }
 

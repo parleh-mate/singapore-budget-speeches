@@ -1,6 +1,6 @@
 {
-  "total_mentions": 2821,
-  "countries_mentioned": 73,
+  "total_mentions": 2823,
+  "countries_mentioned": 74,
   "by_region": {
     "East Asia": {
       "total": 570,
@@ -139,10 +139,11 @@
       }
     },
     "Sub-Saharan Africa": {
-      "total": 2,
+      "total": 4,
       "countries": {
         "South Africa": 1,
-        "Kenya": 1
+        "Kenya": 1,
+        "Seychelles": 2
       }
     }
   },
@@ -189,14 +190,14 @@
     "Spain": 3,
     "Hungary": 3,
     "Greece": 3,
+    "Seychelles": 2,
     "Saudi Arabia": 2,
     "Myanmar": 2,
     "Chile": 2,
     "Slovakia": 2,
     "Maldives": 2,
     "Latvia": 2,
-    "Lithuania": 2,
-    "Serbia": 1
+    "Lithuania": 2
   },
   "years": [
     1960,

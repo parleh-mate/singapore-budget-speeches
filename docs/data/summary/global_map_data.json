@@ -64,6 +64,11 @@
     "total": 95,
     "region": "East Asia"
   },
+  "SYC": {
+    "country": "Seychelles",
+    "total": 2,
+    "region": "Sub-Saharan Africa"
+  },
   "AUS": {
     "country": "Australia",
     "total": 37,
