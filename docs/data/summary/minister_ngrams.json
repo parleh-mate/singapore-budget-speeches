@@ -1,0 +1,821 @@
+{
+  "ministers": {
+    "Goh Keng Swee": {
+      "years": "1960-1970",
+      "num_speeches": 9,
+      "phrases": [
+        {
+          "phrase": "economic development",
+          "count": 80,
+          "score": 0.16
+        },
+        {
+          "phrase": "city council",
+          "count": 55,
+          "score": 0.1437
+        },
+        {
+          "phrase": "development board",
+          "count": 71,
+          "score": 0.1386
+        },
+        {
+          "phrase": "common market",
+          "count": 45,
+          "score": 0.0861
+        },
+        {
+          "phrase": "economic development board",
+          "count": 51,
+          "score": 0.0715
+        },
+        {
+          "phrase": "federation of malaya",
+          "count": 37,
+          "score": 0.065
+        },
+        {
+          "phrase": "development estimates",
+          "count": 40,
+          "score": 0.064
+        },
+        {
+          "phrase": "public utilities",
+          "count": 35,
+          "score": 0.0429
+        },
+        {
+          "phrase": "national income",
+          "count": 32,
+          "score": 0.0384
+        },
+        {
+          "phrase": "entrepot trade",
+          "count": 31,
+          "score": 0.036
+        },
+        {
+          "phrase": "economic growth",
+          "count": 37,
+          "score": 0.0342
+        },
+        {
+          "phrase": "development plan",
+          "count": 27,
+          "score": 0.0273
+        },
+        {
+          "phrase": "gross domestic",
+          "count": 29,
+          "score": 0.0252
+        },
+        {
+          "phrase": "budget statement",
+          "count": 30,
+          "score": 0.0247
+        },
+        {
+          "phrase": "industrial growth",
+          "count": 23,
+          "score": 0.0225
+        }
+      ]
+    },
+    "Lim Kim San": {
+      "years": "1966-1967",
+      "num_speeches": 2,
+      "phrases": [
+        {
+          "phrase": "economic development",
+          "count": 18,
+          "score": 0.0354
+        },
+        {
+          "phrase": "statutory authorities",
+          "count": 13,
+          "score": 0.0314
+        },
+        {
+          "phrase": "development board",
+          "count": 14,
+          "score": 0.0236
+        },
+        {
+          "phrase": "co operation",
+          "count": 10,
+          "score": 0.0142
+        },
+        {
+          "phrase": "development estimates",
+          "count": 9,
+          "score": 0.0142
+        },
+        {
+          "phrase": "public sector",
+          "count": 11,
+          "score": 0.0132
+        },
+        {
+          "phrase": "public utilities",
+          "count": 9,
+          "score": 0.0124
+        },
+        {
+          "phrase": "social development",
+          "count": 9,
+          "score": 0.0115
+        },
+        {
+          "phrase": "supplementary estimates",
+          "count": 8,
+          "score": 0.0112
+        },
+        {
+          "phrase": "total expenditure",
+          "count": 9,
+          "score": 0.0106
+        },
+        {
+          "phrase": "finance companies",
+          "count": 8,
+          "score": 0.0105
+        },
+        {
+          "phrase": "utilities board",
+          "count": 8,
+          "score": 0.0098
+        },
+        {
+          "phrase": "external trade",
+          "count": 8,
+          "score": 0.0098
+        },
+        {
+          "phrase": "estimated expenditure",
+          "count": 8,
+          "score": 0.0098
+        },
+        {
+          "phrase": "urban redevelopment",
+          "count": 8,
+          "score": 0.0098
+        }
+      ]
+    },
+    "Hon Sui Sen": {
+      "years": "1971-1978",
+      "num_speeches": 8,
+      "phrases": [
+        {
+          "phrase": "growth rate",
+          "count": 63,
+          "score": 0.1033
+        },
+        {
+          "phrase": "income tax",
+          "count": 57,
+          "score": 0.0846
+        },
+        {
+          "phrase": "industrial training",
+          "count": 43,
+          "score": 0.0722
+        },
+        {
+          "phrase": "gross domestic",
+          "count": 43,
+          "score": 0.0577
+        },
+        {
+          "phrase": "fy 74",
+          "count": 32,
+          "score": 0.0506
+        },
+        {
+          "phrase": "value added",
+          "count": 42,
+          "score": 0.0505
+        },
+        {
+          "phrase": "asian dollar",
+          "count": 34,
+          "score": 0.0481
+        },
+        {
+          "phrase": "balance of payments",
+          "count": 34,
+          "score": 0.0481
+        },
+        {
+          "phrase": "entrepot trade",
+          "count": 33,
+          "score": 0.0425
+        },
+        {
+          "phrase": "domestic trade",
+          "count": 30,
+          "score": 0.0422
+        },
+        {
+          "phrase": "sen mr hon",
+          "count": 26,
+          "score": 0.0334
+        },
+        {
+          "phrase": "budget statement",
+          "count": 34,
+          "score": 0.0331
+        },
+        {
+          "phrase": "capital formation",
+          "count": 29,
+          "score": 0.0328
+        },
+        {
+          "phrase": "economic growth",
+          "count": 35,
+          "score": 0.0319
+        },
+        {
+          "phrase": "dr yeoh",
+          "count": 28,
+          "score": 0.0306
+        }
+      ]
+    },
+    "Goh Chok Tong": {
+      "years": "1979-1981",
+      "num_speeches": 3,
+      "phrases": [
+        {
+          "phrase": "income tax",
+          "count": 49,
+          "score": 0.2116
+        },
+        {
+          "phrase": "budget statement",
+          "count": 23,
+          "score": 0.0513
+        },
+        {
+          "phrase": "tax rates",
+          "count": 23,
+          "score": 0.0466
+        },
+        {
+          "phrase": "fy 1980",
+          "count": 15,
+          "score": 0.0377
+        },
+        {
+          "phrase": "value added",
+          "count": 18,
+          "score": 0.0314
+        },
+        {
+          "phrase": "trade and industry",
+          "count": 16,
+          "score": 0.0248
+        },
+        {
+          "phrase": "personal income",
+          "count": 15,
+          "score": 0.0218
+        },
+        {
+          "phrase": "personal income tax",
+          "count": 15,
+          "score": 0.0218
+        },
+        {
+          "phrase": "fy 1981",
+          "count": 11,
+          "score": 0.0192
+        },
+        {
+          "phrase": "trade development",
+          "count": 11,
+          "score": 0.0171
+        },
+        {
+          "phrase": "1st april",
+          "count": 12,
+          "score": 0.0165
+        },
+        {
+          "phrase": "tax changes",
+          "count": 13,
+          "score": 0.0164
+        },
+        {
+          "phrase": "economic development",
+          "count": 13,
+          "score": 0.0149
+        },
+        {
+          "phrase": "recurrent expenditure",
+          "count": 11,
+          "score": 0.0139
+        },
+        {
+          "phrase": "local manufacturers",
+          "count": 10,
+          "score": 0.0132
+        }
+      ]
+    },
+    "Dr Tony Tan Keng Yam": {
+      "years": "1982-1985",
+      "num_speeches": 4,
+      "phrases": [
+        {
+          "phrase": "income tax",
+          "count": 40,
+          "score": 0.0799
+        },
+        {
+          "phrase": "economic growth",
+          "count": 33,
+          "score": 0.0544
+        },
+        {
+          "phrase": "budget statement",
+          "count": 31,
+          "score": 0.0528
+        },
+        {
+          "phrase": "tax changes",
+          "count": 24,
+          "score": 0.0316
+        },
+        {
+          "phrase": "1st april",
+          "count": 22,
+          "score": 0.0314
+        },
+        {
+          "phrase": "public housing",
+          "count": 23,
+          "score": 0.0291
+        },
+        {
+          "phrase": "development fund",
+          "count": 24,
+          "score": 0.0288
+        },
+        {
+          "phrase": "construction industry",
+          "count": 21,
+          "score": 0.0286
+        },
+        {
+          "phrase": "recurrent expenditure",
+          "count": 21,
+          "score": 0.0286
+        },
+        {
+          "phrase": "fy 83",
+          "count": 17,
+          "score": 0.0274
+        },
+        {
+          "phrase": "local companies",
+          "count": 20,
+          "score": 0.026
+        },
+        {
+          "phrase": "yam dr",
+          "count": 16,
+          "score": 0.0243
+        },
+        {
+          "phrase": "yam dr tony",
+          "count": 16,
+          "score": 0.0243
+        },
+        {
+          "phrase": "united states",
+          "count": 20,
+          "score": 0.024
+        },
+        {
+          "phrase": "private sector",
+          "count": 21,
+          "score": 0.022
+        }
+      ]
+    },
+    "Dr Richard Hu Tsu Tau": {
+      "years": "1986-2001",
+      "num_speeches": 16,
+      "phrases": [
+        {
+          "phrase": "income tax",
+          "count": 131,
+          "score": 0.2215
+        },
+        {
+          "phrase": "tax rate",
+          "count": 111,
+          "score": 0.1908
+        },
+        {
+          "phrase": "tax changes",
+          "count": 108,
+          "score": 0.1656
+        },
+        {
+          "phrase": "economic growth",
+          "count": 100,
+          "score": 0.1291
+        },
+        {
+          "phrase": "take effect",
+          "count": 94,
+          "score": 0.1254
+        },
+        {
+          "phrase": "1st april",
+          "count": 86,
+          "score": 0.1241
+        },
+        {
+          "phrase": "operating expenditure",
+          "count": 78,
+          "score": 0.1178
+        },
+        {
+          "phrase": "development expenditure",
+          "count": 85,
+          "score": 0.1119
+        },
+        {
+          "phrase": "room flats",
+          "count": 74,
+          "score": 0.106
+        },
+        {
+          "phrase": "c charges",
+          "count": 67,
+          "score": 0.1043
+        },
+        {
+          "phrase": "s c charges",
+          "count": 67,
+          "score": 0.1043
+        },
+        {
+          "phrase": "property tax",
+          "count": 88,
+          "score": 0.1
+        },
+        {
+          "phrase": "long term",
+          "count": 80,
+          "score": 0.0826
+        },
+        {
+          "phrase": "tax exemption",
+          "count": 73,
+          "score": 0.0757
+        },
+        {
+          "phrase": "tax rates",
+          "count": 71,
+          "score": 0.0651
+        }
+      ]
+    },
+    "Lee Hsien Loong": {
+      "years": "2002-2006",
+      "num_speeches": 5,
+      "phrases": [
+        {
+          "phrase": "means testing",
+          "count": 168,
+          "score": 0.4146
+        },
+        {
+          "phrase": "start ups",
+          "count": 139,
+          "score": 0.2523
+        },
+        {
+          "phrase": "govern ment",
+          "count": 118,
+          "score": 0.2159
+        },
+        {
+          "phrase": "private sector",
+          "count": 137,
+          "score": 0.1532
+        },
+        {
+          "phrase": "self employed",
+          "count": 119,
+          "score": 0.1502
+        },
+        {
+          "phrase": "top ups",
+          "count": 108,
+          "score": 0.1428
+        },
+        {
+          "phrase": "ya 2005",
+          "count": 91,
+          "score": 0.1284
+        },
+        {
+          "phrase": "july 2004",
+          "count": 88,
+          "score": 0.1201
+        },
+        {
+          "phrase": "income tax",
+          "count": 119,
+          "score": 0.1156
+        },
+        {
+          "phrase": "from1st july",
+          "count": 86,
+          "score": 0.1147
+        },
+        {
+          "phrase": "from1st july 2004",
+          "count": 86,
+          "score": 0.1147
+        },
+        {
+          "phrase": "university education",
+          "count": 86,
+          "score": 0.0905
+        },
+        {
+          "phrase": "public sector",
+          "count": 104,
+          "score": 0.0883
+        },
+        {
+          "phrase": "effect from1st",
+          "count": 72,
+          "score": 0.0804
+        },
+        {
+          "phrase": "singa pore",
+          "count": 72,
+          "score": 0.0762
+        }
+      ]
+    },
+    "Tharman Shanmugaratnam": {
+      "years": "2007-2015",
+      "num_speeches": 9,
+      "phrases": [
+        {
+          "phrase": "lower income",
+          "count": 776,
+          "score": 1.8485
+        },
+        {
+          "phrase": "low income",
+          "count": 616,
+          "score": 1.4825
+        },
+        {
+          "phrase": "income families",
+          "count": 585,
+          "score": 1.4325
+        },
+        {
+          "phrase": "long term",
+          "count": 712,
+          "score": 1.4147
+        },
+        {
+          "phrase": "income tax",
+          "count": 614,
+          "score": 1.052
+        },
+        {
+          "phrase": "middle income",
+          "count": 512,
+          "score": 0.8778
+        },
+        {
+          "phrase": "personal income",
+          "count": 470,
+          "score": 0.6781
+        },
+        {
+          "phrase": "tax rebate",
+          "count": 398,
+          "score": 0.6189
+        },
+        {
+          "phrase": "top up",
+          "count": 393,
+          "score": 0.6034
+        },
+        {
+          "phrase": "resilience package",
+          "count": 335,
+          "score": 0.5324
+        },
+        {
+          "phrase": "top ups",
+          "count": 349,
+          "score": 0.5098
+        },
+        {
+          "phrase": "child development",
+          "count": 293,
+          "score": 0.4073
+        },
+        {
+          "phrase": "jobs credit",
+          "count": 279,
+          "score": 0.391
+        },
+        {
+          "phrase": "tax exemption",
+          "count": 347,
+          "score": 0.3696
+        },
+        {
+          "phrase": "past reserves",
+          "count": 295,
+          "score": 0.3643
+        }
+      ]
+    },
+    "Heng Swee Keat": {
+      "years": "2016-2021",
+      "num_speeches": 6,
+      "phrases": [
+        {
+          "phrase": "covid 19",
+          "count": 79,
+          "score": 0.26
+        },
+        {
+          "phrase": "long term",
+          "count": 78,
+          "score": 0.1408
+        },
+        {
+          "phrase": "climate change",
+          "count": 52,
+          "score": 0.1126
+        },
+        {
+          "phrase": "set aside",
+          "count": 43,
+          "score": 0.0471
+        },
+        {
+          "phrase": "top up",
+          "count": 38,
+          "score": 0.0468
+        },
+        {
+          "phrase": "support package",
+          "count": 32,
+          "score": 0.0403
+        },
+        {
+          "phrase": "gst voucher",
+          "count": 31,
+          "score": 0.0378
+        },
+        {
+          "phrase": "silver support",
+          "count": 30,
+          "score": 0.0354
+        },
+        {
+          "phrase": "carbon tax",
+          "count": 29,
+          "score": 0.035
+        },
+        {
+          "phrase": "industry transformation",
+          "count": 29,
+          "score": 0.0331
+        },
+        {
+          "phrase": "lower income",
+          "count": 32,
+          "score": 0.0261
+        },
+        {
+          "phrase": "set up",
+          "count": 32,
+          "score": 0.0237
+        },
+        {
+          "phrase": "start ups",
+          "count": 25,
+          "score": 0.0231
+        },
+        {
+          "phrase": "merdeka generation",
+          "count": 22,
+          "score": 0.0202
+        },
+        {
+          "phrase": "c 4",
+          "count": 21,
+          "score": 0.0184
+        }
+      ]
+    },
+    "Lawrence Wong": {
+      "years": "2022-2025",
+      "num_speeches": 4,
+      "phrases": [
+        {
+          "phrase": "covid 19",
+          "count": 47,
+          "score": 0.1513
+        },
+        {
+          "phrase": "top up",
+          "count": 46,
+          "score": 0.1127
+        },
+        {
+          "phrase": "lower income",
+          "count": 41,
+          "score": 0.0704
+        },
+        {
+          "phrase": "lower wage workers",
+          "count": 27,
+          "score": 0.0472
+        },
+        {
+          "phrase": "wage workers",
+          "count": 27,
+          "score": 0.0444
+        },
+        {
+          "phrase": "lower wage",
+          "count": 28,
+          "score": 0.0418
+        },
+        {
+          "phrase": "social compact",
+          "count": 25,
+          "score": 0.0381
+        },
+        {
+          "phrase": "income families",
+          "count": 23,
+          "score": 0.0302
+        },
+        {
+          "phrase": "middle income",
+          "count": 24,
+          "score": 0.0263
+        },
+        {
+          "phrase": "set aside",
+          "count": 25,
+          "score": 0.0262
+        },
+        {
+          "phrase": "assurance package",
+          "count": 18,
+          "score": 0.0222
+        },
+        {
+          "phrase": "income households",
+          "count": 18,
+          "score": 0.0185
+        },
+        {
+          "phrase": "property tax",
+          "count": 22,
+          "score": 0.0184
+        },
+        {
+          "phrase": "lower income families",
+          "count": 17,
+          "score": 0.0165
+        },
+        {
+          "phrase": "residential properties",
+          "count": 18,
+          "score": 0.016
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "n_values": [
+      2,
+      3
+    ],
+    "top_k": 15
+  }
+}

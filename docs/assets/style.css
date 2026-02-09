@@ -988,6 +988,88 @@ a:hover {
   margin-bottom: var(--space-lg);
 }
 
+/* Phrases grid for n-grams */
+.phrases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (min-width: 1100px) {
+  .phrases-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .phrases-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.minister-phrases {
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.phrases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.phrases-header h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.phrases-years {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.phrases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.phrase-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.8rem;
+  padding: 4px 0;
+}
+
+.phrase-rank {
+  font-weight: 700;
+  color: var(--color-text-light);
+  min-width: 1.2rem;
+  font-size: 0.7rem;
+}
+
+.phrase-text {
+  flex: 1;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.phrase-count {
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  background: var(--color-bg-alt);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
 .minister-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

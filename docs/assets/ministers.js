@@ -5,6 +5,7 @@
 // ===================================
 
 let ministerData = null;
+let ngramData = null;
 
 // Chronological order of ministers (source of truth from speech_links.py)
 // Portrait images - placeholder for now, to be updated with actual images
@@ -117,8 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // Load minister statistics
 async function loadMinisterData() {
   try {
-    const response = await fetch("data/summary/ministers_overview.json");
-    ministerData = await response.json();
+    const [ministersResponse, ngramsResponse] = await Promise.all([
+      fetch("data/summary/ministers_overview.json"),
+      fetch("data/summary/minister_ngrams.json"),
+    ]);
+
+    ministerData = await ministersResponse.json();
+    ngramData = await ngramsResponse.json();
 
     // Sort ministers chronologically
     ministerData.ministers = sortMinistersChronologically(
@@ -131,6 +137,7 @@ async function loadMinisterData() {
     renderOutputChart();
     renderStyleChart();
     renderTopicsHeatmap();
+    renderPhrasesChart();
     renderMinisterProfiles();
   } catch (error) {
     console.error("Failed to load minister data:", error);
@@ -560,6 +567,56 @@ function renderTopicsHeatmap() {
     responsive: true,
     displayModeBar: false,
   });
+}
+
+// Render distinctive phrases chart
+function renderPhrasesChart() {
+  if (!ngramData || !ngramData.ministers) return;
+
+  const container = document.getElementById("phrasesChart");
+
+  // Get ministers in chronological order
+  const orderedMinisters = ministerOrder
+    .map((m) => m.name)
+    .filter((name, index, arr) => arr.indexOf(name) === index); // Remove duplicates
+
+  // Build HTML for phrase display
+  let html = '<div class="phrases-grid">';
+
+  orderedMinisters.forEach((ministerName) => {
+    const data = ngramData.ministers[ministerName];
+    if (!data || !data.phrases) return;
+
+    const info = getMinisterInfo(ministerName);
+    const topPhrases = data.phrases.slice(0, 8);
+
+    html += `
+      <div class="minister-phrases" style="border-left: 4px solid ${
+        eraColors[info.era]
+      };">
+        <div class="phrases-header">
+          <h4>${shortName(ministerName)}</h4>
+          <span class="phrases-years">${data.years}</span>
+        </div>
+        <div class="phrases-list">
+          ${topPhrases
+            .map(
+              (p, i) => `
+            <div class="phrase-item">
+              <span class="phrase-rank">${i + 1}</span>
+              <span class="phrase-text">${p.phrase}</span>
+              <span class="phrase-count">${p.count}×</span>
+            </div>
+          `,
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  });
+
+  html += "</div>";
+  container.innerHTML = html;
 }
 
 // Render minister profile cards
