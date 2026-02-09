@@ -82,6 +82,39 @@ poetry run python analysis/export_for_web.py
 poetry run python analysis/country_extraction.py
 ```
 
+### 3. Linguistic Features (Advanced NLP)
+
+**Source script:** `analysis/linguistic_features.py`
+
+**Input files:**
+
+- `output_processor/*.parquet` (66 parquet files, one per year)
+
+**Output files:**
+
+- `analysis/linguistic_features.csv` - Raw linguistic metrics per year
+- Data is incorporated into `docs/data/summary/yearly_overview.json` via `export_for_web.py`
+
+**Metrics calculated:**
+
+| Metric | Library | Description |
+|--------|---------|-------------|
+| Type-Token Ratio (TTR) | `lexicalrichness` | Vocabulary diversity (unique words / total words) |
+| MTLD | `lexicalrichness` | Measure of Textual Lexical Diversity (length-independent) |
+| Temporal Orientation | keyword matching | Forward vs backward-looking language ratio |
+| Certainty Index | keyword matching | Confident vs hedging language ratio |
+| Passive Voice Ratio | `spacy` | Proportion of passive voice constructions |
+
+**To regenerate:**
+
+```bash
+# Step 1: Generate linguistic features CSV
+poetry run python analysis/linguistic_features.py
+
+# Step 2: Export to JSON (includes linguistic data in yearly_overview.json)
+poetry run python analysis/export_for_web.py
+```
+
 ---
 
 ## File Descriptions
@@ -112,12 +145,13 @@ poetry run python analysis/country_extraction.py
 
 ## When to Regenerate
 
-| Scenario                          | Action Required                                    |
-| --------------------------------- | -------------------------------------------------- |
-| New budget speech added           | Run both `export_for_web.py` and `country_extraction.py` |
-| Analysis CSVs updated             | Run `export_for_web.py`                            |
-| Country aliases changed           | Run `country_extraction.py`                        |
-| New topic classification rules    | Run `export_for_web.py`                            |
+| Scenario                          | Action Required                                                |
+| --------------------------------- | -------------------------------------------------------------- |
+| New budget speech added           | Run `linguistic_features.py`, `export_for_web.py`, `country_extraction.py` |
+| Analysis CSVs updated             | Run `export_for_web.py`                                        |
+| Country aliases changed           | Run `country_extraction.py`                                    |
+| New topic classification rules    | Run `export_for_web.py`                                        |
+| Linguistic analysis updated       | Run `linguistic_features.py` then `export_for_web.py`          |
 
 ---
 
@@ -131,7 +165,10 @@ When a new budget speech is added (e.g., 2026):
 4. **Regenerate web data:**
 
 ```bash
-# Regenerate topics, ministers, search index
+# Regenerate linguistic features
+poetry run python analysis/linguistic_features.py
+
+# Regenerate topics, ministers, search index (includes linguistic data)
 poetry run python analysis/export_for_web.py
 
 # Regenerate global references

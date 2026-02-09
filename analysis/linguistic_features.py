@@ -9,6 +9,8 @@ Extracts advanced NLP metrics:
 4. Passive Voice Ratio
 """
 
+from __future__ import annotations
+
 import re
 from pathlib import Path
 
@@ -247,7 +249,7 @@ def calculate_passive_voice_ratio(text: str) -> dict:
     }
 
 
-def analyze_speech(year: int) -> dict:
+def analyze_speech(year: int) -> dict | None:
     """Analyze a single speech and return all linguistic metrics."""
     filepath = PROCESSOR_DIR / f"{year}.parquet"
 
@@ -323,7 +325,9 @@ def main():
 
     # Print summary statistics
     print("\n📊 Summary Statistics:")
-    print(f"  Vocabulary Richness (TTR): {df['ttr'].mean():.3f} avg (range: {df['ttr'].min():.3f} - {df['ttr'].max():.3f})")
+    ttr_mean, ttr_min, ttr_max = df["ttr"].mean(), df["ttr"].min(), df["ttr"].max()
+    print(f"  Vocabulary Richness (TTR): {ttr_mean:.3f} avg (range: {ttr_min:.3f} - {ttr_max:.3f})")
+    print()
     print(f"  Temporal Orientation: {df['temporal_ratio'].mean():.2f} avg (0=past, 1=future)")
     print(f"  Certainty Index: {df['certainty_ratio'].mean():.2f} avg (0=hedging, 1=certain)")
     print(f"  Passive Voice Ratio: {df['passive_ratio'].mean():.2f} avg")
