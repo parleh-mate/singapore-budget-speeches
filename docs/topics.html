@@ -37,13 +37,46 @@
 
       <section id="content" class="content-area" style="display: none">
         <div class="chart-container">
-          <h3>Topic Coverage Over Time</h3>
-          <div id="topicsOverTimeChart"></div>
+          <h3>Topic Coverage Heatmap</h3>
+          <p class="chart-description">
+            How much of each year's budget speech was devoted to each topic.
+            Darker colours = more coverage. "General" excluded for clarity.
+          </p>
+          <div class="heatmap-controls">
+            <label for="heatmapViewToggle">View:</label>
+            <select id="heatmapViewToggle">
+              <option value="decade" selected>By Decade (overview)</option>
+              <option value="year">By Year (detailed)</option>
+            </select>
+            <select id="decadeSelect" style="display: none">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+          <div id="topicsHeatmap"></div>
         </div>
 
         <div class="chart-container">
-          <h3>Top 10 Topics by Total Coverage</h3>
-          <div id="topicsByTotalChart"></div>
+          <h3>Topic Trends Over Time</h3>
+          <p class="chart-description">
+            Select topics to compare their coverage trajectories. Major economic
+            crises are marked.
+          </p>
+          <div class="topic-selector">
+            <label>Compare topics:</label>
+            <select id="topicSelect1"></select>
+            <select id="topicSelect2"></select>
+            <select id="topicSelect3"></select>
+          </div>
+          <div id="topicTrendsChart"></div>
+        </div>
+
+        <div class="chart-container">
+          <h3>Topic Coverage by Decade</h3>
+          <p class="chart-description">
+            Total coverage (sum of annual percentages) for each topic across
+            decades. "General" excluded.
+          </p>
+          <div id="decadeComparisonChart"></div>
         </div>
 
         <div class="insights-section">
