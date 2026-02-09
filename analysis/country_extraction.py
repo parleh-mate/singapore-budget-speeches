@@ -522,6 +522,7 @@ COUNTRIES = {
             "U.S.",
             "U.S.A.",
         ],
+        "case_sensitive_aliases": ["US"],  # Must be uppercase to avoid matching 'us'
     },
     "Canada": {
         "iso": "CAN",
@@ -1159,13 +1160,22 @@ def build_search_patterns():
         # Create pattern that matches any alias as whole word
         alias_patterns = []
         for alias in info["aliases"]:
-            # Escape special chars and make case-insensitive
+            # Escape special chars
             escaped = re.escape(alias)
             alias_patterns.append(escaped)
 
-        # Combine into single pattern with word boundaries
+        # Combine into single pattern with word boundaries (case-insensitive)
         combined = r"\b(" + "|".join(alias_patterns) + r")\b"
-        patterns[country] = re.compile(combined, re.IGNORECASE)
+        case_insensitive_pattern = re.compile(combined, re.IGNORECASE)
+
+        # Handle case-sensitive aliases separately (e.g., "US" must be uppercase)
+        case_sensitive_pattern = None
+        if "case_sensitive_aliases" in info:
+            cs_patterns = [re.escape(a) for a in info["case_sensitive_aliases"]]
+            cs_combined = r"\b(" + "|".join(cs_patterns) + r")\b"
+            case_sensitive_pattern = re.compile(cs_combined)  # No IGNORECASE
+
+        patterns[country] = (case_insensitive_pattern, case_sensitive_pattern)
 
     return patterns
 
@@ -1174,8 +1184,15 @@ def extract_country_mentions(text: str, patterns: dict) -> dict[str, list[str]]:
     """Extract all country mentions from text with matched terms."""
     mentions = {}
 
-    for country, pattern in patterns.items():
-        matches = pattern.findall(text)
+    for country, (ci_pattern, cs_pattern) in patterns.items():
+        # Find case-insensitive matches
+        matches = ci_pattern.findall(text)
+
+        # Also find case-sensitive matches if pattern exists
+        if cs_pattern:
+            cs_matches = cs_pattern.findall(text)
+            matches.extend(cs_matches)
+
         if matches:
             # Deduplicate while preserving order
             unique_matches = list(dict.fromkeys(matches))

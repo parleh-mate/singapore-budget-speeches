@@ -1,5 +1,5 @@
 {
-  "total_mentions": 1897,
+  "total_mentions": 2163,
   "countries_mentioned": 74,
   "by_region": {
     "East Asia": {
@@ -93,9 +93,9 @@
       }
     },
     "North America": {
-      "total": 178,
+      "total": 444,
       "countries": {
-        "United States": 166,
+        "United States": 432,
         "Canada": 8,
         "Mexico": 4
       }
@@ -148,12 +148,12 @@
     }
   },
   "country_totals": {
+    "United States": 432,
     "Malaysia": 273,
     "United Kingdom": 209,
     "Japan": 207,
     "Indonesia": 193,
     "China": 174,
-    "United States": 166,
     "Hong Kong": 95,
     "India": 75,
     "Germany": 57,

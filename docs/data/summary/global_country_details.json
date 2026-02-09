@@ -2579,7 +2579,7 @@
   "United States": {
     "iso": "USA",
     "region": "North America",
-    "total_mentions": 166,
+    "total_mentions": 432,
     "by_year": {
       "1960": [
         {
@@ -2837,6 +2837,13 @@
           ]
         },
         {
+          "text": "Total resources are now estimated at about US$400 million, and this despite declining interest rates consequent upon the fall in interest rates in international financial centres during the last few months of the year.",
+          "section": "Review of the Singapore Economy",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "When the market was first established, most of its funds were being reinvested in Euro dollars and U.S, dollars in London, European financial centres and the United States.",
           "section": "Review of the Singapore Economy",
           "terms": [
@@ -2856,6 +2863,13 @@
           "terms": [
             "United States",
             "American"
+          ]
+        },
+        {
+          "text": "This should be in the region of US$4,000 million by 1975, at one per cent of US$400,000 million in GNP double that of her 1970 GNP of US$200,000 million.",
+          "section": "Future Prospects",
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -2889,10 +2903,31 @@
           ]
         },
         {
+          "text": "Sterling reserves are guaranteed by Britain against a devaluation of the British Pound by more than 1 per cent from its old parity of US$2.40 to 1.",
+          "section": "Survey of International Economic Events",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Sterling having a parity or central rate-of US$2.6057 to the Pound and a wider margin of 2\u00bc per cent on either side of parity, which clearly renders the Sterling Guarantee Agreement inapplicable without major amendment.",
+          "section": "Survey of International Economic Events",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "By these, I mean Japan, Australia, the United States, and the richer European countries.",
           "section": "(a) Tourism",
           "terms": [
             "United States"
+          ]
+        },
+        {
+          "text": "Total liabilities of the Asian Currency Units by the end of 1971 aggregated to nearly US$1 billion as compared to US$400 million at the end of the previous year - an increase of l\u00ab times.",
+          "section": "(c) Banking and Insurance",
+          "terms": [
+            "US"
           ]
         },
         {
@@ -2919,6 +2954,48 @@
           ]
         },
         {
+          "text": "However, in the new year when it finally became known that the US trade and payments deficits for 1972 were larger than had been previously expected and might not greatly improve in 1973, the situation again suddenly deteriorated.",
+          "section": "Survey of the Economic Scene",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In recent weeks, the splitting of the Lira and the floating of the Swiss Franc were the first signs that the US Dollar would come once again under severe pressure.",
+          "section": "Survey of the Economic Scene",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "With the floating of the Pound Sterling in June last year and restrictions on capital movements within the Sterling area, Singapore decided to change its intervention currency from Sterling to the US Dollar.",
+          "section": "Survey of the Economic Scene",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "A new phase of development occurred in December 1971 when the Development Bank of Singapore Limited (DBS) floated a 10-year Asian Dollar Bond for US$10 million.",
+          "section": "Banking and insurance",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "This was followed by an Asian Dollar loan of US$27.5 million to the Brunei LNG Company Limited.",
+          "section": "Banking and insurance",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In October, the Singapore Government itself floated a 15-year US$20 million Asian Dollar Bond.",
+          "section": "Banking and insurance",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "A forecast made by the Organisation for Economic Co-operation and Development (OECD) indicated that Japan should lead the group of industrialised countries with a real growth rate for 1973 of nearly 11 per cent, followed by the United States with 6.25 per cent, France and Canada 6 per cent, Germany 5.2 per cent, and Italy and the United Kingdom 5 per cent.",
           "section": "Trade",
           "terms": [
@@ -2929,7 +3006,8 @@
           "text": "The devaluation of the US Dollar resulted in an appreciable increase in trade between Singapore and the USA.",
           "section": "Trade",
           "terms": [
-            "USA"
+            "USA",
+            "US"
           ]
         },
         {
@@ -2951,6 +3029,13 @@
           ]
         },
         {
+          "text": "The unilateral increase of 70 per cent in posted prices by the Gulf States in October 1973 was followed by further increases in December 1973, bringing the posted prices to US$11.60 per barrel, a four-fold increase compared to the pre-October prices.",
+          "section": "\"Oil Crisis\"",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "The GNP deflator (a commonly used indicator of the inflation rate) rose in the United States by 7.1 per cent in 1973 (against 3.3 per cent in 1972), Japan 10.5 per cent (4.8 per cent), West Germany 6.2 per cent (6.1 per cent) and the industrial countries as a whole 6.9 per cent (4.7 per cent).",
           "section": "Worldwide inflation",
           "terms": [
@@ -2965,50 +3050,56 @@
           ]
         },
         {
+          "text": "value in US Dollars, the growth of international trade was even more remarkable with an increase of over 37 per cent or more than twice the rate of the previous year.",
+          "section": "International Trade",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The increase reflects the depreciation of the US Dollar for the larger part of the year as well as the high rate of inflation.",
+          "section": "International Trade",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Following the devaluation of the US Dollar in February for the second time in 14 months and the floating of major currencies of the world, the US Dollar continued to weaken for some months after its devaluation and only strengthened towards the closing months of the year.",
+          "section": "International Monetary Situation",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "These developments had their repercussions on Singapore, for the earlier weakness of the US Dollar led to a large speculative capital inflow, with inflationary effects caused by domestic over-liquidity.",
+          "section": "International Monetary Situation",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The US Dollar staged a dramatic recovery towards the end of 1973 as her balance of trade improved and as her own large domestic energy sources gave rise to a general expectation that the US would be relatively less badly hit by the oil crisis than other industrial countries.",
+          "section": "International Monetary Situation",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "Our next three largest trading partners in order of importance continued to be the United States, Japan and the United Kingdom.",
           "section": "External Trade",
           "terms": [
             "United States"
           ]
-        },
-        {
-          "text": "According to the OECD estimates, made in December, 1973, the forecast of growth has been scaled down in the United States to only 2 per cent in 1974 (from 6 per cent in 1973), in Japan to 8 per cent (from 11 per cent), and in West Germany to 3 per cent (from 6 per cent).",
-          "section": "External Factors: The Oil Crisis",
-          "terms": [
-            "United States"
-          ]
-        },
-        {
-          "text": "Even large countries, like the USA which is less dependent upon imports and which has adopted the system of price controls, have had only modest and temporary success in curbing inflation.",
-          "section": "Singapore's Economic Situation",
-          "terms": [
-            "USA"
-          ]
-        },
-        {
-          "text": "And in deciding policy we have to take note of the economic recession widely forecasted in America and the industrial centres in the latter part of the year.",
-          "section": "Fiscal and Monetary Policies",
-          "terms": [
-            "America"
-          ]
-        },
-        {
-          "text": "Moreover, when compared to the developed countries to which a major portion of our exports are destined, that is the United States of America, the United Kingdom, Japan and West Germany, workers in Singapore obtained much lower wages, compared to workers of the United States of America who draw six times as much, of the United Kingdom 3.6 times, of Japan 3.1 times and of West Germany 3.7 times.",
-          "section": "Employment, Productivity and Wages",
-          "terms": [
-            "United States",
-            "America"
-          ]
-        },
-        {
-          "text": "The principle of the more you can earn, the more you must pay for the poor, when carried too far has led, in many countries like Britain, to professionals migrating to North America, Australia and New Zealand.",
-          "section": "(4) Income Tax on Annuity Instalments",
-          "terms": [
-            "America"
-          ]
         }
       ],
       "1975": [
+        {
+          "text": "The relatively slower growth of tourists from Australia, US and UK in 1974 was corn-pen sated by the high growth of tourists from ASEAN countries.",
+          "section": "Diversification of Economic Activities",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "However, our economic structure, strengthened by the diversification of our industries and services, should be able to withstand, as in the past year, the impact of some further recession provided the American and Western world economy does pick up by the first half of 1976 at the latest.",
           "section": "Prospects for Singapore",
@@ -3049,6 +3140,13 @@
       ],
       "1977": [
         {
+          "text": "The Asian Dollar Market is now serviced by 69 Asian Currency Units and has expanded from US$2,980 million of deposits in 1972 to the present US$17,350 million.",
+          "section": "Economic Strategy Programme",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "While we can only sometimes offset adverse external developments, we must continue to press on with our promotion efforts in the United States, Japan and Western Europe.",
           "section": "Industrial Development",
           "terms": [
@@ -3060,6 +3158,13 @@
           "section": "Trade Development",
           "terms": [
             "United States"
+          ]
+        },
+        {
+          "text": "(3) To further develop Singapore as a financial centre and its Asian Dollar Market from its present gross size of US$17.3 billion, the tax on income derived from Asian Dollar Market operations will be streamlined.",
+          "section": "Tax Concessions",
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -3075,14 +3180,23 @@
           "text": "President Carter's proposal to end tax deferral for US companies abroad if approved by the American Congress is likely to seriously reduce future US investments in Singapore.",
           "section": "Problems and Outlook for the next 2 - 3 Years",
           "terms": [
-            "American"
+            "American",
+            "US"
+          ]
+        },
+        {
+          "text": "We feel that tax deferral - of incomes eamed abroad until they are returned as dividends to the US - should be preserved.",
+          "section": "Problems and Outlook for the next 2 - 3 Years",
+          "terms": [
+            "US"
           ]
         },
         {
           "text": "US investments overseas help US companies to maintain their competitiveness in world markets and do not replace US investments or US jobs in the United States.",
           "section": "Problems and Outlook for the next 2 - 3 Years",
           "terms": [
-            "United States"
+            "United States",
+            "US"
           ]
         },
         {
@@ -3094,6 +3208,13 @@
           ]
         },
         {
+          "text": "If it will be helpful, the Singapore Government will continue to make representations for retaining tax deferral either in its present form, or alternatively, since this has been indicated as more acceptable to the US Administration, in the context of a bilateral treaty.",
+          "section": "Problems and Outlook for the next 2 - 3 Years",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "With less uncertainties, Japan, which is currently the second largest investor after the United States in Singapore is likely to be a more promising source of investment in the next few years.",
           "section": "Problems and Outlook for the next 2 - 3 Years",
           "terms": [
@@ -3101,10 +3222,24 @@
           ]
         },
         {
-          "text": "The turbulence of the exchange rate of the US Dollar and the poor performance of the New York Stock Exchange are but some of the symptoms of the chronic problems of inflation and unemployment, leading to strong sentiments for trade restrictions and controls in most industrialised countries.",
-          "section": "Conclusion",
+          "text": "Whilst the US continues to be the largest source of investment commitments through expansion of existing industries, Japan for the first time became the largest source of new projects.",
+          "section": "Industrial Development",
           "terms": [
-            "New York"
+            "US"
+          ]
+        },
+        {
+          "text": "The US dollar negotiable certificate of deposit was introduced to add greater depth to the Asian Dollar Market.",
+          "section": "Services Development",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In regard to the ASEAN industrial projects, there has been some progress since Japan indicated her willingness to extend financial assistance totalling US$l billion for these projects.",
+          "section": "Development of ASEAN Economic Cooperation",
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -3147,6 +3282,13 @@
           ]
         },
         {
+          "text": "While the US economy is expected to decline by 1 1/4% in 1980, West Germany and Japan are forecast to grow by 2 1/4% and 4 3/4%, respectively.",
+          "section": "Problems and Prospects",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "Our major investors continued to be Japan and the United States.",
           "section": "Industrial Development",
           "terms": [
@@ -3158,6 +3300,13 @@
           "section": "Trade Development",
           "terms": [
             "USA"
+          ]
+        },
+        {
+          "text": "In 1979, the ASEAN Economic Ministers decided again to accelerate the pace of trade liberalisation by adding 600 products per country per year, each with a trade value greater than US$50,000.",
+          "section": "ASEAN Economic Cooperation",
+          "terms": [
+            "US"
           ]
         },
         {
@@ -3235,6 +3384,20 @@
           ]
         },
         {
+          "text": "Also the ceiling for items given across the board tariff concession of 20-25% was raised from US$50,000 to US$500,000.",
+          "section": "Trade Development",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "To increase the spectrum of services provided, new services such as a financial futures market and a US Dollar Clearing System will be investigated.",
+          "section": "Financial Services",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "In the last few years, the technology for automation and robotization has made great strides and robots are increasingly being used in manufacturing industries in Japan and the United States.",
           "section": "Manpower Development",
           "terms": [
@@ -3247,23 +3410,23 @@
           "terms": [
             "United States"
           ]
-        },
-        {
-          "text": "The largest of the world economies, the United States, is in a recession.",
-          "section": "Concluding Remarks on Economic Policy",
-          "terms": [
-            "United States"
-          ]
-        },
-        {
-          "text": "Growifig trade friction between Japan and the other OECD countries have led to strident demands in the United States for legislation to unilaterally impose \"trade reciprocity\", a concept which'threatens the very foundation of the world's free trade system.",
-          "section": "Concluding Remarks on Economic Policy",
-          "terms": [
-            "United States"
-          ]
         }
       ],
       "1983": [
+        {
+          "text": "The hopes of many finance ministers, bankers and economists were dashed when the US economy did not recover and consequently failed to pull the world out of the recession.",
+          "section": "The Economy in 1982",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Instead, the US economy contracted by 1.8%.",
+          "section": "The Economy in 1982",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "In the United States, the number of people who",
           "section": "The Economy in 1982",
@@ -3272,10 +3435,38 @@
           ]
         },
         {
+          "text": "Their international debts now exceed US$600 billion.",
+          "section": "The Economy in 1982",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "A CAD/CAM training unit has been established in conjunction with a leading US company in this field while an industrial robotics training unit will soon be established in cooperation with a European robot manufacturer.",
+          "section": "Industrial Development",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Companies that are presently engaged in automating their existing plants in the US, Europe and Japan will have insufficient resources to undertake new investments overseas.",
+          "section": "Prospects Ahead",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "The United States, the European Community, Japan and Carlada have tightened up the rules of their Generalised System of Preferences (GSP) to selectively restrict the more competitive countries, including Singapore.",
           "section": "Trade Development Board",
           "terms": [
             "United States"
+          ]
+        },
+        {
+          "text": "Our exports of refrigerator compressors for instance have been removed from the US GSP Scheme.",
+          "section": "Trade Development Board",
+          "terms": [
+            "US"
           ]
         },
         {
@@ -3290,20 +3481,6 @@
           "section": "Trade Development Board",
           "terms": [
             "America"
-          ]
-        },
-        {
-          "text": "The establishment of these three institutes in partnership with expertise from the United States, Japan and England will facilitate technology transfer from leading international companies to local professionals.",
-          "section": "Computerization",
-          "terms": [
-            "United States"
-          ]
-        },
-        {
-          "text": "The United States remains the beacon of hope for the world as the will to compete in new areas of technology still appears to be strong in that country.",
-          "section": "Concluding Remarks on Economic Policy",
-          "terms": [
-            "United States"
           ]
         }
       ],
@@ -3323,10 +3500,52 @@
           ]
         },
         {
+          "text": "Our exports of office machine components for example now face higher duties for entry into the US.",
+          "section": "TRADE DEVELOPMENT",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "i As it turned out, the Singapore dollar actually firmed against the currencies of our major trading partners and, in particular, was remarkably steady vis-a-vis the US dollar.",
+          "section": "MONETARY AND EXCHANGE RATE POLICIES",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "A US-led world economic recovery should increase opportunities for investments, especially in the Asia-Pacific region where Singapore is well placed to play an intermediary role.",
+          "section": "FINANCIAL SERVICES",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The latest was the listing in the Stock Exchange of Singapore of securities guaranteed by the US Government National Mortgage Association under its Mortgage-backed Securities Scheme.",
+          "section": "FINANCIAL SERVICES",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "The Board will intensify its promotional activities in the United States, Europe and the Asia-Pacific region.",
           "section": "TOURISM",
           "terms": [
             "United States"
+          ]
+        },
+        {
+          "text": "The US economy showed no signs of recovery.",
+          "section": "CONCLUDING REMARKS",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The unexpected strong turnaround of the US economy in 1983, brought about by a surge in consumer spending, has given the world a respite.",
+          "section": "CONCLUDING REMARKS",
+          "terms": [
+            "US"
           ]
         },
         {
@@ -3346,23 +3565,86 @@
           ]
         },
         {
+          "text": "Nevertheless the vast overhang of the developing countries' international debt amounting to some US$900 billion as at",
+          "section": "External Constraints on Growth",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "A further complication in recent years has been the very large budget deficit of the United States which has caused vast amounts of capital to be drawn into the United States from the rest of the world, forcing up interest rates and giving rise to currency instability.",
           "section": "External Constraints on Growth",
           "terms": [
             "United States"
           ]
+        },
+        {
+          "text": "The US budget deficit has reached limits which would have been thought to be inconceivable even as short as five years ago.",
+          "section": "External Constraints on Growth",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Everyone recognizes the dangers of a sudden loss of confidence in the US dollar at some date in the future but unhappily no economist or monetary expert has been able to come up with a convincing plan to get the world out of this quandary.",
+          "section": "External Constraints on Growth",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "1986": [
+        {
+          "text": "How we fare will depend on the world economy in general and the US economy in particular.",
+          "section": "I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The recent fall in world oil prices will hopefully quicken the upturn in activities expected for the US and other industrial economies.",
+          "section": "I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "The TDB will also help disseminate information to traders so as to assist them in penetrating non-traditional markets such as Latin America, Africa and South Asia.",
           "section": "Trade Development",
           "terms": [
             "America"
           ]
+        },
+        {
+          "text": "Despite our progress in education, our workforce is still less educated than those in the US, Japan and even Taiwan.",
+          "section": "Manpower Development",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Presently, only 5% of our total workforce have tertiary education compared to 19% in the US and Japan and 6% in Taiwan.",
+          "section": "Manpower Development",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "At the bottom end, about 53% or more than half our workforce have no education or at most primary level education compared with 15% in the US, 35% in Japan and 45% in Taiwan.",
+          "section": "Manpower Development",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "1987": [
+        {
+          "text": "MNCs seeking investment locations are evaluating us against countries such as Britain, Spain and even some states in the US.",
+          "section": "LONG-TERM TRANSFORMATION OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "Apart from resisting attempts to deny us market access, TDB will step up its efforts to promote Singapore's exports, particularly of new products and to new markets such as Latin America, India and China.",
           "section": "LONG-TERM TRANSFORMATION OF THE ECONOMY",
@@ -3373,14 +3655,63 @@
       ],
       "1988": [
         {
+          "text": "At the beginning of this year, we forecast a growth of between 5 and 6% for 1988 with the caveat that much will depend on how the major economies, particularly the US, react to the October stock market crash.",
+          "section": "[Mr Deputy Speaker in the Chair]",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The US index of leading indicators, which has been shown to precede activity in our own manufacturing sector by six to nine months, has been on a downward trend.",
+          "section": "[Mr Deputy Speaker in the Chair]",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "As the US continues to be saddled with massive budget and trade deficits, the tide of protectionism is likely to swell.",
+          "section": "[Mr Deputy Speaker in the Chair]",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Recently, despite persistent protests, the US Government has announced its intention to remove Singapore from the GSP programme with effect from January 1989.",
+          "section": "[Mr Deputy Speaker in the Chair]",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "This will put Singapore more in line with other major financial centres like New York, which does not levy any stamp duty on stocks or share transactions, and Hong Kong, which does not impose contract note duty on transactions in foreign stocks or shares.",
           "section": "[Mr Deputy Speaker in the Chair]",
           "terms": [
             "New York"
           ]
+        },
+        {
+          "text": "It can also be seen as further Government encouragement and support of private sector initiative, which has led to a trading linkage being formed last year between the Stock Exchange of Singapore and the US National Association of Securities Dealers to facilitate the trading of US stocks here, and an agreement between our Stock Exchange and the Luxembourg Stock Exchange to have joint listings for Eurobonds.",
+          "section": "[Mr Deputy Speaker in the Chair]",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "1989": [
+        {
+          "text": "The US index of leading indicators which had been shown to precede",
+          "section": "ECONOMIC PERFORMANCE IN 1988",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "As it turned out, however, expectations of a post-crash recession dissipated as the US economy continued on its longest post-war expansion into the sixth consecutive year.",
+          "section": "ECONOMIC PERFORMANCE IN 1988",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "These transactions have gained importance in major financial centres such as London and New York.",
           "section": "Withholding Tax Exemption on Swap Transactions",
@@ -3405,6 +3736,13 @@
           ]
         },
         {
+          "text": "For example, Tradenet has linked up with the US-based Infonet, an international electronic data interchange service and product company, to exchange formatted trade documents which will speed up processing.",
+          "section": "International Linkages",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "The majority view of economists is that a recession is not imminent in the United States.",
           "section": "OUTLOOK FOR 1990",
           "terms": [
@@ -3421,6 +3759,48 @@
       ],
       "1991": [
         {
+          "text": "The slowdown of the major economies was confirmed by the fourth quarter results of the US which recorded its largest negative growth of 2.1% since the 1982 recession.",
+          "section": "ECONOMIC OUTLOOK FOR 1991",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The recession in the US is expected to be short and mild.",
+          "section": "ECONOMIC OUTLOOK FOR 1991",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "I was told that when the Iraqi Foreign Minister Tariq Aziz and US Secretary of State James Baker met in Geneva just before the war, dealers in financial markets started to trade as soon as they saw live TV pictures of the two emerging from their talks.",
+          "section": "THE GLOBAL VILLAGE",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Then of course we have ASEAN and arrangements that spring from ASEAN, eg, the ASEAN-US",
+          "section": "Building External Linkages",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Initiative which links the six members of ASEAN with the US.",
+          "section": "Building External Linkages",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "So although we will undoubtedly be affected by the current US recession, the impact will be buffered considerably by the overall buoyancy of the region.",
+          "section": "Building External Linkages",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "The United States is now in a recession.",
           "section": "FISCAL POLICY OBJECTIVES",
           "terms": [
@@ -3429,6 +3809,48 @@
         }
       ],
       "1992": [
+        {
+          "text": "Total assets of the Asian Dollar Market contracted by 8.4% in 1991, while the average daily volume of foreign exchange transactions declined by 5.8% from US$79 billion in 1990 to US$75 billion in 1991.",
+          "section": "ECONOMIC PERFORMANCE IN 1991",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The general slowdown in the volume of financial activity was in line with the consolidation of international banks, especially those of Japan and the US, to meet the Bank for International Settlements' capital adequacy requirements.",
+          "section": "ECONOMIC PERFORMANCE IN 1991",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "MTI's assessment is that the slow recovery of the US economy, and the economic problems in Europe and Japan, will dampen our prospects.",
+          "section": "ECONOMIC OUTLOOK FOR 1992",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "However, our GDP is now at a higher base of US$10,000 per-capita, and we have reached full employment.",
+          "section": "MEDIUM TERM SUSTAINABLE GROWTH",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Its per capita GDP was around US$10,000 in the late 1970s and early 1980s.",
+          "section": "MEDIUM TERM SUSTAINABLE GROWTH",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Second, as the US economy has grown less dominant, the global economy has changed to a more distributed structure in which Japan plays an increasingly important role.",
+          "section": "Enhancing International Linkages",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "The formation of new institutional arrangements, like the Single European Market or SEM and the North American Free Trade Area or NAFTA, has implications for Singapore.",
           "section": "Enhancing International Linkages",
@@ -3451,17 +3873,82 @@
           ]
         },
         {
-          "text": "It has been estimated that every American man, woman and child owes the rest of the world US$1,700, much more than the average Singaporean household earns in a month.",
-          "section": "FISCAL PRUDENCE",
+          "text": "For example, Japanese car-makers have set up plants in the US and the EC to assure themselves of continued access to these markets.",
+          "section": "Enhancing International Linkages",
           "terms": [
-            "American"
+            "US"
+          ]
+        }
+      ],
+      "1993": [
+        {
+          "text": "This decline and the continued weakness of the US economy raised fears of a recession in Singapore in 1991.",
+          "section": "ECONOMIC PERFORMANCE IN 1992",
+          "terms": [
+            "US"
           ]
         },
         {
-          "text": "We also do not know if the Single European Community and the North American Free Trade Area will eventually affect world trade.",
-          "section": "CONCLUSION",
+          "text": "The pessimistic outlook gained further support when the US economy only managed a weak recovery and the manufacturing sector recorded negative growth in the first quarter of 1992, the first time since the recession of 1985.",
+          "section": "ECONOMIC PERFORMANCE IN 1992",
           "terms": [
-            "American"
+            "US"
+          ]
+        },
+        {
+          "text": "The OECD and IMF expect the US economy to grow by 2.4% to 3% in 1993.",
+          "section": "OUTLOOK FOR 1993",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "China and India both have official per capita GNP of less than US$400, but they have pockets of an emerging middle class in urban areas.",
+          "section": "STRENGTHENING THE EXTERNAL DIMENSION OF THE SINGAPORE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "It is reckoned that at least 5 Chinese cities - Shenzhen, Guangzhou, Shanghai, Beijing and Tianjin - have per capita incomes above US$1,000.",
+          "section": "STRENGTHENING THE EXTERNAL DIMENSION OF THE SINGAPORE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "For example, STI, the international arm of Singapore Telecom, has invested US$150 million in 11 countries.",
+          "section": "STRENGTHENING THE EXTERNAL DIMENSION OF THE SINGAPORE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "marginal tax rates were as high as 75% in the UK, 70% in the US and 50% in New Zealand.",
+          "section": "STRENGTHENING THE EXTERNAL DIMENSION OF THE SINGAPORE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the US, employer-provided medical benefits enjoy unlimited tax exemption.",
+          "section": "Cap on Deduction for Medical Expenses",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "According to a recent report on the US automobile industry, the cost of steel per US-made car is less than the cost of medical benefits per car.",
+          "section": "Cap on Deduction for Medical Expenses",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Many experts who have studied the problem of high medical costs in the US have concluded that this tax exemption is a major cause of the high costs, and that any serious attempt to contain health costs must include setting a cap on tax-free medical benefits.",
+          "section": "Cap on Deduction for Medical Expenses",
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -3481,6 +3968,13 @@
           ]
         },
         {
+          "text": "But it was also fortuitous that a generally benign world economic environment, with strong US leadership and a liberalising trade regime, gave developing countries like Singapore a chance to grow out of poverty.",
+          "section": "Preparing for the future",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "In the developed countries, about 75% of the workforce in Japan and Switzerland have at least a post-secondary education, and 87% in the USA.",
           "section": "Preparing for the future",
           "terms": [
@@ -3493,18 +3987,104 @@
           "terms": [
             "United States"
           ]
+        },
+        {
+          "text": "The US economic expansion will remain strong.",
+          "section": "CONCLUSION",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "1995": [
+        {
+          "text": "World capital markets have recently been volatile, due to concerns over US interest rates, the devaluation of the Mexican peso and the earthquake in Kobe.",
+          "section": "ECONOMIC OUTLOOK FOR 1995",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the US and the UK, wage differentials between those with higher education and those without have widened in the last 10-15 years.",
+          "section": "Challenges for the Future",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "The restructuring of the American corporate sector in recent years was accompanied by \"de-layering\" of corporate hierarchies and the loss of many middle management jobs.",
           "section": "Preparing Singaporeans for challenges of the global economy",
           "terms": [
             "American"
           ]
+        },
+        {
+          "text": "The rise of a new class of \"temporary professionals\" in the US is a sign that even professionals are not immune to fundamental changes in the global labour market.",
+          "section": "Preparing Singaporeans for challenges of the global economy",
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "1996": [
+        {
+          "text": "The Relative Unit Labour Cost Index in US$ against the NIEs grew by 9.1%.",
+          "section": "ECONOMIC PERFORMANCE IN 1995",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The outlook for the external environment remains positive, but sentiments in Europe and the US have turned less optimistic in recent months.",
+          "section": "OUTLOOK FOR 1996",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "1993 was a record year when China saw foreign direct investment approvals reach US$110 billion.",
+          "section": "MEDIUM-TERM GROWTH OUTLOOK",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Foreign direct investment into the ASEAN countries, China and India rose dramatically, from US$20 billion in 1988 to US$160 billion in 1995.",
+          "section": "MEDIUM-TERM GROWTH OUTLOOK",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "1997": [
+        {
+          "text": "According to the US Department of Commerce, inventories of electronic components in the US have been run down while new orders have risen by a healthy 17% in the first 5 months of 1997.",
+          "section": "OUTLOOK FOR 1997",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "This also partially reflects the traditional summer slow-down in the disk drive industry in the US and Europe.",
+          "section": "OUTLOOK FOR 1997",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The US economy is experiencing unusually strong growth with low inflation.",
+          "section": "OUTLOOK FOR 1997",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "US-China official relations also appear to have moved to a more constructive track.",
+          "section": "OUTLOOK FOR 1997",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "Through strategic alliances with other airlines like Qantas and American Airlines, British Airways is striving to grow in the major markets of North America and the Pacific region.",
           "section": "A NEW OPERATING ENVIRONMENT",
@@ -3526,18 +4106,123 @@
           "terms": [
             "New York"
           ]
+        },
+        {
+          "text": "Our financial futures exchange, or SIMEX, trades a wide range of international products with an annual turnover of 22.6 million contracts valued at US$ 16.1 trillion.",
+          "section": "TAX CHANGES FOR COMPANIES",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "1998": [
+        {
+          "text": "Corrections in inventory overhang and healthy new orders in US and Europe boosted export demand, and confirmed our earlier assessment that the slowdown we experienced in the second half of 1996 was primarily cyclical.",
+          "section": "ECONOMIC PERFORMANCE IN 1997",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "As final demand from the US and EU was healthy, Singapore's overall trade was not too seriously affected by the regional crisis.",
+          "section": "ECONOMIC PERFORMANCE IN 1997",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In countries whose currencies were tightly pegged to the US dollar, exports began to lose competitiveness.",
+          "section": "ECONOMIC OUTLOOK FOR 1998",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "Economies such as China and Latin America emerged as keen competitors.",
           "section": "ECONOMIC OUTLOOK FOR 1998",
           "terms": [
             "America"
           ]
+        },
+        {
+          "text": "Hong Kong's US dollar peg came under severe pressure, but managed to hold.",
+          "section": "ECONOMIC OUTLOOK FOR 1998",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "A massive US$57 billion IMF-led bail-out package was necessary to stabilise the Won, and to keep the Korean economy on its feet.",
+          "section": "ECONOMIC OUTLOOK FOR 1998",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In manufacturing, the continuing robustness of our major export markets in US and EU will help to sustain growth.",
+          "section": "ECONOMIC OUTLOOK FOR 1998",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The US is enjoying an unprecedented stretch of strong growth accompanied by low unemployment and low inflation.",
+          "section": "ECONOMIC OUTLOOK FOR 1998",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The uptrend in US demand for electronics components since the second half of 1996 is continuing.",
+          "section": "ECONOMIC OUTLOOK FOR 1998",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The value of goods and services currently being traded on the Internet is estimated at US$46 billion.",
+          "section": "c) Tax Exemption for Income Derived From Writing Offshore Marine Hull and Liability Insurance Business",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "1999": [
+        {
+          "text": "The quick succession of US federal rate cuts and the co-ordinated interest rate reduction initiated by European central banks toward the close of last year helped to allay concerns of a global credit crunch and set the stage for a rapid, albeit fragile, recovery of financial markets in early 1999.",
+          "section": "OUTLOOK FOR 1999",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Demand for disk drives and semiconductors is on the upturn, following the corrections in inventory overhang and healthy new orders from the US.",
+          "section": "OUTLOOK FOR 1999",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Health of the US Economy",
+          "section": "OUTLOOK FOR 1999",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "With Japan stagnating and EU adjusting to its new monetary union, the US remains the linchpin of the global economy.",
+          "section": "OUTLOOK FOR 1999",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Some analysts have remarked that \"what happens in the US is make-or-break for the world economy this year\".",
+          "section": "OUTLOOK FOR 1999",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "(Financial Times, \"Cracks in Wall Street\", 7 January 1999, Samuel Brittan.)",
           "section": "OUTLOOK FOR 1999",
@@ -3546,38 +4231,31 @@
           ]
         },
         {
-          "text": "The negative wealth effect from a substantial correction on Wall Street is potentially large.",
+          "text": "The current US expansion has entered its 92nd month, the longest peacetime expansion since the 1850s.",
           "section": "OUTLOOK FOR 1999",
           "terms": [
-            "Wall Street"
+            "US"
           ]
         },
         {
-          "text": "Aside from the equity risk, there could also be significant repercussions on the US banking sector and economy if Brazil falls into full-blown recession and drags down the rest of Latin America.",
+          "text": "Rapid above-potential growth, however, has led to some macroeconomic imbalances in the US economy.",
           "section": "OUTLOOK FOR 1999",
           "terms": [
-            "America"
+            "US"
           ]
         },
         {
-          "text": "The US extended 51% of its total overseas lending and directed 21% of its exports to Latin American countries.",
+          "text": "The US economy is widely expected to moderate to slower growth this year.",
           "section": "OUTLOOK FOR 1999",
           "terms": [
-            "American"
+            "US"
           ]
         },
         {
-          "text": "exposure, 20% of US' earnings from direct investments abroad were derived from Latin America.",
+          "text": "There are, however, several downside risks to this projection for a soft landing in the US economy.",
           "section": "OUTLOOK FOR 1999",
           "terms": [
-            "America"
-          ]
-        },
-        {
-          "text": "Another 40 events will be targeted at emerging markets in East Europe, South Asia, Middle East, Latin America and Africa.",
-          "section": "MANAGING THE CRISIS",
-          "terms": [
-            "America"
+            "US"
           ]
         }
       ],
@@ -3597,6 +4275,48 @@
           ]
         },
         {
+          "text": "marked slowdown of the US economy, cannot be discounted.",
+          "section": "ECONOMIC PERFORMANCE IN 1999",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Macroeconomic imbalances in the US economy, such as the widening current account deficit, the falling personal savings rate, and the rising corporate leverage, are not sustainable at current rates and will need to be corrected at some point.",
+          "section": "ECONOMIC PERFORMANCE IN 1999",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Last year, the value of mergers in Europe surged 50% to US$1.2 trillion, while that in the US has remained high at US$1.6 trillion for the last 2 years.",
+          "section": "Competing In The New Millennium",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The new AOL Time Warner conglomerate, for instance, has a market capitalisation of about US$360 billion, almost 4 times Singapore's GDP.",
+          "section": "Competing In The New Millennium",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "[Goldman Sachs estimated that FDI into China would rise to US$100 billion a year over the next five years as a result of its WTO entry.",
+          "section": "Competing In The New Millennium",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In 1996, China's share of the US and Japan electronics market was only 6% and 7% respectively.",
+          "section": "Competing In The New Millennium",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "Outside Asia, Latin America and Eastern Europe have similarly geared up for the new competitive challenges.",
           "section": "Competing In The New Millennium",
           "terms": [
@@ -3604,14 +4324,56 @@
           ]
         },
         {
-          "text": "Equity ownership is key to the development of the vibrant technopreneurial environment in Silicon Valley and other high tech nodes.",
-          "section": "Enhanced Tax Treatment for Stock Options",
+          "text": "The US is in the throes of its New Economy powered by innovations and technological start-ups.",
+          "section": "Competing In The New Millennium",
           "terms": [
-            "Silicon Valley"
+            "US"
           ]
         }
       ],
       "2001": [
+        {
+          "text": "In particular, the US economy was the key driver behind global demand.",
+          "section": "PART I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The bursting of the dot-com bubble did not stop the US from registering a stellar growth of 5.0% last year.",
+          "section": "PART I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The US economy has decelerated quite sharply in the past few months.",
+          "section": "PART I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The consensus is that the US economy will grow by only 2 to 2.5% this year.",
+          "section": "PART I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Japanese exports are already slowing on the back of weaker US demand.",
+          "section": "PART I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The slowdown in the US economy and electronics demand will affect the region.",
+          "section": "PART I REVIEW OF THE ECONOMY",
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "Our domestic exports are fairly well spread out among the major markets of United States, European Union and Asia.",
           "section": "PART I REVIEW OF THE ECONOMY",
@@ -3632,6 +4394,13 @@
           "terms": [
             "Silicon Valley"
           ]
+        },
+        {
+          "text": "This year, we aim to conclude FTAs with Australia, Japan, Mexico and the US.",
+          "section": "PART II THE FY2001 BUDGET",
+          "terms": [
+            "US"
+          ]
         }
       ],
       "2002": [
@@ -3639,14 +4408,71 @@
           "text": "In 2001, economic conditions world-wide grew even more difficult as the world's three largest economies - the United States (US), Japan and Germany - experienced sharp,",
           "section": "A BUDGET FOR A DIFFERENT WORLD",
           "terms": [
-            "United States"
+            "United States",
+            "US"
           ]
         },
         {
-          "text": "Unlike cities such as New York or London, Singapore does not have a large hinterland where city dwellers can use their cars outside the city.",
-          "section": "Expanding Electronic Road Pricing",
+          "text": "Then came the September 11 terrorist attacks on the US.",
+          "section": "A BUDGET FOR A DIFFERENT WORLD",
           "terms": [
-            "New York"
+            "US"
+          ]
+        },
+        {
+          "text": "The US economy grew by a robust 5.8% in the first quarter of this year after growing 1.7% in the last quarter of 2001.",
+          "section": "Global",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Business confidence seems to be improving in the US, European Union (EU) and Japan.",
+          "section": "Global",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The strong growth of the US economy in the first quarter masks signs of weaknesses.",
+          "section": "Global",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "For example, US March orders for durable goods fell 0.6% after 3 months of growth, and profit warnings caused US stocks to fall despite the strong growth.",
+          "section": "Global",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Recovery does not just depend on the confidence of US consumers, or how strongly the US economy picks up.",
+          "section": "Global",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "So too if the US moves against Iraq in its continuing war against global terrorism.",
+          "section": "Global",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Extremist and terrorist groups in the region, which are linked to global terrorist networks, seek to destabilise regional governments and attack Americans and US interests everywhere.",
+          "section": "Regional",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the US, the corporate income tax rate is nominally 35%, but various provisions and loopholes reportedly enable some corporations to reduce their effective rate to only 11%.",
+          "section": "Reducing Corporate Income Tax",
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -3659,10 +4485,60 @@
           ]
         },
         {
+          "text": "This slowed down the US economy.",
+          "section": "PART I: OUTLOOK AND RESPONSE",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the US, the consumer confidence index in January reached its lowest level since 1993.",
+          "section": "Immediate Outlook",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "ASEAN is also launching Free Trade Agreement (FTA) negotiations with China and Japan, and preparing to benefit from an FTA with India and the Enterprise ASEAN Initiative with the US.",
+          "section": "Immediate Outlook",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the second half, if the US economy and the global electronics industry strengthen as we hope, Singapore should also recover more strongly, and our unemployment should start to decline.",
+          "section": "Immediate Outlook",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The US, the EU and Japan will continue to be our main markets and sources of investments.",
+          "section": "Moving Ahead",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The negotiations for the US-Singapore FTA were concluded in January.",
+          "section": "Moving Ahead",
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Many US multinationals have outsourced their back-end call centre operations to the Philippines and India, lured by low wages and an ample supply of English-speakers.",
+          "section": "Moving Ahead",
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "Part of the training for call operators is to watch American TV serials, so that they can discuss the latest episodes in the proper American accents, and make the callers think they are talking to people in the US.",
           "section": "Moving Ahead",
           "terms": [
-            "American"
+            "American",
+            "US"
           ]
         },
         {
@@ -3671,25 +4547,134 @@
           "terms": [
             "New York"
           ]
-        },
-        {
-          "text": "However, the major global cities in those countries, such as London or New York, which draw on wider hinterlands, have been able to grow faster and sustain higher per capita incomes than their national averages.",
-          "section": "Service & Conservancy Charges",
-          "terms": [
-            "New York"
-          ]
         }
       ],
       "2004": [
+        {
+          "text": "For example, Hewlett-Packard recently decided to invest another US$1 billion in the next five years to expand its operations.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In contrast, US universities have to compete actively for both state and private funding, on the basis of quality.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "American students pay higher fees, and take student loans to a much larger extent than European students.",
           "section": null,
           "terms": [
             "American"
           ]
+        },
+        {
+          "text": "The industry estimates that there are 1.8 million high net worth individuals in the Asia-Pacific region, with private wealth totalling US$5.7 trillion.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2005": [
+        {
+          "text": "Members can refer to the newBudget Highlightsdocument that will be distributed at the end of the Budget Statement for more details of the revised budget position in FY2004.2005 - Continued growth and fiscal consolidationThis year, the US is likely to enjoy steady growth of around 3-3.5%.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "While the huge US current account deficit poses risks to both the US and the international economy, this is a medium term issue.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "2005 - Continued growth and fiscal consolidationThis year, the US is likely to enjoy steady growth of around 3-3.5%.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2006": [
+        {
+          "text": "The US economy continues to grow, underpinned by strong consumption and investment expenditure.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Disruptions in world oil supply could cause prices to spike sharply, while a disorderly unwinding of the US current account deficit could have knock-on effects on financial stability, exchange rates, and trade liberalisation.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "This will put us on par with the European Union economies and close the gap with world leaders in R&D like the Nordic countries and the US.Increased R&D investment will generate more intellectual capital which can be exploited and commercialised.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "For example, Rolls-Royce and a Singaporean consortium jointly invested US$100 million in developing a commercially viable power system based on fuel cells.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Last year, the World Intellectual Property Organisation (WIPO) set up in Singapore its first office outside the US and Europe.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "This will put us on par with the European Union economies and close the gap with world leaders in R&D like the Nordic countries and the US.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "George Lucas set up Lucasfilms' first and only studio outside US in Singapore partly because of our cosmopolitan appeal.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
         }
       ],
       "2007": [
+        {
+          "text": "The US economy has kept up its momentum.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Consumer spending has been supported by more stable oil prices, offsetting the effects of a slowdown in the US housing market.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "A sharp slowdown in the US economy, which could happen if there is a hard landing in the US housing market, remains our biggest external risk.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "A disruption in global financial markets, for example, in response to America's large external deficits, is another factor that could slow down the global economy.",
           "section": null,
@@ -3698,19 +4683,104 @@
           ]
         },
         {
+          "text": "Take Bob Chandran, for example, who came from the US.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "He first relocated from Finland to the US, lived there for several years, before deciding to come to Singapore - both for his company and his family.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the US, the income gap has been widening for some time, especially in the last decade.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Because we are a much more open economy, compared to the US, China, Germany or Japan, we are, in fact, more exposed to these pressures of globalisation.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "Some of them are in fact very fast-growing companies, or 'gazelles', as they are called in Silicon Valley.",
           "section": null,
           "terms": [
             "Silicon Valley"
           ]
+        },
+        {
+          "text": "In its latest report, for this year, it put Singapore as the most business-friendly economy in the world, ahead of New Zealand, the US, Canada, Hong Kong and the UK.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
         }
       ],
       "2008": [
         {
+          "text": "Economic Outlook for 2008The key factor that will shape the growth of the Singapore economy in 2008 is the global economy, especially the state of the US economy.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Many private forecasters now expect the US economy to enter into a recession in the first half of the year, although it may be mild.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "A sharper than expected decline in US growth could add to the turmoil in the financial markets, and deepen the credit crunch that is still unfolding.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The key factor that will shape the growth of the Singapore economy in 2008 is the global economy, especially the state of the US economy.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the US for example, about a fifth of older Americans rent their homes.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "In the US, the city of Austin in Texas is fast establishing itself as a centre of innovation for clean technology.",
           "section": null,
           "terms": [
-            "Texas"
+            "Texas",
+            "US"
+          ]
+        },
+        {
+          "text": "It was recently named by Moody\u2019s as the best place for business in the US.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Austin has the third-highest number of patents among US cities in 2005, and over 44% of the population hold a college degree.",
+          "section": null,
+          "terms": [
+            "US"
           ]
         },
         {
@@ -3721,7 +4791,139 @@
           ]
         }
       ],
+      "2009": [
+        {
+          "text": "GDP is estimated to have fallen by about 5% in the US in the fourth quarter of 2008.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Job losses in the US in December 2008 were the worst in 60 years and unemployment has risen to 7.2%.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The new US Administration\u2019s fiscal package is currently expected to be US$825 billion spread over two years, which will increase its government deficit by about 2.8% of GDP each year.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Including the US government\u2019s existing deficit programmes, this will lead to a total deficit of about 10% of GDP in 2009.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Second, domestic spending in the US and other advanced economies, is unlikely to recover for some time to come.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Consumers in the US are over-stretched, having over-borrowed during the years of the housing bubble.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "US consumers, who account for one-fifth of global consumption, will have to gradually reduce their debts and are therefore unlikely to go back to old ways of spending for some years to come.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Banks, especially in the US and Europe, have made heavy losses - the results are coming out each week.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Once the full extent of impaired assets becomes apparent, it is estimated that the loan losses will reach two trillion dollars in the US alone.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The key factor is the US economy.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2010": [
+        {
+          "text": "The G3 markets \u2013 US, Europe and Japan \u2013 will also remain major sources of demand for Singapore companies.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2011": [
+        {
+          "text": "However, the outlook for the US, the Eurozone and Japan is challenging, with recovery from the crisis expected to take at least another four years.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The recovery in the advanced economies, especially in the US, is picking up steam.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Heavy budget cutting in Europe, the UK and Japan, and the withdrawal of the fiscal stimulus in the US later this year, will also dampen growth.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Achieving this will bring us up to today\u2019s levels of productivity in the most advanced economies \u2013 the US, Japan and the Scandinavian region.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
       "2012": [
+        {
+          "text": "Taken as a whole, Asia is providing some lift to our economy at a time of continuing economic weakness in the US, Japan and Europe.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "There are still threats hanging over the world economy \u2013 in the Eurozone\u2019s unresolved problems, in the tensions over Iran\u2019s nuclear programme and in a US economy which remains vulnerable to setbacks.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Today, the same value of output produced by 10 workers in Singapore takes only seven workers to produce in the US or six in Switzerland3.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
         {
           "text": "For example, our retail industry lags behind several other global cities \u2013 its productivity level is less than half of that in New York, Paris and London and remains behind Hong Kong\u2019s.",
           "section": null,
@@ -3739,6 +4941,20 @@
       ],
       "2013": [
         {
+          "text": "It has happened not only in the advanced economies like the US, but also in the Asian countries that are in the same league as Singapore.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Three decades on, our productivity level is about 70% of today's global productivity leaders \u2013 countries like the US, Japan, Switzerland and Sweden.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "For example, the World Bank's investment arm, the IFC, will be setting up its first Asset Management Company office outside Washington DC in Singapore, to invest in infrastructure projects in the region.",
           "section": null,
           "terms": [
@@ -3748,10 +4964,54 @@
       ],
       "2014": [
         {
+          "text": "There is no reason, for example, why restaurants and cafes in Singapore cannot be like those in Europe or the US, which operate with fewer service staff,",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "We know this from the evidence of half a century of major social interventions around the world, such as in the US and the European countries.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
           "text": "retail outlet abroad, in New York, in the middle of this year.",
           "section": null,
           "terms": [
             "New York"
+          ]
+        }
+      ],
+      "2015": [
+        {
+          "text": "The US continues to recover.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In the US, Japan, UK and much of Europe, there has been no increase in real incomes over the last decade for the median household.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Even in the US, which has one of the highest home ownership rates amongst the advanced countries, less than 40% of households in the lower-income group, those in the bottom 20%, today own their homes.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "So, when Joseph's current coach Eddie Reese \u2013 former coach of the US Men's Olympic Swimming Team, in fact, in two successive Olympics \u2013 recently described Joseph as",
+          "section": null,
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -3760,7 +5020,8 @@
           "text": "The pace of global economic recovery is uneven, with the United States (US) being the most advanced, while Europe and Japan will only see modest growth aided by monetary stimulus.",
           "section": null,
           "terms": [
-            "United States"
+            "United States",
+            "US"
           ]
         }
       ],
@@ -3778,7 +5039,142 @@
           "text": "And the United States' (US') recent tax changes and review of trade pacts will intensify competition and economic nationalism, fuelling anxieties worldwide.",
           "section": null,
           "terms": [
-            "United States"
+            "United States",
+            "US"
+          ]
+        },
+        {
+          "text": "This concrete complies with the latest specifications set by the US Federal Aviation Administration.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2019": [
+        {
+          "text": "On the global stage, the trade frictions between the US and China are developing into a deeper strategic competition of strength and of governance systems.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In recent years, Southeast Asia has grown several new \"unicorns\", or companies with valuations in excess of US$1 billion.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "There are now over 220 venture capital deals per year in Singapore, worth close to US$4.2 billion.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "This is a significant rise from the 80 deals worth US$136 million in 2012.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The Monetary Authority of Singapore (MAS) has simplified the regulatory regime for venture capital managers and launched a US$5 billion private markets programme to encourage global private equity players to deepen their presence here.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Over the years, we have forged deep partnerships with the G3 economies of US, Europe and Japan, as well as China, India and ASEAN.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "After 20 years of R&D costing US$100 million, the company recently launched the Super X-Fi, a technology that recreates the holographic sound experience \u2013 or 3D sound \u2013 with headphones, personalised.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "It has already won 14 awards at the 2019 Consumer Electronics Show in the US.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "These investors expressed an interest to invest up to US$12 billion in ASEAN enterprises in fintech, info-communications technology, and medtech over the next three years.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2020": [
+        {
+          "text": "On the strategic front, the friction in the US-China relationship is a major source of tension and uncertainty, affecting global economic growth.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "On present trends, US-China tensions will recreate geopolitical fault lines and portend a bifurcated global order.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2021": [
+        {
+          "text": "COVID-19 vaccines were developed in less than a year, and tests were implemented within weeks to months, in the US, China, Europe and Russia.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "But COVID-19 has also accentuated a US-China-centric technology race, into a global race for technological superiority and heightened concerns over supply chain resilience.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The ASEAN nations had a GDP of US$3.2 trillion collectively in 2019, making it the world\u2019s fifth largest economy.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        }
+      ],
+      "2022": [
+        {
+          "text": "This will be supported by more widespread vaccination and booster efforts in the major economies like the US and Eurozone.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "We are also seeing the effects of the expansionary macro-economic policies pursued by the US and other developed countries to revive their economies following the onset of the pandemic.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "In particular, rivalry between the two great powers \u2013 US and China \u2013 has intensified and will impact the world for the rest of the decade and more.",
+          "section": null,
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -3787,7 +5183,50 @@
           "text": "Inflation reached historic levels in many advanced economies \u2013 in the United States (US), consumer prices were the highest in four decades; in Germany, they were the highest in nearly half a century.",
           "section": null,
           "terms": [
-            "United States"
+            "United States",
+            "US"
+          ]
+        },
+        {
+          "text": "The US is seeing slower growth and may enter a recession, as the Federal Reserve continues to raise interest rates to combat elevated inflation.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Our deep relationships with both the US and China, as well as our partners in ASEAN and the wider region, make us a neutral and increasingly important place for global and regional businesses.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "A greater-than-expected decline in the US and EU economies could tip the world into recession.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Great power contestation has intensified, most notably between the US and China.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The US, in particular, is determined to establish a clear technological lead over China, especially in critical industries like semiconductors and green energy.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "Meanwhile, the US and other countries are rolling out vast subsidies to build up their strategic industries.",
+          "section": null,
+          "terms": [
+            "US"
           ]
         }
       ],
@@ -3796,14 +5235,30 @@
           "text": "It was the height of the Cold War, with the Berlin Wall standing as a stark symbol of division between the United States (US) and the Soviet Union.",
           "section": null,
           "terms": [
-            "United States"
+            "United States",
+            "US"
+          ]
+        },
+        {
+          "text": "The US and China are locked in a fierce contest for global supremacy.",
+          "section": null,
+          "terms": [
+            "US"
           ]
         },
         {
           "text": "We see this in the US, where the technology sector, powered by Silicon Valley and companies like Apple, Amazon, Alphabet and Tesla, has helped to propel the country\u2019s dynamism and innovation.",
           "section": null,
           "terms": [
-            "Silicon Valley"
+            "Silicon Valley",
+            "US"
+          ]
+        },
+        {
+          "text": "We do not operate at the same scale as the US.",
+          "section": null,
+          "terms": [
+            "US"
           ]
         },
         {
@@ -3811,6 +5266,34 @@
           "section": null,
           "terms": [
             "American"
+          ]
+        },
+        {
+          "text": "AEM today has a global footprint, with manufacturing plants and R&D teams across Asia, Europe and the US.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "We have signed agreements with the US on civil nuclear cooperation.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "The new US administration has withdrawn from the earlier consensus forged by the Organisation for Economic Co-operation and Development (OECD) and other countries.",
+          "section": null,
+          "terms": [
+            "US"
+          ]
+        },
+        {
+          "text": "And it remains to be seen what further moves the US and other major economies will make in this new geopolitical environment.",
+          "section": null,
+          "terms": [
+            "US"
           ]
         }
       ]
