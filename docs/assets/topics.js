@@ -46,6 +46,40 @@ const TOPIC_COLORS = {
   Law: "#CCCCCC",
 };
 
+// Topic descriptions for tooltips - based on classification keywords
+const TOPIC_DESCRIPTIONS = {
+  General: "Sentences not classified into specific ministry topics",
+  Defence:
+    "Military, SAF, national service, MINDEF, security, armed forces, terrorism",
+  Finance:
+    "Tax, GST, budget, fiscal policy, CPF, reserves, revenue, MAS, IRAS, retirement savings",
+  "Trade Industry":
+    "Economy, GDP, trade, investment, business, SMEs, manufacturing, tourism, MTI, jobs, wages",
+  Manpower:
+    "Workforce, foreign workers, levy, MOM, labour policies, retraining",
+  Education:
+    "Schools, universities, MOE, SkillsFuture, students, teachers, vocational training",
+  Transport:
+    "MRT, buses, LTA, roads, Changi Airport, port, infrastructure, vehicles",
+  "National Development":
+    "Housing, HDB, BTO, property, urban planning, URA, land use, estates",
+  Health:
+    "Healthcare, hospitals, MOH, Medisave, MediShield, clinics, mental health, vaccines",
+  "Sustainability Environment":
+    "Climate, green initiatives, carbon, renewable energy, NEWater, recycling, MSE",
+  "Social Family Development":
+    "Welfare, ComCare, low-income support, Pioneer/Merdeka Generation, MSF, GST vouchers",
+  "Home Affairs":
+    "Police, SPF, SCDF, civil defence, crime, immigration, ICA, MHA",
+  "Foreign Affairs":
+    "Diplomacy, ASEAN, international relations, MFA, bilateral ties, treaties",
+  "Communications Information":
+    "Technology, digital, AI, Smart Nation, R&D, fintech, cyber, IMDA, MCI",
+  "Culture Community Youth":
+    "Arts, heritage, sports, community, MCCY, museums, National Day",
+  Law: "Legal system, courts, judiciary, MinLaw, legislation, attorneys",
+};
+
 // Initialize page
 document.addEventListener("DOMContentLoaded", () => {
   loadTopicData();
@@ -199,14 +233,15 @@ function renderHeatmap() {
         const decadeYears = years.filter(
           (y) => parseInt(y) >= decade.start && parseInt(y) <= decade.end,
         );
+        const desc = TOPIC_DESCRIPTIONS[topic] || "";
         if (decadeYears.length === 0)
-          return `<b>${topic}</b><br>${decade.name}: No data`;
+          return `<b>${topic}</b><br><i>${desc}</i><br>${decade.name}: No data`;
         const sum = decadeYears.reduce(
           (acc, y) => acc + (topicData.by_year[y][topic] || 0),
           0,
         );
         const avg = sum / decadeYears.length;
-        return `<b>${topic}</b><br>${
+        return `<b>${topic}</b><br><i>${desc}</i><br>${
           decade.name
         }<br>Avg coverage: ${avg.toFixed(1)}%`;
       }),
@@ -230,12 +265,12 @@ function renderHeatmap() {
     );
 
     hoverText = sortedTopics.map((topic) =>
-      filteredYears.map(
-        (year) =>
-          `<b>${topic}</b><br>Year: ${year}<br>Coverage: ${(
-            topicData.by_year[year][topic] || 0
-          ).toFixed(1)}%`,
-      ),
+      filteredYears.map((year) => {
+        const desc = TOPIC_DESCRIPTIONS[topic] || "";
+        return `<b>${topic}</b><br><i>${desc}</i><br>Year: ${year}<br>Coverage: ${(
+          topicData.by_year[year][topic] || 0
+        ).toFixed(1)}%`;
+      }),
     );
   }
 
@@ -353,11 +388,17 @@ function setupTopicSelectors() {
       const option = document.createElement("option");
       option.value = topic;
       option.textContent = topic;
+      option.title = TOPIC_DESCRIPTIONS[topic] || "";
       if (topic === defaults[index]) option.selected = true;
       select.appendChild(option);
     });
 
-    select.addEventListener("change", renderTopicTrends);
+    // Add title attribute to show description on hover
+    select.title = TOPIC_DESCRIPTIONS[select.value] || "";
+    select.addEventListener("change", () => {
+      select.title = TOPIC_DESCRIPTIONS[select.value] || "";
+      renderTopicTrends();
+    });
   });
 }
 
@@ -373,16 +414,19 @@ function renderTopicTrends() {
 
   if (selectedTopics.length === 0) return;
 
-  const traces = selectedTopics.map((topic) => ({
-    x: years,
-    y: years.map((year) => topicData.by_year[year][topic] || 0),
-    name: topic,
-    type: "scatter",
-    mode: "lines+markers",
-    line: { color: TOPIC_COLORS[topic] || "#9EA2A2", width: 2.5 },
-    marker: { size: 4 },
-    hovertemplate: `<b>${topic}</b><br>Year: %{x}<br>Coverage: %{y:.1f}%<extra></extra>`,
-  }));
+  const traces = selectedTopics.map((topic) => {
+    const desc = TOPIC_DESCRIPTIONS[topic] || "";
+    return {
+      x: years,
+      y: years.map((year) => topicData.by_year[year][topic] || 0),
+      name: topic,
+      type: "scatter",
+      mode: "lines+markers",
+      line: { color: TOPIC_COLORS[topic] || "#9EA2A2", width: 2.5 },
+      marker: { size: 4 },
+      hovertemplate: `<b>${topic}</b><br><i>${desc}</i><br>Year: %{x}<br>Coverage: %{y:.1f}%<extra></extra>`,
+    };
+  });
 
   // Add crisis year shapes
   const shapes = CRISIS_YEARS.map((crisis) => ({
@@ -645,14 +689,17 @@ function renderDecadeComparison() {
   });
 
   // Create grouped bar traces (not stacked - easier to compare)
-  const traces = topTopics.map((topic) => ({
-    x: DECADES.map((d) => d.name),
-    y: DECADES.map((d) => decadeData[d.name][topic]),
-    name: topic,
-    type: "bar",
-    marker: { color: TOPIC_COLORS[topic] || "#9EA2A2" },
-    hovertemplate: `<b>${topic}</b><br>%{x}<br>Total coverage: %{y:.0f}%<extra></extra>`,
-  }));
+  const traces = topTopics.map((topic) => {
+    const desc = TOPIC_DESCRIPTIONS[topic] || "";
+    return {
+      x: DECADES.map((d) => d.name),
+      y: DECADES.map((d) => decadeData[d.name][topic]),
+      name: topic,
+      type: "bar",
+      marker: { color: TOPIC_COLORS[topic] || "#9EA2A2" },
+      hovertemplate: `<b>${topic}</b><br><i>${desc}</i><br>%{x}<br>Total coverage: %{y:.0f}%<extra></extra>`,
+    };
+  });
 
   const layout = {
     barmode: "group",
