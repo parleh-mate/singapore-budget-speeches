@@ -771,6 +771,37 @@ a:hover {
   border-color: var(--color-primary);
 }
 
+/* Entropy chart legend */
+.entropy-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-alt);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+}
+
+.entropy-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.entropy-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.entropy-line {
+  display: inline-block;
+  width: 20px;
+  height: 0;
+}
+
 /* Heatmap controls */
 .heatmap-controls {
   display: flex;

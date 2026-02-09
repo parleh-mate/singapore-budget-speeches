@@ -80,10 +80,28 @@
           <h3>Topic Diversity Over Time (Shannon Entropy)</h3>
           <p class="chart-description">
             Shannon entropy measures how evenly topics are distributed each
-            year. Higher values = more diverse coverage across topics. Lower
-            values = speech dominated by fewer topics. "General" excluded from
-            calculation.
+            year. The <strong>dashed line</strong> shows maximum possible
+            entropy (if all topics had equal coverage). Values closer to max =
+            diverse coverage; lower values = dominated by fewer topics.
+            "General" excluded.
           </p>
+          <div class="entropy-legend">
+            <span class="entropy-item"
+              ><span class="entropy-dot" style="background: #2d3748"></span>
+              Yearly entropy</span
+            >
+            <span class="entropy-item"
+              ><span class="entropy-dot" style="background: #c8102e"></span>
+              5-year average</span
+            >
+            <span class="entropy-item"
+              ><span
+                class="entropy-line"
+                style="border-top: 2px dashed #38a169"
+              ></span>
+              Max possible</span
+            >
+          </div>
           <div id="entropyChart"></div>
         </div>
 

@@ -462,6 +462,21 @@ function renderEntropyChart() {
     hovertemplate: "<b>%{x}</b><br>5-yr avg: %{y:.2f}<extra></extra>",
   };
 
+  // Max entropy reference line
+  const maxEntropyLine = {
+    x: years,
+    y: years.map(() => maxEntropy),
+    name: `Max Possible (${maxEntropy.toFixed(2)} bits)`,
+    type: "scatter",
+    mode: "lines",
+    line: { color: "#38A169", width: 2, dash: "dash" },
+    hovertemplate:
+      "<b>Maximum entropy</b><br>" +
+      `${maxEntropy.toFixed(
+        2,
+      )} bits<br>(if all ${numTopics} topics had equal coverage)<extra></extra>`,
+  };
+
   // Crisis year shapes
   const shapes = CRISIS_YEARS.map((crisis) => ({
     type: "line",
@@ -483,6 +498,17 @@ function renderEntropyChart() {
     font: { size: 9, color: "#718096" },
     xshift: 10,
   }));
+
+  // Add interpretation annotation
+  annotations.push({
+    x: years[Math.floor(years.length * 0.85)],
+    y: maxEntropy,
+    text: "← Perfect diversity",
+    showarrow: false,
+    font: { size: 10, color: "#38A169" },
+    xanchor: "left",
+    yshift: 10,
+  });
 
   const layout = {
     xaxis: {
@@ -506,9 +532,14 @@ function renderEntropyChart() {
     annotations: annotations,
   };
 
-  Plotly.newPlot("entropyChart", [entropyTrace, movingAvgTrace], layout, {
-    responsive: true,
-  });
+  Plotly.newPlot(
+    "entropyChart",
+    [entropyTrace, movingAvgTrace, maxEntropyLine],
+    layout,
+    {
+      responsive: true,
+    },
+  );
 }
 
 // ===================================
