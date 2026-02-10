@@ -649,7 +649,7 @@ function renderDecadeComparison() {
 
   const years = Object.keys(topicData.by_year).sort();
 
-  // Get topics by total, excluding "General"
+  // Get all topics excluding "General", sorted by total coverage
   const topicTotals = {};
   years.forEach((year) => {
     Object.entries(topicData.by_year[year]).forEach(([topic, value]) => {
@@ -659,19 +659,13 @@ function renderDecadeComparison() {
     });
   });
 
-  // Get top 10 topics (excluding General)
-  const topTopics = Object.entries(topicTotals)
+  // Get all non-General topics sorted by total
+  const allTopics = Object.entries(topicTotals)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
     .map(([topic]) => topic);
 
-  // We need sentence counts. The data is in percentages.
-  // We'll need to estimate or show relative values.
-  // Since we don't have raw counts, let's use the percentage sums as a proxy
-  // (higher % across more years = more total coverage)
-
-  // Calculate sum of percentages per decade for each topic
-  // This gives us relative "weight" across decades
+  // Calculate AVERAGE percentage per decade for each topic (not sum)
+  // This makes decades comparable regardless of how many years of data
   const decadeData = {};
   DECADES.forEach((decade) => {
     decadeData[decade.name] = {};
@@ -679,43 +673,69 @@ function renderDecadeComparison() {
       (y) => parseInt(y) >= decade.start && parseInt(y) <= decade.end,
     );
 
-    topTopics.forEach((topic) => {
-      const sum = decadeYears.reduce(
-        (acc, y) => acc + (topicData.by_year[y][topic] || 0),
-        0,
-      );
-      decadeData[decade.name][topic] = sum;
+    if (decadeYears.length === 0) return;
+
+    allTopics.forEach((topic) => {
+      const avg =
+        decadeYears.reduce(
+          (acc, y) => acc + (topicData.by_year[y][topic] || 0),
+          0,
+        ) / decadeYears.length;
+      decadeData[decade.name][topic] = avg;
     });
   });
 
-  // Create grouped bar traces (not stacked - easier to compare)
-  const traces = topTopics.map((topic) => {
+  // Calculate total for normalization (to 100% stacked)
+  const decadeTotals = {};
+  DECADES.forEach((decade) => {
+    decadeTotals[decade.name] = allTopics.reduce(
+      (acc, topic) => acc + (decadeData[decade.name][topic] || 0),
+      0,
+    );
+  });
+
+  // Create 100% stacked bar traces (reversed order so top topics appear at bottom/first)
+  const traces = [...allTopics].reverse().map((topic) => {
     const desc = TOPIC_DESCRIPTIONS[topic] || "";
     return {
       x: DECADES.map((d) => d.name),
-      y: DECADES.map((d) => decadeData[d.name][topic]),
+      y: DECADES.map((d) => {
+        const total = decadeTotals[d.name] || 1;
+        return ((decadeData[d.name][topic] || 0) / total) * 100;
+      }),
       name: topic,
       type: "bar",
       marker: { color: TOPIC_COLORS[topic] || "#9EA2A2" },
-      hovertemplate: `<b>${topic}</b><br><i>${desc}</i><br>%{x}<br>Total coverage: %{y:.0f}%<extra></extra>`,
+      customdata: DECADES.map((d) => ({
+        avg: decadeData[d.name][topic] || 0,
+        desc: desc,
+      })),
+      hovertemplate:
+        `<b>${topic}</b><br>` +
+        `<i>%{customdata.desc}</i><br>` +
+        `%{x}<br>` +
+        `Share: %{y:.1f}%<br>` +
+        `Avg coverage: %{customdata.avg:.1f}%<extra></extra>`,
     };
   });
 
   const layout = {
-    barmode: "group",
+    barmode: "stack",
     xaxis: {
       title: "Decade",
     },
     yaxis: {
-      title: "Total % Coverage (sum across years in decade)",
+      title: "Share of Topic Coverage (%)",
       gridcolor: "#E2E8F0",
+      range: [0, 100],
+      ticksuffix: "%",
     },
     showlegend: true,
     legend: {
       orientation: "h",
       y: -0.25,
       font: { size: 9 },
-      traceorder: "normal",
+      traceorder: "reversed",
     },
     height: 500,
     margin: { t: 20, b: 120, l: 70, r: 20 },
